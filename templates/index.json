@@ -1,0 +1,133 @@
+{
+  "sections": {
+    "hero": {
+      "type": "aelo-hero",
+      "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-ambiance-douceur_5f1dbc6d-ed27-4ad2-9c08-66a9b786510f.jpg?v=1786668653&width=1400",
+        "image_alt": "Ponceuse pieds électrique Talyss dans une ambiance douce",
+        "product": "ponceuse-pieds-electrique-talyss",
+        "rating_text": "Noté <b>Excellent</b> par nos clientes",
+        "kicker": "La ponceuse qui s'adapte à vous",
+        "heading": "Jusqu'à -40%\nsur les packs\n+ livraison offerte",
+        "subheading": "Des pieds doux, lisses et sans callosités en quelques minutes. Sans effort, sans institut, directement chez vous.",
+        "button_label": "Profiter de l'offre",
+        "button_link": "/products/ponceuse-pieds-electrique-talyss",
+        "pad_top": 32,
+        "pad_bottom": 40
+      }
+    },
+    "marquee": {
+      "type": "aelo-marquee",
+      "settings": {
+        "text": "Livraison offerte | Jusqu'à -40% sur les packs | Peau douce garantie 90 jours",
+        "pad_top": 20,
+        "pad_bottom": 20
+      }
+    },
+    "steps": {
+      "type": "aelo-steps",
+      "blocks": {
+        "step1": {
+          "type": "step",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-detail-plateau_68b0180b-671d-4602-a504-884b9f7a8fce.jpg?v=1786668653&width=800",
+            "title": "Clipsez votre disque",
+            "text": "Gros grain pour les zones épaisses, grain fin pour la finition. Le disque se fixe sur le plateau en une seconde, et vous en utilisez un neuf à chaque séance — hygiène parfaite."
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-salle-de-bain_06bd3028-8040-4e6a-bce7-e77e8669fe03.jpg?v=1786668653&width=800",
+            "title": "Passez délicatement 5 minutes",
+            "text": "Sur les talons, la plante et les orteils. La tête tourne toute seule : vous guidez, le moteur travaille. Aucune lame, aucune douleur — juste une sensation de gommage."
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-des-pieds-doux_ee09b435-892b-49b5-8571-2c25f38d6e17.jpg?v=1786668654&width=800",
+            "title": "Hydratez, et c'est tout",
+            "text": "La couche de peau morte est polie, la peau saine n'est jamais touchée. Une crème hydratante, et vous profitez de pieds doux toute la semaine."
+          }
+        }
+      },
+      "block_order": ["step1", "step2", "step3"],
+      "settings": {
+        "heading": "Une ponceuse qui travaille",
+        "heading_accent": "Pour Vous",
+        "pad_top": 64,
+        "pad_bottom": 72
+      }
+    },
+    "reviews": {
+      "type": "aelo-reviews",
+      "blocks": {
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Très belle découverte",
+            "text": "Mes talons sont lisses dès la première utilisation. Aucune douleur, juste une sensation de gommage. On ne sent presque rien et le résultat est superbe. Je recommande sans hésiter.",
+            "author": "Camille R."
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Un résultat bluffant",
+            "text": "J'étais sceptique au départ, mais mes talons sont redevenus tout doux en une seule séance. Fini la râpe manuelle qui fatigue le bras pour un demi-résultat.",
+            "author": "Julie D."
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Mon nouveau rituel",
+            "text": "Application rapide, pratique avec les disques qui se clipsent, et le résultat dure toute la semaine. C'est devenu mon rituel du dimanche soir.",
+            "author": "Manon L."
+          }
+        },
+        "rev4": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Exactement ce qu'il me fallait",
+            "text": "Plus besoin de prendre rendez-vous en institut. En 5 minutes devant la télé, mes pieds sont prêts pour les sandales. Le rapport qualité-prix est imbattable.",
+            "author": "Sophie B."
+          }
+        }
+      },
+      "block_order": ["rev1", "rev2", "rev3", "rev4"],
+      "settings": {
+        "heading": "Nos avis récents de la semaine",
+        "pad_top": 64,
+        "pad_bottom": 56
+      }
+    },
+    "approved": {
+      "type": "aelo-approved",
+      "blocks": {
+        "chk1": { "type": "check", "settings": { "text": "Résultat visible dès la première séance" } },
+        "chk2": { "type": "check", "settings": { "text": "Aucune lame : la peau saine n'est jamais touchée" } },
+        "chk3": { "type": "check", "settings": { "text": "Disque neuf à chaque séance, hygiène parfaite" } },
+        "chk4": { "type": "check", "settings": { "text": "Recharge USB — pas de piles à racheter" } }
+      },
+      "block_order": ["chk1", "chk2", "chk3", "chk4"],
+      "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-ponceuse-packshot_20a39dd1-98e9-4406-b343-c253b85e4f89.jpg?v=1786668653&width=1000",
+        "image_alt": "Ponceuse pieds électrique Talyss",
+        "heading": "Approuvée par",
+        "heading_accent": "Nos Clientes,\nJour Après Jour.",
+        "text": "Découvrez la ponceuse électrique nouvelle génération qui offre des pieds doux, lisses et sans callosités en quelques minutes, sans effort. Garantie Peau Douce : 90 jours satisfait ou remboursé.",
+        "button_label": "Profiter de l'offre",
+        "button_link": "/products/ponceuse-pieds-electrique-talyss",
+        "pad_top": 32,
+        "pad_bottom": 88
+      }
+    }
+  },
+  "order": ["hero", "marquee", "steps", "reviews", "approved"]
+}

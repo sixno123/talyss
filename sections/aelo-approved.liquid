@@ -1,0 +1,59 @@
+{{ 'aelo.css' | asset_url | stylesheet_tag }}
+<section class="ae ae-approved" style="padding-block: {{ section.settings.pad_top }}px {{ section.settings.pad_bottom }}px;">
+  <div class="ae-wrap">
+    <div class="ae-approved__card">
+      <div class="ae-approved__media">
+        {%- if section.settings.image -%}
+          <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="{{ section.settings.image_alt | escape }}" loading="lazy">
+        {%- elsif section.settings.image_url != blank -%}
+          <img src="{{ section.settings.image_url }}" alt="{{ section.settings.image_alt | escape }}" loading="lazy">
+        {%- endif -%}
+      </div>
+      <div class="ae-approved__body">
+        <h2>{{ section.settings.heading }} <span class="ae-serif">{{ section.settings.heading_accent | newline_to_br }}</span></h2>
+        <p class="ae-approved__text">{{ section.settings.text }}</p>
+        <ul class="ae-approved__checks">
+          {%- for block in section.blocks -%}
+            <li {{ block.shopify_attributes }}><span class="ae-check">&#10003;</span> {{ block.settings.text }}</li>
+          {%- endfor -%}
+        </ul>
+        {%- if section.settings.button_label != blank -%}
+          <a class="ae-btn" href="{{ section.settings.button_link | default: '/' }}">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AELO — Approuvé par",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image (prioritaire)" },
+    { "type": "text", "id": "image_url", "label": "ou URL d'image (CDN)" },
+    { "type": "text", "id": "image_alt", "label": "Texte alternatif", "default": "Routine soin des pieds Talyss" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Approuvée par" },
+    { "type": "textarea", "id": "heading_accent", "label": "Titre (accent serif)", "default": "Nos Clientes, Jour Après Jour." },
+    { "type": "textarea", "id": "text", "label": "Paragraphe", "default": "Découvrez la ponceuse électrique qui rend vos pieds doux, lisses et sans callosités en quelques minutes, sans effort." },
+    { "type": "text", "id": "button_label", "label": "Texte du bouton", "default": "Profiter de l'offre" },
+    { "type": "url", "id": "button_link", "label": "Lien du bouton" },
+    { "type": "range", "id": "pad_top", "label": "Espace haut", "min": 0, "max": 120, "step": 4, "default": 40 },
+    { "type": "range", "id": "pad_bottom", "label": "Espace bas", "min": 0, "max": 120, "step": 4, "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "check",
+      "name": "Point fort",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texte", "default": "Résultat visible dès la première utilisation" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AELO — Approuvé par",
+      "blocks": [ { "type": "check" }, { "type": "check" }, { "type": "check" }, { "type": "check" } ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,23 @@
+{{ 'aelo.css' | asset_url | stylesheet_tag }}
+{%- assign items = section.settings.text | split: '|' -%}
+<section class="ae ae-marquee" style="padding-block: {{ section.settings.pad_top }}px {{ section.settings.pad_bottom }}px;" aria-hidden="true">
+  <div class="ae-marquee__track">
+    {%- for n in (1..2) -%}
+      {%- for item in items -%}
+        <span>{{ item | strip }}</span>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AELO — Texte défilant",
+  "settings": [
+    { "type": "textarea", "id": "text", "label": "Textes (séparés par |)", "default": "Livraison offerte | Jusqu'à -40% sur les packs | Peau douce garantie" },
+    { "type": "range", "id": "pad_top", "label": "Espace haut", "min": 0, "max": 80, "step": 4, "default": 16 },
+    { "type": "range", "id": "pad_bottom", "label": "Espace bas", "min": 0, "max": 80, "step": 4, "default": 16 }
+  ],
+  "presets": [{ "name": "AELO — Texte défilant" }]
+}
+{% endschema %}

@@ -1,0 +1,208 @@
+{
+  "sections": {
+    "main": {
+      "type": "aelo-product",
+      "blocks": {
+        "ben1": { "type": "benefit", "settings": { "text": "S'adapte à toutes les zones — talons, plante, orteils", "strong": false } },
+        "ben2": { "type": "benefit", "settings": { "text": "Lisse visiblement callosités et talons secs", "strong": false } },
+        "ben3": { "type": "benefit", "settings": { "text": "Zéro effort : le moteur travaille pour vous", "strong": false } },
+        "ben4": { "type": "benefit", "settings": { "text": "Disque neuf à chaque séance — hygiène parfaite", "strong": false } },
+        "ben5": { "type": "benefit", "settings": { "text": "90 JOURS SATISFAIT OU REMBOURSÉ", "strong": true } },
+        "off1": {
+          "type": "offer",
+          "settings": {
+            "variant_id": "54330966671703",
+            "title": "1 Acheter — Découverte",
+            "subtitle": "1 ponceuse + 20 disques",
+            "qty_badge": "x1",
+            "ribbon_text": "",
+            "ribbon_countdown": false,
+            "preselected": false
+          }
+        },
+        "off2": {
+          "type": "offer",
+          "settings": {
+            "variant_id": "54330966704471",
+            "title": "Pack Sérénité — 80 disques",
+            "subtitle": "≈ 9 mois de routine incluse",
+            "qty_badge": "x80",
+            "ribbon_text": "PLUS QUE QUELQUES HEURES",
+            "ribbon_countdown": true,
+            "preselected": true
+          }
+        },
+        "off3": {
+          "type": "offer",
+          "settings": {
+            "product": "pack-duo-talyss",
+            "variant_id": "54336761037143",
+            "title": "Pack Duo — 2 ponceuses",
+            "subtitle": "40 disques — idéal à deux ou à offrir",
+            "qty_badge": "x2",
+            "ribbon_text": "",
+            "ribbon_countdown": false,
+            "preselected": false
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Comment puis-je vous contacter si j'ai une question ?",
+            "answer": "<p>Via la page contact de la boutique ou par e-mail : nous répondons sous 24 h ouvrées, en français.</p>"
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Le produit est-il garanti ? Puis-je effectuer un retour ?",
+            "answer": "<p>Oui. Garantie Peau Douce : testez Talyss™ chez vous pendant 90 jours. Si vos pieds ne sont pas visiblement plus doux, contactez-nous et vous êtes remboursée intégralement.</p>"
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Quels sont les délais de livraison ?",
+            "answer": "<p>Expédition sous 24 à 48 h ouvrées, avec numéro de suivi envoyé par e-mail. Comptez en moyenne 7 à 12 jours ouvrés pour la France métropolitaine.</p>"
+          }
+        }
+      },
+      "block_order": ["ben1", "ben2", "ben3", "ben4", "ben5", "off1", "off2", "off3", "faq1", "faq2", "faq3"],
+      "settings": {
+        "rating_text": "Noté <b>Excellent</b> — Garantie Peau Douce 90 jours",
+        "tagline": "Des pieds tout doux en moins de 5 minutes",
+        "show_scarcity": true,
+        "scarcity_text": "DERNIERS PACKS DISPONIBLES — FIN DE L'OFFRE AUJOURD'HUI !",
+        "scarcity_pct": 85,
+        "atc_label": "Ajouter au panier",
+        "guarantee_text": "Garantie Peau Douce 90 jours — satisfait ou remboursé",
+        "ship_title": "Livraison rapide et suivie",
+        "ship_sub": "Commande préparée avec soin, suivi envoyé par e-mail",
+        "ship_item1": "Expédiée sous 24–48 h",
+        "ship_item2": "Suivi inclus par e-mail",
+        "ship_item3": "Livraison offerte",
+        "social_initials": "C,M,J,S,A",
+        "social_text": "Déjà adoptée par nos clientes",
+        "show_description": true,
+        "description_label": "Description"
+      }
+    },
+    "reviews": {
+      "type": "aelo-reviews",
+      "blocks": {
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Très belle découverte",
+            "text": "Mes talons sont lisses dès la première utilisation. Aucune douleur, juste une sensation de gommage. Je recommande sans hésiter.",
+            "author": "Camille R."
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Un résultat bluffant",
+            "text": "J'étais sceptique au départ, mais mes talons sont redevenus tout doux en une seule séance. Fini la râpe manuelle.",
+            "author": "Julie D."
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Mon nouveau rituel",
+            "text": "Application rapide, pratique avec les disques qui se clipsent, et le résultat dure toute la semaine.",
+            "author": "Manon L."
+          }
+        },
+        "rev4": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Exactement ce qu'il me fallait",
+            "text": "Plus besoin d'institut. En 5 minutes devant la télé, mes pieds sont prêts pour les sandales.",
+            "author": "Sophie B."
+          }
+        }
+      },
+      "block_order": ["rev1", "rev2", "rev3", "rev4"],
+      "settings": {
+        "heading": "Elles ont adopté Talyss™",
+        "pad_top": 56,
+        "pad_bottom": 48
+      }
+    },
+    "cross_sell": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "gap": 12,
+            "width": "fill",
+            "height": "fit"
+          },
+          "blocks": {
+            "cs_title": {
+              "type": "_product-list-text",
+              "settings": {
+                "text": "<h3>Complétez votre routine</h3>",
+                "width": "fit-content",
+                "alignment": "left",
+                "type_preset": "h4"
+              }
+            }
+          },
+          "block_order": ["cs_title"]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 8,
+            "border_radius": 8,
+            "padding-block-end": 8
+          },
+          "blocks": {
+            "cs_gallery": {
+              "type": "_product-card-gallery",
+              "settings": { "image_ratio": "square", "border_radius": 8 }
+            },
+            "cs_ptitle": {
+              "type": "product-title",
+              "settings": { "width": "100%", "alignment": "left", "type_preset": "rte", "padding-block-start": 4 }
+            },
+            "cs_price": {
+              "type": "price",
+              "settings": { "show_sale_price_first": true, "type_preset": "h6", "width": "100%", "alignment": "left" }
+            }
+          },
+          "block_order": ["cs_gallery", "cs_ptitle", "cs_price"]
+        }
+      },
+      "settings": {
+        "collection": "soin-des-pieds",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 4,
+        "columns": 2,
+        "mobile_columns": "2",
+        "columns_gap": 16,
+        "rows_gap": 24,
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 24,
+        "padding-block-start": 48,
+        "padding-block-end": 56
+      }
+    }
+  },
+  "order": ["main", "reviews", "cross_sell"]
+}

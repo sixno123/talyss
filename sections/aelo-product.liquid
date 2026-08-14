@@ -1,0 +1,278 @@
+{{ 'aelo.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign offer_blocks = section.blocks | where: 'type', 'offer'
+  assign benefit_blocks = section.blocks | where: 'type', 'benefit'
+  assign faq_blocks = section.blocks | where: 'type', 'faq'
+
+  # index de l'offre présélectionnée
+  assign sel_index = 0
+  assign sel_found = false
+  for block in offer_blocks
+    if block.settings.preselected and sel_found == false
+      assign sel_index = forloop.index0
+      assign sel_found = true
+    endif
+  endfor
+
+  # variante par défaut (pour le champ caché du formulaire)
+  assign default_vid = product.first_available_variant.id | default: product.variants.first.id
+  for block in offer_blocks
+    if forloop.index0 == sel_index
+      assign op = block.settings.product | default: product
+      assign ov = op.first_available_variant | default: op.variants.first
+      if block.settings.variant_id != blank
+        assign vid_num = block.settings.variant_id | plus: 0
+        for v in op.variants
+          if v.id == vid_num
+            assign ov = v
+          endif
+        endfor
+      endif
+      assign default_vid = ov.id
+    endif
+  endfor
+-%}
+<section class="ae ae-p" id="ae-p-{{ section.id }}">
+  <div class="ae-p__grid">
+
+    <div class="ae-p__gallery">
+      <div class="ae-p__main">
+        <img src="{{ product.featured_image | image_url: width: 1200 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" width="1200" height="1200" data-ae-main>
+      </div>
+      {%- assign imgs = product.images -%}
+      {%- if imgs.size > 1 -%}
+        <div class="ae-p__thumbs">
+          {%- for img in imgs limit: 10 -%}
+            <button type="button" class="{% if forloop.first %}on{% endif %}" data-ae-thumb="{{ img | image_url: width: 1200 }}" aria-label="Voir l'image {{ forloop.index }}">
+              <img src="{{ img | image_url: width: 160 }}" alt="" loading="lazy">
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="ae-p__panel">
+      {%- if section.settings.rating_text != blank -%}
+        <div class="ae-p__tprow">
+          <span class="ae-tpstars sm" aria-hidden="true">{%- for i in (1..5) -%}<i><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></i>{%- endfor -%}</span>
+          <span>{{ section.settings.rating_text }}</span>
+        </div>
+      {%- endif -%}
+
+      <h1 class="ae-p__title">{{ product.title }}</h1>
+
+      {%- if section.settings.tagline != blank -%}
+        <p class="ae-p__tagline"><span>&#10024;</span> {{ section.settings.tagline }}</p>
+      {%- endif -%}
+
+      {%- if benefit_blocks.size > 0 -%}
+        <ul class="ae-p__benefits">
+          {%- for block in benefit_blocks -%}
+            <li {% if block.settings.strong %}class="strong"{% endif %} {{ block.shopify_attributes }}><span class="ae-bcheck">&#10003;</span> {{ block.settings.text }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if section.settings.show_scarcity -%}
+        <p class="ae-p__scarcity">{{ section.settings.scarcity_text }}</p>
+        <div class="ae-p__bar"><i style="width: {{ section.settings.scarcity_pct }}%"></i></div>
+      {%- endif -%}
+
+      {%- if offer_blocks.size > 0 -%}
+        <div class="ae-offers">
+          {%- for block in offer_blocks -%}
+            {%- liquid
+              assign op = block.settings.product | default: product
+              assign ov = op.first_available_variant | default: op.variants.first
+              if block.settings.variant_id != blank
+                assign vid_num = block.settings.variant_id | plus: 0
+                for v in op.variants
+                  if v.id == vid_num
+                    assign ov = v
+                  endif
+                endfor
+              endif
+            -%}
+            <label class="ae-offer" {{ block.shopify_attributes }}>
+              {%- if block.settings.ribbon_text != blank -%}
+                <span class="ae-offer__ribbon">{{ block.settings.ribbon_text }}{% if block.settings.ribbon_countdown %}<b data-ae-countdown></b>{% endif %}</span>
+              {%- endif -%}
+              <span class="ae-offer__row">
+                <input type="radio" name="ae-offer-{{ section.id }}" value="{{ ov.id }}" {% if forloop.index0 == sel_index %}checked{% endif %}>
+                <span class="ae-offer__img">
+                  <img src="{{ op.featured_image | image_url: width: 120 }}" alt="" loading="lazy">
+                  {%- if block.settings.qty_badge != blank -%}<span class="ae-offer__qty">{{ block.settings.qty_badge }}</span>{%- endif -%}
+                </span>
+                <span class="ae-offer__label">
+                  <b>{{ block.settings.title | default: ov.title }}</b>
+                  {%- if block.settings.subtitle != blank -%}<small>( {{ block.settings.subtitle }} )</small>{%- endif -%}
+                </span>
+                <span class="ae-offer__price">
+                  <b>{{ ov.price | money }}</b>
+                  {%- if ov.compare_at_price > ov.price -%}<s>{{ ov.compare_at_price | money }}</s>{%- endif -%}
+                </span>
+              </span>
+            </label>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      <form method="post" action="{{ routes.cart_add_url }}">
+        <input type="hidden" name="id" value="{{ default_vid }}" data-ae-id>
+        <button type="submit" class="ae-btn ae-p__atc">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L23 7H6"/></svg>
+          {{ section.settings.atc_label }}
+        </button>
+      </form>
+
+      {%- if section.settings.guarantee_text != blank -%}
+        <p class="ae-p__guarantee"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/></svg> {{ section.settings.guarantee_text }}</p>
+      {%- endif -%}
+
+      <div class="ae-payicons" aria-label="Moyens de paiement acceptés">
+        <span>VISA</span><span>Mastercard</span><span>AMEX</span><span>PayPal</span><span>Apple&nbsp;Pay</span><span>G&nbsp;Pay</span><span>Shop&nbsp;Pay</span>
+      </div>
+
+      {%- if section.settings.ship_title != blank -%}
+        <div class="ae-ship">
+          <div class="ae-ship__head">
+            <span class="ae-ship__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 7h13v9H1zM14 10h5l3 3v3h-8z"/><circle cx="5.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></span>
+            <span><b>{{ section.settings.ship_title }}</b><p>{{ section.settings.ship_sub }}</p></span>
+          </div>
+          <div class="ae-ship__row">
+            {%- if section.settings.ship_item1 != blank -%}<span>&#128337; {{ section.settings.ship_item1 }}</span>{%- endif -%}
+            {%- if section.settings.ship_item2 != blank -%}<span>&#128233; {{ section.settings.ship_item2 }}</span>{%- endif -%}
+            {%- if section.settings.ship_item3 != blank -%}<span>&#128666; {{ section.settings.ship_item3 }}</span>{%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.social_text != blank -%}
+        <div class="ae-social">
+          <span class="ae-social__avs">
+            {%- assign initials = section.settings.social_initials | split: ',' -%}
+            {%- for ini in initials -%}<span>{{ ini | strip }}</span>{%- endfor -%}
+          </span>
+          <span>{{ section.settings.social_text }}</span>
+          <span class="gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+      {%- endif -%}
+
+      <div class="ae-acc">
+        {%- if section.settings.show_description and product.description != blank -%}
+          <details>
+            <summary>{{ section.settings.description_label }}</summary>
+            <div class="ae-acc__body">{{ product.description }}</div>
+          </details>
+        {%- endif -%}
+        {%- for block in faq_blocks -%}
+          <details {{ block.shopify_attributes }}>
+            <summary>{{ block.settings.question }}</summary>
+            <div class="ae-acc__body">{{ block.settings.answer }}</div>
+          </details>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  var root = document.getElementById('ae-p-{{ section.id }}');
+  if (!root) return;
+
+  /* Galerie : clic vignette -> image principale */
+  var main = root.querySelector('[data-ae-main]');
+  root.querySelectorAll('[data-ae-thumb]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      main.src = btn.getAttribute('data-ae-thumb');
+      root.querySelectorAll('[data-ae-thumb]').forEach(function (b) { b.classList.remove('on'); });
+      btn.classList.add('on');
+    });
+  });
+
+  /* Offres : radio -> champ caché du formulaire */
+  var hidden = root.querySelector('[data-ae-id]');
+  root.querySelectorAll('input[name="ae-offer-{{ section.id }}"]').forEach(function (r) {
+    r.addEventListener('change', function () { if (hidden) hidden.value = r.value; });
+    if (r.checked && hidden) hidden.value = r.value;
+  });
+
+  /* Compte à rebours jusqu'à minuit */
+  var cds = root.querySelectorAll('[data-ae-countdown]');
+  if (cds.length) {
+    var tick = function () {
+      var n = new Date();
+      var m = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1, 0, 0, 0);
+      var d = Math.max(0, Math.floor((m - n) / 1000));
+      var h = String(Math.floor(d / 3600)).padStart(2, '0');
+      var mi = String(Math.floor((d % 3600) / 60)).padStart(2, '0');
+      var s = String(d % 60).padStart(2, '0');
+      cds.forEach(function (e) { e.textContent = h + ' : ' + mi + ' : ' + s; });
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "AELO — Page produit",
+  "settings": [
+    { "type": "text", "id": "rating_text", "label": "Ligne de notation", "default": "Noté <b>Excellent</b> par nos clientes" },
+    { "type": "text", "id": "tagline", "label": "Accroche (après ✨)", "default": "Des pieds tout doux en moins de 5 minutes" },
+    { "type": "checkbox", "id": "show_scarcity", "label": "Afficher la ligne d'urgence", "default": true },
+    { "type": "text", "id": "scarcity_text", "label": "Texte d'urgence", "default": "DERNIERS PACKS DISPONIBLES — FIN DE L'OFFRE AUJOURD'HUI !" },
+    { "type": "range", "id": "scarcity_pct", "label": "Jauge (%)", "min": 10, "max": 100, "step": 5, "default": 85 },
+    { "type": "text", "id": "atc_label", "label": "Bouton d'achat", "default": "Ajouter au panier" },
+    { "type": "text", "id": "guarantee_text", "label": "Ligne de garantie", "default": "Garantie Peau Douce 90 jours — satisfait ou remboursé" },
+    { "type": "text", "id": "ship_title", "label": "Encart livraison — titre", "default": "Livraison rapide et suivie" },
+    { "type": "text", "id": "ship_sub", "label": "Encart livraison — sous-titre", "default": "Commande préparée avec soin, suivi envoyé par e-mail" },
+    { "type": "text", "id": "ship_item1", "label": "Encart livraison — point 1", "default": "Expédiée sous 24–48 h" },
+    { "type": "text", "id": "ship_item2", "label": "Encart livraison — point 2", "default": "Suivi inclus par e-mail" },
+    { "type": "text", "id": "ship_item3", "label": "Encart livraison — point 3", "default": "Livraison offerte" },
+    { "type": "text", "id": "social_initials", "label": "Initiales des avatars (séparées par ,)", "default": "C,M,J,S,A" },
+    { "type": "text", "id": "social_text", "label": "Preuve sociale", "default": "Déjà adoptée par nos clientes" },
+    { "type": "checkbox", "id": "show_description", "label": "Accordéon description", "default": true },
+    { "type": "text", "id": "description_label", "label": "Libellé de la description", "default": "Description" }
+  ],
+  "blocks": [
+    {
+      "type": "offer",
+      "name": "Offre",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Produit (vide = produit de la page)" },
+        { "type": "text", "id": "variant_id", "label": "ID de variante (vide = 1re dispo)" },
+        { "type": "text", "id": "title", "label": "Titre", "default": "1 PONCEUSE" },
+        { "type": "text", "id": "subtitle", "label": "Sous-titre", "default": "" },
+        { "type": "text", "id": "qty_badge", "label": "Badge quantité", "default": "x1" },
+        { "type": "text", "id": "ribbon_text", "label": "Ruban (vide = masqué)", "default": "" },
+        { "type": "checkbox", "id": "ribbon_countdown", "label": "Compte à rebours dans le ruban", "default": false },
+        { "type": "checkbox", "id": "preselected", "label": "Sélectionnée par défaut", "default": false }
+      ]
+    },
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texte", "default": "Lisse visiblement callosités et talons secs" },
+        { "type": "checkbox", "id": "strong", "label": "Mise en avant (coche pleine)", "default": false }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "Question / réponse",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Comment puis-je vous contacter ?" },
+        { "type": "richtext", "id": "answer", "label": "Réponse", "default": "<p>Écrivez-nous via la page contact, nous répondons sous 24 h.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AELO — Page produit",
+      "blocks": [ { "type": "benefit" }, { "type": "benefit" }, { "type": "benefit" }, { "type": "offer" }, { "type": "faq" } ]
+    }
+  ]
+}
+{% endschema %}

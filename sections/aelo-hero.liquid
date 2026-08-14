@@ -1,0 +1,60 @@
+{{ 'aelo.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign fp = section.settings.product
+  assign hero_img = ''
+  if section.settings.image
+    assign hero_img = section.settings.image | image_url: width: 1400
+  elsif section.settings.image_url != blank
+    assign hero_img = section.settings.image_url
+  elsif fp
+    assign hero_img = fp.featured_image | image_url: width: 1400
+  endif
+-%}
+<section class="ae ae-hero" style="padding-block: {{ section.settings.pad_top }}px {{ section.settings.pad_bottom }}px;">
+  <div class="ae-hero__grid">
+    <div class="ae-hero__media">
+      {%- if hero_img != blank -%}
+        <img src="{{ hero_img }}" alt="{{ section.settings.image_alt | escape }}" width="1200" height="1200" fetchpriority="high">
+      {%- endif -%}
+    </div>
+    <div class="ae-hero__content">
+      {%- if section.settings.rating_text != blank -%}
+        <div class="ae-rating">
+          <span class="ae-tpstars sm" aria-hidden="true">{%- for i in (1..5) -%}<i><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></i>{%- endfor -%}</span>
+          <span>{{ section.settings.rating_text }}</span>
+        </div>
+      {%- endif -%}
+      {%- if section.settings.kicker != blank -%}
+        <p class="ae-hero__kicker">{{ section.settings.kicker }}</p>
+      {%- endif -%}
+      <h1 class="ae-hero__title">{{ section.settings.heading | newline_to_br }}</h1>
+      {%- if section.settings.subheading != blank -%}
+        <p class="ae-hero__sub">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <a class="ae-btn" href="{{ section.settings.button_link | default: '/' }}">{{ section.settings.button_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AELO — Hero offre",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image (prioritaire)" },
+    { "type": "text", "id": "image_url", "label": "ou URL d'image (CDN)" },
+    { "type": "text", "id": "image_alt", "label": "Texte alternatif de l'image", "default": "Ponceuse pieds électrique Talyss" },
+    { "type": "product", "id": "product", "label": "Produit (image de secours + lien)" },
+    { "type": "text", "id": "rating_text", "label": "Ligne de notation", "default": "Noté <b>Excellent</b> par nos clientes" },
+    { "type": "text", "id": "kicker", "label": "Phrase d'accroche", "default": "La ponceuse qui s'adapte à vous" },
+    { "type": "textarea", "id": "heading", "label": "Titre", "default": "Jusqu'à -40% sur les packs\n+ livraison offerte" },
+    { "type": "textarea", "id": "subheading", "label": "Sous-titre", "default": "Des pieds doux, lisses et sans callosités en quelques minutes. Sans effort, chez vous." },
+    { "type": "text", "id": "button_label", "label": "Texte du bouton", "default": "Profiter de l'offre" },
+    { "type": "url", "id": "button_link", "label": "Lien du bouton" },
+    { "type": "range", "id": "pad_top", "label": "Espace haut", "min": 0, "max": 120, "step": 4, "default": 32 },
+    { "type": "range", "id": "pad_bottom", "label": "Espace bas", "min": 0, "max": 120, "step": 4, "default": 32 }
+  ],
+  "presets": [{ "name": "AELO — Hero offre" }]
+}
+{% endschema %}
