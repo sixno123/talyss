@@ -47,15 +47,38 @@ absorbé par un `atempo=1.01669` (+1,7 %, inaudible).
 ### 2 · Sous-titres
 
 `bbox.py` localise les anciens sous-titres en profilant les pixels quasi blancs
-sur 174 images : bande **y 960–1090, x 142–581**. Elle est masquée par un
-bandeau dépoli (`y 930–1120`) — flou gaussien σ=26, −26 % de luminosité,
-saturation 0,62 — aux bords adoucis sur 26 px via `feather.png` + `alphamerge`,
-pour que la bande ne se voie pas comme un rectangle collé.
+sur 174 images : bande **y 960–1090, x 142–581**.
+
+`make-mask.py` génère le masque qui l'efface. La zone **opaque** doit couvrir
+cette boîte : un bandeau simplement plus court casserait le masquage (avec 45 px
+de dégradé, un bandeau 940–1112 n'est plein qu'entre 985 et 1067, soit *dans*
+l'ancien texte). Le bandeau est donc **plus haut mais au dégradé bien plus long** —
+`y 905–1145`, fondu vertical de 45 px en smoothstep, cœur opaque 947–1102 — plus
+un **fondu horizontal** pour qu'il ne touche pas les bords du cadre comme une
+barre. Flou gaussien σ=34, −20 % de luminosité : c'est le flou qui détruit les
+lettres, l'assombrissement ne fait que baisser le contraste.
+
+`verify-mask.py` est le garde-fou : il rend le masque **sans** les nouveaux
+sous-titres (blancs et au même endroit, ils seraient comptés comme des restes) et
+profile la boîte d'origine. Résultat actuel : **816 862 → 85 pixels quasi blancs
+(0,010 %)**, pire ligne 3 px sur 174 images.
 
 `align.py` transcrit la voix off finale avec `faster-whisper` (mots horodatés),
 puis `subs.py` réaligne le vrai script sur ces horodatages (`difflib`, 127/140
-mots ancrés, le reste réparti dans les trous) et écrit `subs.ass` : 45 cartons
-façon karaoké, Montserrat ExtraBold 54 px, « Talyss » en doré.
+mots ancrés, le reste réparti dans les trous) et écrit `subs.ass` : 45 cartons,
+131 événements, Montserrat ExtraBold 54 px.
+
+**Karaoké mot par mot.** Un événement ASS par mot prononcé : le carton entier est
+redessiné à chaque fois, seul le mot en cours passe en doré, au même `\pos` pour
+que rien ne bouge. Le fondu n'est appliqué qu'aux **bords du carton**, sinon
+chaque mot clignoterait.
+
+**Mots-clés.** `sans douleur`, `doux et lisses`, `usage unique`, `60 disques`,
+`peau morte`, `Talyss` restent dorés une fois prononcés (effet d'accumulation) —
+ainsi le surlignage karaoké et la couleur mot-clé ne se disputent jamais le même
+mot, sans avoir besoin d'une troisième couleur. Les expressions sont repérées sur
+**tout le script**, pas carton par carton, pour que celles coupées par une
+découpe (« …peau morte, sans » / « douleur ») se colorent des deux côtés.
 
 Deux détails de découpe : un carton ne se termine jamais sur un chiffre ou un mot
 outil (« toutes les **3** » → « les 3 semaines »), et les mots non reconnus par
@@ -63,6 +86,14 @@ l'ASR sont répartis sur toute la durée du trou, sinon ils recevraient tous le
 même départ et les cartons sortiraient dans le désordre.
 
 ### 3 · Carte de fin
+
+> **À remplacer.** Une carte de fin maison (soie rose, « -40% » doré métallisé,
+> photo produit) doit prendre la place de celle-ci. Elle n'a pas encore pu être
+> intégrée : collée dans la conversation, elle n'arrivait que sous forme d'aperçu,
+> sans fichier lisible. Pour l'intégrer, déposer l'image dans ce dossier
+> (`endcard-source.png`), la normaliser en
+> `scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280`, écraser
+> `endcard.png`, puis re-rendre. Le point d'incrustation ne bouge pas.
 
 `endcard.html` rendue en PNG par Chromium (×2 puis réduit en lanczos), incrustée
 à partir de **43,75 s** — l'image exacte de la coupe d'origine (image 1313 ; un
@@ -84,8 +115,10 @@ pip install faster-whisper pillow
 
 python3 fit-voix.py     # vo_raw.mp3 -> vo_tight.wav (silences resserrés)
 python3 align.py        # vo_final2.wav -> words.json (mots horodatés)
-python3 subs.py         # words.json  -> subs.ass
+python3 make-mask.py    # -> feather.png (masque, vérifie qu'il couvre l'ancien texte)
+python3 subs.py         # words.json  -> subs.ass (karaoké + mots-clés)
 python3 bbox.py         # (contrôle) position des anciens sous-titres
+python3 verify-mask.py  # (garde-fou) l'ancien texte a-t-il disparu ?
 
 chromium --headless --force-device-scale-factor=2 --window-size=720,1280 \
   --screenshot=endcard_2x.png file://$PWD/endcard.html
@@ -96,9 +129,9 @@ ffmpeg -i source.mp4 -i vo_final2.wav \
   -loop 1 -framerate 30 -t 47 -i endcard.png \
   -filter_complex "\
 [0:v]split[b][p];\
-[p]crop=720:190:0:930,gblur=sigma=26,eq=brightness=-0.26:saturation=0.62,format=rgb24[bandrgb];\
+[p]crop=720:240:0:905,gblur=sigma=34,eq=brightness=-0.20:saturation=0.62,format=rgb24[bandrgb];\
 [2:v]format=gray[mask];[bandrgb][mask]alphamerge[band];\
-[b][band]overlay=0:930[plated];[plated]ass=subs.ass[subbed];\
+[b][band]overlay=0:905[plated];[plated]ass=subs.ass[subbed];\
 [subbed][3:v]overlay=0:0:enable='gte(t,43.75)',format=yuv420p[v]" \
   -map "[v]" -map 1:a -c:v libx264 -crf 18 -preset medium \
   -c:a aac -b:a 192k -movflags +faststart talyss-final.mp4

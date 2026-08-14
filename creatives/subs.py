@@ -6,12 +6,19 @@ from PIL import ImageFont
 
 # ---------------------------------------------------------------- config
 W, H = 720, 1280
-PLATE_TOP, PLATE_BOT = 930, 1120          # frosted band that hides the old text
+PLATE_TOP, PLATE_BOT = 905, 1145          # frosted band (see make-mask.py)
 CAP_Y = (PLATE_TOP + PLATE_BOT) // 2      # captions sit centred in the band
 FONT_PX = 54
 MAX_TEXT_W = 610                          # keep ~55px breathing room each side
 ENDCARD_T = 43.75                         # subtitles stop where the new card starts
 GOLD = "&H1BA9DE&"                        # &HBBGGRR& = #DEA91B, warm brand accent
+WHITE = "&H00FFFFFF&"                     # matches the style's PrimaryColour
+
+# Benefit phrases that stay gold once spoken. Matched on the whole script rather
+# than per card, so a phrase straddling two cards ("…peau morte, sans" / "douleur")
+# still colours on both sides of the break.
+KEYWORDS = ["Talyss", "sans douleur", "doux et lisses", "usage unique",
+            "60 disques", "peau morte"]
 
 # Display text == spoken text, except digits the TTS read out in full.
 LINES = [
@@ -55,6 +62,18 @@ script = []                          # (line_index, display_word, norm_spoken)
 for li, line in enumerate(LINES):
     for word in line.split():
         script.append((li, word, norm(SPOKEN.get(word.strip(",.:"), word))))
+
+# Flag every word belonging to a benefit phrase (matched on the displayed wording,
+# since SPOKEN rewrites digits: "60" reads as "soixante" but displays as "60").
+shown = [norm(t[1]) for t in script]
+is_kw = [False] * len(script)
+for phrase in KEYWORDS:
+    toks = [norm(w) for w in phrase.split()]
+    for i in range(len(shown) - len(toks) + 1):
+        if shown[i:i + len(toks)] == toks:
+            for k in range(i, i + len(toks)):
+                is_kw[k] = True
+print(f"{sum(is_kw)} mots-clés marqués")
 
 # ------------------------------------------------- align the two streams
 sm = difflib.SequenceMatcher(None, [t[2] for t in script],
@@ -139,7 +158,8 @@ for n, ids in enumerate(chunks):
     own_end = times[ids[-1]][1]
     nxt = times[chunks[n + 1][0]][0] if n + 1 < len(chunks) else own_end + 0.4
     end = max(min(nxt, own_end + 0.75), start + 0.25)   # never zero/negative length
-    cards.append({"text": text, "start": start, "end": end, "line": script[ids[0]][0]})
+    cards.append({"text": text, "start": start, "end": end,
+                  "ids": ids, "line": script[ids[0]][0]})
 
 cards = [c for c in cards if c["start"] < ENDCARD_T]     # card takes over after
 for c in cards:
@@ -168,12 +188,32 @@ Style: Cap,Montserrat ExtraBold,{FONT_PX},&H00FFFFFF,&H00101010,&H80000000,0,0,0
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
 
+# One event per spoken word: the whole card is redrawn each time with the word being
+# spoken in gold, at an identical \pos so nothing shifts. Benefit words stay gold once
+# passed, so the highlight and the keyword colour never fight over the same word.
+events = 0
 with open("subs.ass", "w", encoding="utf-8") as f:
     f.write(head)
     for c in cards:
-        body = re.sub(r"(Talyss)", r"{\\c" + GOLD + r"}\1{\\c&H00FFFFFF&}", c["text"])
-        f.write(f"Dialogue: 0,{ts(c['start'])},{ts(c['end'])},Cap,,0,0,0,,"
-                f"{{\\pos({W//2},{CAP_Y})\\fad(70,70)}}{body}\n")
+        ids = c["ids"]
+        bounds = [c["start"]]
+        for j in range(1, len(ids)):                 # clamp monotonic, inside the card
+            bounds.append(min(max(times[ids[j]][0], bounds[-1]), c["end"]))
+        bounds.append(c["end"])
+
+        live = [j for j in range(len(ids)) if bounds[j + 1] - bounds[j] > 0.001]
+        for pos, j in enumerate(live):
+            parts = []
+            for k, wid in enumerate(ids):
+                lit = k == j or (is_kw[wid] and k < j)
+                w = script[wid][1]
+                parts.append(f"{{\\c{GOLD}}}{w}{{\\c{WHITE}}}" if lit else w)
+            fin = 70 if pos == 0 else 0              # fade at card edges only,
+            fout = 70 if pos == len(live) - 1 else 0 # otherwise every word blinks
+            f.write(f"Dialogue: 0,{ts(bounds[j])},{ts(bounds[j + 1])},Cap,,0,0,0,,"
+                    f"{{\\pos({W // 2},{CAP_Y})\\fad({fin},{fout})}}{' '.join(parts)}\n")
+            events += 1
+print(f"{events} événements ASS (karaoké mot par mot)")
 
 print(f"{len(cards)} caption cards, last ends {cards[-1]['end']:.2f}s")
 for c in cards[:6]:

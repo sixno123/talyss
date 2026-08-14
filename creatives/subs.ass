@@ -11,48 +11,134 @@ Style: Cap,Montserrat ExtraBold,54,&H00FFFFFF,&H00101010,&H80000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:00.72,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Voici comment j'ai
-Dialogue: 0,0:00:00.72,0:00:01.34,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}arrêté de jeter
-Dialogue: 0,0:00:01.34,0:00:01.82,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}mon argent
-Dialogue: 0,0:00:01.82,0:00:02.32,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}dans les soins
-Dialogue: 0,0:00:02.32,0:00:02.94,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}des pieds
-Dialogue: 0,0:00:02.94,0:00:03.90,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Avant, c'était
-Dialogue: 0,0:00:03.90,0:00:04.68,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}pédicure toutes
-Dialogue: 0,0:00:04.68,0:00:05.70,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}les 3 semaines
-Dialogue: 0,0:00:05.70,0:00:06.14,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}parce que
-Dialogue: 0,0:00:06.14,0:00:06.94,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}mes talons étaient
-Dialogue: 0,0:00:06.94,0:00:08.36,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}une catastrophe
-Dialogue: 0,0:00:08.36,0:00:09.56,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Dès qu'ils séchaient,
-Dialogue: 0,0:00:09.56,0:00:10.64,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ça craquelait et ça
-Dialogue: 0,0:00:10.64,0:00:11.74,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ressemblait à ça
-Dialogue: 0,0:00:11.74,0:00:12.66,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Impossible de
-Dialogue: 0,0:00:12.66,0:00:13.56,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}mettre des sandales
-Dialogue: 0,0:00:13.56,0:00:14.44,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ou des talons sans
-Dialogue: 0,0:00:14.44,0:00:15.36,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}complexer
-Dialogue: 0,0:00:15.36,0:00:16.24,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}J'ai testé toutes les
-Dialogue: 0,0:00:16.24,0:00:17.64,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}alternatives : pierre
-Dialogue: 0,0:00:17.64,0:00:18.88,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ponce, râpes
-Dialogue: 0,0:00:18.88,0:00:19.50,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}manuelles
-Dialogue: 0,0:00:19.50,0:00:20.98,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}soit ça irrite, soit ça
-Dialogue: 0,0:00:20.98,0:00:21.86,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ne fait rien
-Dialogue: 0,0:00:21.86,0:00:22.72,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Certaines, on dirait
-Dialogue: 0,0:00:22.72,0:00:23.52,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}carrément des râpes
-Dialogue: 0,0:00:23.52,0:00:24.48,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}à fromage
-Dialogue: 0,0:00:24.48,0:00:25.78,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Et puis une amie m'a
-Dialogue: 0,0:00:25.78,0:00:26.80,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}fait découvrir la râpe
-Dialogue: 0,0:00:26.80,0:00:27.78,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}électrique {\c&H1BA9DE&}Talyss{\c&H00FFFFFF&}
-Dialogue: 0,0:00:27.78,0:00:29.10,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Elle utilise des petits
-Dialogue: 0,0:00:29.10,0:00:30.22,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}disques abrasifs
-Dialogue: 0,0:00:30.22,0:00:31.16,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}à usage unique
-Dialogue: 0,0:00:31.16,0:00:32.40,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}et elle enlève toute
-Dialogue: 0,0:00:32.40,0:00:33.74,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}la peau morte, sans
-Dialogue: 0,0:00:33.74,0:00:34.44,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}douleur
-Dialogue: 0,0:00:34.44,0:00:35.70,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Vitesse réglable, et
-Dialogue: 0,0:00:35.70,0:00:36.56,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ça marche sur peau
-Dialogue: 0,0:00:36.56,0:00:37.90,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}sèche ou humide
-Dialogue: 0,0:00:37.90,0:00:39.22,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Résultat : des pieds
-Dialogue: 0,0:00:39.22,0:00:40.04,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}incroyablement
-Dialogue: 0,0:00:40.04,0:00:41.24,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}doux et lisses
-Dialogue: 0,0:00:41.24,0:00:41.90,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Le kit arrive avec
-Dialogue: 0,0:00:41.90,0:00:43.14,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}60 disques, de quoi
-Dialogue: 0,0:00:43.14,0:00:43.75,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}tenir des mois
+Dialogue: 0,0:00:00.00,0:00:00.32,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Voici{\c&H00FFFFFF&} comment j'ai
+Dialogue: 0,0:00:00.32,0:00:00.52,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Voici {\c&H1BA9DE&}comment{\c&H00FFFFFF&} j'ai
+Dialogue: 0,0:00:00.52,0:00:00.72,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Voici comment {\c&H1BA9DE&}j'ai{\c&H00FFFFFF&}
+Dialogue: 0,0:00:00.72,0:00:01.06,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}arrêté{\c&H00FFFFFF&} de jeter
+Dialogue: 0,0:00:01.06,0:00:01.16,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}arrêté {\c&H1BA9DE&}de{\c&H00FFFFFF&} jeter
+Dialogue: 0,0:00:01.16,0:00:01.34,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}arrêté de {\c&H1BA9DE&}jeter{\c&H00FFFFFF&}
+Dialogue: 0,0:00:01.34,0:00:01.50,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}mon{\c&H00FFFFFF&} argent
+Dialogue: 0,0:00:01.50,0:00:01.82,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}mon {\c&H1BA9DE&}argent{\c&H00FFFFFF&}
+Dialogue: 0,0:00:01.82,0:00:01.98,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}dans{\c&H00FFFFFF&} les soins
+Dialogue: 0,0:00:01.98,0:00:02.12,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}dans {\c&H1BA9DE&}les{\c&H00FFFFFF&} soins
+Dialogue: 0,0:00:02.12,0:00:02.32,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}dans les {\c&H1BA9DE&}soins{\c&H00FFFFFF&}
+Dialogue: 0,0:00:02.32,0:00:02.42,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}des{\c&H00FFFFFF&} pieds
+Dialogue: 0,0:00:02.42,0:00:02.94,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}des {\c&H1BA9DE&}pieds{\c&H00FFFFFF&}
+Dialogue: 0,0:00:02.94,0:00:03.68,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Avant,{\c&H00FFFFFF&} c'était
+Dialogue: 0,0:00:03.68,0:00:03.90,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Avant, {\c&H1BA9DE&}c'était{\c&H00FFFFFF&}
+Dialogue: 0,0:00:03.90,0:00:04.48,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}pédicure{\c&H00FFFFFF&} toutes
+Dialogue: 0,0:00:04.48,0:00:04.68,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}pédicure {\c&H1BA9DE&}toutes{\c&H00FFFFFF&}
+Dialogue: 0,0:00:04.68,0:00:04.86,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}les{\c&H00FFFFFF&} 3 semaines
+Dialogue: 0,0:00:04.86,0:00:05.06,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}les {\c&H1BA9DE&}3{\c&H00FFFFFF&} semaines
+Dialogue: 0,0:00:05.06,0:00:05.70,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}les 3 {\c&H1BA9DE&}semaines{\c&H00FFFFFF&}
+Dialogue: 0,0:00:05.70,0:00:05.98,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}parce{\c&H00FFFFFF&} que
+Dialogue: 0,0:00:05.98,0:00:06.14,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}parce {\c&H1BA9DE&}que{\c&H00FFFFFF&}
+Dialogue: 0,0:00:06.14,0:00:06.28,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}mes{\c&H00FFFFFF&} talons étaient
+Dialogue: 0,0:00:06.28,0:00:06.66,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}mes {\c&H1BA9DE&}talons{\c&H00FFFFFF&} étaient
+Dialogue: 0,0:00:06.66,0:00:06.94,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}mes talons {\c&H1BA9DE&}étaient{\c&H00FFFFFF&}
+Dialogue: 0,0:00:06.94,0:00:07.26,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}une{\c&H00FFFFFF&} catastrophe
+Dialogue: 0,0:00:07.26,0:00:08.36,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}une {\c&H1BA9DE&}catastrophe{\c&H00FFFFFF&}
+Dialogue: 0,0:00:08.36,0:00:08.48,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Dès{\c&H00FFFFFF&} qu'ils séchaient,
+Dialogue: 0,0:00:08.48,0:00:08.68,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Dès {\c&H1BA9DE&}qu'ils{\c&H00FFFFFF&} séchaient,
+Dialogue: 0,0:00:08.68,0:00:09.56,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Dès qu'ils {\c&H1BA9DE&}séchaient,{\c&H00FFFFFF&}
+Dialogue: 0,0:00:09.56,0:00:09.66,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}ça{\c&H00FFFFFF&} craquelait et ça
+Dialogue: 0,0:00:09.66,0:00:10.16,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}ça {\c&H1BA9DE&}craquelait{\c&H00FFFFFF&} et ça
+Dialogue: 0,0:00:10.16,0:00:10.50,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}ça craquelait {\c&H1BA9DE&}et{\c&H00FFFFFF&} ça
+Dialogue: 0,0:00:10.50,0:00:10.64,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}ça craquelait et {\c&H1BA9DE&}ça{\c&H00FFFFFF&}
+Dialogue: 0,0:00:10.64,0:00:11.06,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}ressemblait{\c&H00FFFFFF&} à ça
+Dialogue: 0,0:00:11.06,0:00:11.26,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}ressemblait {\c&H1BA9DE&}à{\c&H00FFFFFF&} ça
+Dialogue: 0,0:00:11.26,0:00:11.74,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}ressemblait à {\c&H1BA9DE&}ça{\c&H00FFFFFF&}
+Dialogue: 0,0:00:11.74,0:00:12.14,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Impossible{\c&H00FFFFFF&} de
+Dialogue: 0,0:00:12.14,0:00:12.66,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Impossible {\c&H1BA9DE&}de{\c&H00FFFFFF&}
+Dialogue: 0,0:00:12.66,0:00:12.80,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}mettre{\c&H00FFFFFF&} des sandales
+Dialogue: 0,0:00:12.80,0:00:13.10,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}mettre {\c&H1BA9DE&}des{\c&H00FFFFFF&} sandales
+Dialogue: 0,0:00:13.10,0:00:13.56,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}mettre des {\c&H1BA9DE&}sandales{\c&H00FFFFFF&}
+Dialogue: 0,0:00:13.56,0:00:13.72,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}ou{\c&H00FFFFFF&} des talons sans
+Dialogue: 0,0:00:13.72,0:00:13.84,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}ou {\c&H1BA9DE&}des{\c&H00FFFFFF&} talons sans
+Dialogue: 0,0:00:13.84,0:00:14.22,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}ou des {\c&H1BA9DE&}talons{\c&H00FFFFFF&} sans
+Dialogue: 0,0:00:14.22,0:00:14.44,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}ou des talons {\c&H1BA9DE&}sans{\c&H00FFFFFF&}
+Dialogue: 0,0:00:14.44,0:00:15.36,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}{\c&H1BA9DE&}complexer{\c&H00FFFFFF&}
+Dialogue: 0,0:00:15.36,0:00:15.54,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}J'ai{\c&H00FFFFFF&} testé toutes les
+Dialogue: 0,0:00:15.54,0:00:15.92,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}J'ai {\c&H1BA9DE&}testé{\c&H00FFFFFF&} toutes les
+Dialogue: 0,0:00:15.92,0:00:16.06,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}J'ai testé {\c&H1BA9DE&}toutes{\c&H00FFFFFF&} les
+Dialogue: 0,0:00:16.06,0:00:16.24,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}J'ai testé toutes {\c&H1BA9DE&}les{\c&H00FFFFFF&}
+Dialogue: 0,0:00:16.24,0:00:16.72,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}alternatives{\c&H00FFFFFF&} : pierre
+Dialogue: 0,0:00:16.72,0:00:17.44,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}alternatives {\c&H1BA9DE&}:{\c&H00FFFFFF&} pierre
+Dialogue: 0,0:00:17.44,0:00:17.64,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}alternatives : {\c&H1BA9DE&}pierre{\c&H00FFFFFF&}
+Dialogue: 0,0:00:17.64,0:00:18.26,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}ponce,{\c&H00FFFFFF&} râpes
+Dialogue: 0,0:00:18.26,0:00:18.88,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}ponce, {\c&H1BA9DE&}râpes{\c&H00FFFFFF&}
+Dialogue: 0,0:00:18.88,0:00:19.50,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}{\c&H1BA9DE&}manuelles{\c&H00FFFFFF&}
+Dialogue: 0,0:00:19.50,0:00:19.72,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}soit{\c&H00FFFFFF&} ça irrite, soit ça
+Dialogue: 0,0:00:19.72,0:00:20.16,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}soit {\c&H1BA9DE&}ça{\c&H00FFFFFF&} irrite, soit ça
+Dialogue: 0,0:00:20.16,0:00:20.60,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}soit ça {\c&H1BA9DE&}irrite,{\c&H00FFFFFF&} soit ça
+Dialogue: 0,0:00:20.60,0:00:20.82,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}soit ça irrite, {\c&H1BA9DE&}soit{\c&H00FFFFFF&} ça
+Dialogue: 0,0:00:20.82,0:00:20.98,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}soit ça irrite, soit {\c&H1BA9DE&}ça{\c&H00FFFFFF&}
+Dialogue: 0,0:00:20.98,0:00:21.06,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}ne{\c&H00FFFFFF&} fait rien
+Dialogue: 0,0:00:21.06,0:00:21.18,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}ne {\c&H1BA9DE&}fait{\c&H00FFFFFF&} rien
+Dialogue: 0,0:00:21.18,0:00:21.86,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}ne fait {\c&H1BA9DE&}rien{\c&H00FFFFFF&}
+Dialogue: 0,0:00:21.86,0:00:22.36,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Certaines,{\c&H00FFFFFF&} on dirait
+Dialogue: 0,0:00:22.36,0:00:22.44,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Certaines, {\c&H1BA9DE&}on{\c&H00FFFFFF&} dirait
+Dialogue: 0,0:00:22.44,0:00:22.72,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Certaines, on {\c&H1BA9DE&}dirait{\c&H00FFFFFF&}
+Dialogue: 0,0:00:22.72,0:00:23.12,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}carrément{\c&H00FFFFFF&} des râpes
+Dialogue: 0,0:00:23.12,0:00:23.30,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}carrément {\c&H1BA9DE&}des{\c&H00FFFFFF&} râpes
+Dialogue: 0,0:00:23.30,0:00:23.52,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}carrément des {\c&H1BA9DE&}râpes{\c&H00FFFFFF&}
+Dialogue: 0,0:00:23.52,0:00:23.64,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}à{\c&H00FFFFFF&} fromage
+Dialogue: 0,0:00:23.64,0:00:24.48,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}à {\c&H1BA9DE&}fromage{\c&H00FFFFFF&}
+Dialogue: 0,0:00:24.48,0:00:24.62,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Et{\c&H00FFFFFF&} puis une amie m'a
+Dialogue: 0,0:00:24.62,0:00:25.16,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Et {\c&H1BA9DE&}puis{\c&H00FFFFFF&} une amie m'a
+Dialogue: 0,0:00:25.16,0:00:25.34,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Et puis {\c&H1BA9DE&}une{\c&H00FFFFFF&} amie m'a
+Dialogue: 0,0:00:25.34,0:00:25.60,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Et puis une {\c&H1BA9DE&}amie{\c&H00FFFFFF&} m'a
+Dialogue: 0,0:00:25.60,0:00:25.78,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Et puis une amie {\c&H1BA9DE&}m'a{\c&H00FFFFFF&}
+Dialogue: 0,0:00:25.78,0:00:25.90,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}fait{\c&H00FFFFFF&} découvrir la râpe
+Dialogue: 0,0:00:25.90,0:00:26.26,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}fait {\c&H1BA9DE&}découvrir{\c&H00FFFFFF&} la râpe
+Dialogue: 0,0:00:26.26,0:00:26.56,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}fait découvrir {\c&H1BA9DE&}la{\c&H00FFFFFF&} râpe
+Dialogue: 0,0:00:26.56,0:00:26.80,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}fait découvrir la {\c&H1BA9DE&}râpe{\c&H00FFFFFF&}
+Dialogue: 0,0:00:26.80,0:00:27.30,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}électrique{\c&H00FFFFFF&} Talyss
+Dialogue: 0,0:00:27.30,0:00:27.78,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}électrique {\c&H1BA9DE&}Talyss{\c&H00FFFFFF&}
+Dialogue: 0,0:00:27.78,0:00:28.24,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Elle{\c&H00FFFFFF&} utilise des petits
+Dialogue: 0,0:00:28.24,0:00:28.64,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Elle {\c&H1BA9DE&}utilise{\c&H00FFFFFF&} des petits
+Dialogue: 0,0:00:28.64,0:00:28.90,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Elle utilise {\c&H1BA9DE&}des{\c&H00FFFFFF&} petits
+Dialogue: 0,0:00:28.90,0:00:29.10,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Elle utilise des {\c&H1BA9DE&}petits{\c&H00FFFFFF&}
+Dialogue: 0,0:00:29.10,0:00:29.54,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}disques{\c&H00FFFFFF&} abrasifs
+Dialogue: 0,0:00:29.54,0:00:30.22,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}disques {\c&H1BA9DE&}abrasifs{\c&H00FFFFFF&}
+Dialogue: 0,0:00:30.22,0:00:30.38,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}à{\c&H00FFFFFF&} usage unique
+Dialogue: 0,0:00:30.38,0:00:30.58,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}à {\c&H1BA9DE&}usage{\c&H00FFFFFF&} unique
+Dialogue: 0,0:00:30.58,0:00:31.16,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}à {\c&H1BA9DE&}usage{\c&H00FFFFFF&} {\c&H1BA9DE&}unique{\c&H00FFFFFF&}
+Dialogue: 0,0:00:31.16,0:00:31.68,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}et{\c&H00FFFFFF&} elle enlève toute
+Dialogue: 0,0:00:31.68,0:00:31.80,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}et {\c&H1BA9DE&}elle{\c&H00FFFFFF&} enlève toute
+Dialogue: 0,0:00:31.80,0:00:32.18,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}et elle {\c&H1BA9DE&}enlève{\c&H00FFFFFF&} toute
+Dialogue: 0,0:00:32.18,0:00:32.40,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}et elle enlève {\c&H1BA9DE&}toute{\c&H00FFFFFF&}
+Dialogue: 0,0:00:32.40,0:00:32.62,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}la{\c&H00FFFFFF&} peau morte, sans
+Dialogue: 0,0:00:32.62,0:00:32.82,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}la {\c&H1BA9DE&}peau{\c&H00FFFFFF&} morte, sans
+Dialogue: 0,0:00:32.82,0:00:33.20,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}la {\c&H1BA9DE&}peau{\c&H00FFFFFF&} {\c&H1BA9DE&}morte,{\c&H00FFFFFF&} sans
+Dialogue: 0,0:00:33.20,0:00:33.74,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}la {\c&H1BA9DE&}peau{\c&H00FFFFFF&} {\c&H1BA9DE&}morte,{\c&H00FFFFFF&} {\c&H1BA9DE&}sans{\c&H00FFFFFF&}
+Dialogue: 0,0:00:33.74,0:00:34.44,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}{\c&H1BA9DE&}douleur{\c&H00FFFFFF&}
+Dialogue: 0,0:00:34.44,0:00:34.74,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Vitesse{\c&H00FFFFFF&} réglable, et
+Dialogue: 0,0:00:34.74,0:00:35.36,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Vitesse {\c&H1BA9DE&}réglable,{\c&H00FFFFFF&} et
+Dialogue: 0,0:00:35.36,0:00:35.70,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Vitesse réglable, {\c&H1BA9DE&}et{\c&H00FFFFFF&}
+Dialogue: 0,0:00:35.70,0:00:35.82,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}ça{\c&H00FFFFFF&} marche sur peau
+Dialogue: 0,0:00:35.82,0:00:36.08,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}ça {\c&H1BA9DE&}marche{\c&H00FFFFFF&} sur peau
+Dialogue: 0,0:00:36.08,0:00:36.32,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}ça marche {\c&H1BA9DE&}sur{\c&H00FFFFFF&} peau
+Dialogue: 0,0:00:36.32,0:00:36.56,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}ça marche sur {\c&H1BA9DE&}peau{\c&H00FFFFFF&}
+Dialogue: 0,0:00:36.56,0:00:36.98,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}sèche{\c&H00FFFFFF&} ou humide
+Dialogue: 0,0:00:36.98,0:00:37.24,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}sèche {\c&H1BA9DE&}ou{\c&H00FFFFFF&} humide
+Dialogue: 0,0:00:37.24,0:00:37.90,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}sèche ou {\c&H1BA9DE&}humide{\c&H00FFFFFF&}
+Dialogue: 0,0:00:37.90,0:00:38.42,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Résultat{\c&H00FFFFFF&} : des pieds
+Dialogue: 0,0:00:38.42,0:00:38.66,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Résultat {\c&H1BA9DE&}:{\c&H00FFFFFF&} des pieds
+Dialogue: 0,0:00:38.66,0:00:38.76,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Résultat : {\c&H1BA9DE&}des{\c&H00FFFFFF&} pieds
+Dialogue: 0,0:00:38.76,0:00:39.22,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Résultat : des {\c&H1BA9DE&}pieds{\c&H00FFFFFF&}
+Dialogue: 0,0:00:39.22,0:00:40.04,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}{\c&H1BA9DE&}incroyablement{\c&H00FFFFFF&}
+Dialogue: 0,0:00:40.04,0:00:40.36,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}doux{\c&H00FFFFFF&} et lisses
+Dialogue: 0,0:00:40.36,0:00:40.50,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}{\c&H1BA9DE&}doux{\c&H00FFFFFF&} {\c&H1BA9DE&}et{\c&H00FFFFFF&} lisses
+Dialogue: 0,0:00:40.50,0:00:41.24,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}{\c&H1BA9DE&}doux{\c&H00FFFFFF&} {\c&H1BA9DE&}et{\c&H00FFFFFF&} {\c&H1BA9DE&}lisses{\c&H00FFFFFF&}
+Dialogue: 0,0:00:41.24,0:00:41.30,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}Le{\c&H00FFFFFF&} kit arrive avec
+Dialogue: 0,0:00:41.30,0:00:41.44,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Le {\c&H1BA9DE&}kit{\c&H00FFFFFF&} arrive avec
+Dialogue: 0,0:00:41.44,0:00:41.70,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}Le kit {\c&H1BA9DE&}arrive{\c&H00FFFFFF&} avec
+Dialogue: 0,0:00:41.70,0:00:41.90,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}Le kit arrive {\c&H1BA9DE&}avec{\c&H00FFFFFF&}
+Dialogue: 0,0:00:41.90,0:00:42.32,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}60{\c&H00FFFFFF&} disques, de quoi
+Dialogue: 0,0:00:42.32,0:00:42.82,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}{\c&H1BA9DE&}60{\c&H00FFFFFF&} {\c&H1BA9DE&}disques,{\c&H00FFFFFF&} de quoi
+Dialogue: 0,0:00:42.82,0:00:43.04,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}{\c&H1BA9DE&}60{\c&H00FFFFFF&} {\c&H1BA9DE&}disques,{\c&H00FFFFFF&} {\c&H1BA9DE&}de{\c&H00FFFFFF&} quoi
+Dialogue: 0,0:00:43.04,0:00:43.14,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}{\c&H1BA9DE&}60{\c&H00FFFFFF&} {\c&H1BA9DE&}disques,{\c&H00FFFFFF&} de {\c&H1BA9DE&}quoi{\c&H00FFFFFF&}
+Dialogue: 0,0:00:43.14,0:00:43.40,Cap,,0,0,0,,{\pos(360,1025)\fad(70,0)}{\c&H1BA9DE&}tenir{\c&H00FFFFFF&} des mois
+Dialogue: 0,0:00:43.40,0:00:43.60,Cap,,0,0,0,,{\pos(360,1025)\fad(0,0)}tenir {\c&H1BA9DE&}des{\c&H00FFFFFF&} mois
+Dialogue: 0,0:00:43.60,0:00:43.75,Cap,,0,0,0,,{\pos(360,1025)\fad(0,70)}tenir des {\c&H1BA9DE&}mois{\c&H00FFFFFF&}
