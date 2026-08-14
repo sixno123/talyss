@@ -1,19 +1,26 @@
 # Créatives vidéo
 
-## `talyss-vo-fr.mp4`
+## `talyss-final.mp4`
 
-Vidéo publicitaire Talyss avec voix off féminine française ajoutée.
-Vidéo source muette (46,97 s · 720×1280 · 30 fps) + piste voix générée.
+Vidéo publicitaire Talyss : voix off féminine française, sous-titres calés sur
+cette voix, et carte de fin aux couleurs Talyss.
 
 | | |
 |---|---|
-| Durée | 46,97 s (vidéo et audio alignées) |
-| Vidéo | H.264 copiée telle quelle (aucun ré-encodage, qualité d'origine) |
+| Durée | 47,0 s · 720×1280 · 30 fps |
+| Vidéo | H.264 CRF 18, `+faststart` |
 | Audio | AAC 192 kb/s · 44,1 kHz · stéréo |
 | Niveau | −14,1 LUFS intégré, true peak −1,5 dBTP (norme réseaux sociaux) |
 | Voix | ElevenLabs `eleven_multilingual_v2`, voix « Charlotte » (`XB0fDUnXU5powFXDhCwa`), `language_code=fr` |
 
-### Script dit par la voix off
+La vidéo source était **muette** et portait les sous-titres incrustés et la carte
+de fin d'une **autre marque** (« Mielle Glow »). Les trois problèmes ont été traités.
+
+---
+
+### 1 · Voix off
+
+Script dit par la voix off :
 
 > Voici comment j'ai arrêté de jeter mon argent dans les soins des pieds.
 > Avant, c'était pédicure toutes les trois semaines… parce que mes talons étaient une catastrophe.
@@ -28,41 +35,77 @@ Vidéo source muette (46,97 s · 720×1280 · 30 fps) + piste voix générée.
 > Le kit arrive avec soixante disques, de quoi tenir des mois.
 > Les stocks partent vite, alors commandez maintenant sur Talyss !
 
-Les nombres sont écrits en toutes lettres (« trois semaines », « soixante disques »)
-pour éviter toute lecture erronée par la synthèse vocale.
+Les nombres sont écrits en toutes lettres pour éviter une lecture erronée par la
+synthèse vocale ; les sous-titres réaffichent « 3 » et « 60 ».
 
-### Mise à la durée
+**Mise à la durée.** La voix brute durait 52,74 s pour 46,97 s de vidéo.
+Plutôt que d'accélérer la lecture de 12 % (effet précipité), `fit-voix.py`
+raccourcit les silences entre les phrases à 0,30 s maximum et supprime le silence
+final — 4,78 s récupérées **sans toucher au débit de parole**. Le reliquat est
+absorbé par un `atempo=1.01669` (+1,7 %, inaudible).
 
-La voix brute durait 52,74 s pour une vidéo de 46,97 s. Plutôt que d'accélérer
-la lecture de 12 % (effet précipité), `fit-voix.py` raccourcit les silences
-entre les phrases à 0,30 s maximum et supprime le silence final — ce qui
-récupère 4,78 s **sans toucher au débit de parole**. Le reliquat est absorbé
-par un `atempo=1.01669` (+1,7 %, inaudible).
+### 2 · Sous-titres
 
-La phrase d'appel à l'action démarre à ~43,0 s, juste avant l'apparition de la
-carte de fin à 43,77 s.
+`bbox.py` localise les anciens sous-titres en profilant les pixels quasi blancs
+sur 174 images : bande **y 960–1090, x 142–581**. Elle est masquée par un
+bandeau dépoli (`y 930–1120`) — flou gaussien σ=26, −26 % de luminosité,
+saturation 0,62 — aux bords adoucis sur 26 px via `feather.png` + `alphamerge`,
+pour que la bande ne se voie pas comme un rectangle collé.
 
-### Point de vigilance
+`align.py` transcrit la voix off finale avec `faster-whisper` (mots horodatés),
+puis `subs.py` réaligne le vrai script sur ces horodatages (`difflib`, 127/140
+mots ancrés, le reste réparti dans les trous) et écrit `subs.ass` : 45 cartons
+façon karaoké, Montserrat ExtraBold 54 px, « Talyss » en doré.
 
-⚠️ La vidéo source contient des **sous-titres incrustés d'un autre script**
-(mot à mot, marque « Mielle Glow ») qui ne correspondent pas à ce texte, et sa
-carte de fin affiche « Mielle GLOW − 50 % » au lieu de Talyss. La voix off est
-correcte, mais l'image reste à retravailler avant diffusion.
+Deux détails de découpe : un carton ne se termine jamais sur un chiffre ou un mot
+outil (« toutes les **3** » → « les 3 semaines »), et les mots non reconnus par
+l'ASR sont répartis sur toute la durée du trou, sinon ils recevraient tous le
+même départ et les cartons sortiraient dans le désordre.
+
+### 3 · Carte de fin
+
+`endcard.html` rendue en PNG par Chromium (×2 puis réduit en lanczos), incrustée
+à partir de **43,75 s** — l'image exacte de la coupe d'origine (image 1313 ; un
+seuil à 43,767 s laissait passer une image de l'ancienne carte « Mielle Glow »).
+
+Palette et texte repris du thème : crème `#f2eee2`, brun `#7e4e26`, accent
+`#a06a3f`, Montserrat + EB Garamond, et l'offre telle qu'elle est déjà écrite
+dans la boutique — « Jusqu'à -40 % sur les packs + livraison offerte »,
+« Peau douce garantie 90 jours ». **Aucune promotion n'a été inventée** :
+si l'offre change, éditez `endcard.html` et refaites le rendu.
+
+---
 
 ### Régénérer
 
 ```bash
-# 1. générer la voix (ElevenLabs, voix Charlotte, fr)
-# 2. resserrer les silences
-python3 fit-voix.py                     # vo_raw.mp3 -> vo_tight.wav
+sudo apt-get install -y ffmpeg fonts-montserrat fonts-inter fonts-ebgaramond
+pip install faster-whisper pillow
 
-# 3. tempo + normalisation en deux passes + calage sur la durée vidéo
-ffmpeg -i vo_tight.wav -af "atempo=1.01669" vo_tempo.wav
-ffmpeg -i vo_tempo.wav -af "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json" -f null -
-ffmpeg -i vo_tempo.wav -af "loudnorm=I=-14:TP=-1.5:LRA=11:measured_I=…:linear=true,\
-afade=t=out:st=46.45:d=0.30,apad=whole_dur=46.9667" vo_final.wav
+python3 fit-voix.py     # vo_raw.mp3 -> vo_tight.wav (silences resserrés)
+python3 align.py        # vo_final2.wav -> words.json (mots horodatés)
+python3 subs.py         # words.json  -> subs.ass
+python3 bbox.py         # (contrôle) position des anciens sous-titres
 
-# 4. muxer (vidéo copiée, jamais ré-encodée)
-ffmpeg -i source.mp4 -i vo_final.wav -map 0:v:0 -map 1:a:0 \
-  -c:v copy -c:a aac -b:a 192k -movflags +faststart talyss-vo-fr.mp4
+chromium --headless --force-device-scale-factor=2 --window-size=720,1280 \
+  --screenshot=endcard_2x.png file://$PWD/endcard.html
+ffmpeg -i endcard_2x.png -vf scale=720:1280:flags=lanczos endcard.png
+
+ffmpeg -i source.mp4 -i vo_final2.wav \
+  -loop 1 -framerate 30 -t 47 -i feather.png \
+  -loop 1 -framerate 30 -t 47 -i endcard.png \
+  -filter_complex "\
+[0:v]split[b][p];\
+[p]crop=720:190:0:930,gblur=sigma=26,eq=brightness=-0.26:saturation=0.62,format=rgb24[bandrgb];\
+[2:v]format=gray[mask];[bandrgb][mask]alphamerge[band];\
+[b][band]overlay=0:930[plated];[plated]ass=subs.ass[subbed];\
+[subbed][3:v]overlay=0:0:enable='gte(t,43.75)',format=yuv420p[v]" \
+  -map "[v]" -map 1:a -c:v libx264 -crf 18 -preset medium \
+  -c:a aac -b:a 192k -movflags +faststart talyss-final.mp4
 ```
+
+### Reste à faire avant diffusion
+
+Les **images** viennent toujours du montage d'origine (pieds, sandales, plans du
+produit). Seuls la voix, les sous-titres et la carte de fin sont à vous — pensez
+à vérifier vos droits sur les rushes avant de lancer la campagne.

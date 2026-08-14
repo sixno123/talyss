@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<style>
+  :root{
+    --cream:#f2eee2; --cream2:#faf8f2; --brown:#7e4e26; --brown-d:#653d1c;
+    --serif-c:#a06a3f; --ink:#1b1b1b; --mut:#6b6154; --line:#e2d9c6; --green:#00b67a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:720px;height:1280px}
+  body{
+    background:var(--cream);
+    font-family:'Inter','Inter Display',sans-serif;
+    color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:72px 56px; position:relative; overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* warm glow so the flat cream doesn't read as dead space on video */
+  body::before{
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 38%, #fffdf7 0%, rgba(255,253,247,0) 62%);
+  }
+  .stack{position:relative; display:flex; flex-direction:column; align-items:center; width:100%}
+
+  .badge{
+    font-size:19px; font-weight:700; letter-spacing:.20em; text-transform:uppercase;
+    color:var(--brown); background:var(--cream2);
+    border:1.5px solid var(--line); border-radius:999px; padding:13px 30px;
+  }
+  .wordmark{
+    font-family:'Montserrat',sans-serif; font-weight:800;
+    font-size:76px; letter-spacing:.20em; text-indent:.20em;
+    color:var(--ink); margin-top:52px; line-height:1;
+  }
+  .rule{width:96px; height:2px; background:var(--serif-c); opacity:.55; margin:30px 0 44px}
+
+  .jusqua{
+    font-family:'EB Garamond',Georgia,serif; font-style:italic;
+    font-size:52px; color:var(--serif-c); line-height:1;
+  }
+  .deal{
+    font-family:'Montserrat',sans-serif; font-weight:900;
+    font-size:190px; line-height:.92; letter-spacing:-.035em;
+    color:var(--brown); margin:12px 0 6px;
+  }
+  .packs{
+    font-size:37px; font-weight:600; color:var(--ink); letter-spacing:-.01em;
+  }
+  .ship{
+    display:flex; align-items:center; gap:13px;
+    font-size:30px; font-weight:600; color:var(--mut); margin-top:26px;
+  }
+  .ship svg{width:27px; height:27px; flex:0 0 auto}
+
+  .cta{
+    margin-top:60px; background:var(--brown); color:#fff;
+    font-size:33px; font-weight:700; letter-spacing:.005em;
+    border-radius:999px; padding:29px 62px; line-height:1;
+    box-shadow:0 12px 30px rgba(126,78,38,.26);
+  }
+  .foot{
+    margin-top:40px; font-size:24px; font-weight:500; color:var(--mut);
+    letter-spacing:.02em;
+  }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div class="badge">Offre limitée</div>
+
+    <div class="wordmark">TALYSS</div>
+    <div class="rule"></div>
+
+    <div class="jusqua">Jusqu'à</div>
+    <div class="deal">-40%</div>
+    <div class="packs">sur les packs</div>
+
+    <div class="ship">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#00b67a" stroke-width="3"
+           stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      Livraison offerte
+    </div>
+
+    <div class="cta">Commandez maintenant</div>
+    <div class="foot">Peau douce garantie 90 jours</div>
+  </div>
+</body>
+</html>

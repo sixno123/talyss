@@ -1,0 +1,58 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Montserrat ExtraBold,54,&H00FFFFFF,&H00101010,&H80000000,0,0,0,0,100,100,0.4,0,1,3.4,2.2,5,40,40,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.72,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Voici comment j'ai
+Dialogue: 0,0:00:00.72,0:00:01.34,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}arrêté de jeter
+Dialogue: 0,0:00:01.34,0:00:01.82,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}mon argent
+Dialogue: 0,0:00:01.82,0:00:02.32,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}dans les soins
+Dialogue: 0,0:00:02.32,0:00:02.94,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}des pieds
+Dialogue: 0,0:00:02.94,0:00:03.90,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Avant, c'était
+Dialogue: 0,0:00:03.90,0:00:04.68,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}pédicure toutes
+Dialogue: 0,0:00:04.68,0:00:05.70,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}les 3 semaines
+Dialogue: 0,0:00:05.70,0:00:06.14,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}parce que
+Dialogue: 0,0:00:06.14,0:00:06.94,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}mes talons étaient
+Dialogue: 0,0:00:06.94,0:00:08.36,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}une catastrophe
+Dialogue: 0,0:00:08.36,0:00:09.56,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Dès qu'ils séchaient,
+Dialogue: 0,0:00:09.56,0:00:10.64,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ça craquelait et ça
+Dialogue: 0,0:00:10.64,0:00:11.74,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ressemblait à ça
+Dialogue: 0,0:00:11.74,0:00:12.66,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Impossible de
+Dialogue: 0,0:00:12.66,0:00:13.56,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}mettre des sandales
+Dialogue: 0,0:00:13.56,0:00:14.44,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ou des talons sans
+Dialogue: 0,0:00:14.44,0:00:15.36,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}complexer
+Dialogue: 0,0:00:15.36,0:00:16.24,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}J'ai testé toutes les
+Dialogue: 0,0:00:16.24,0:00:17.64,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}alternatives : pierre
+Dialogue: 0,0:00:17.64,0:00:18.88,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ponce, râpes
+Dialogue: 0,0:00:18.88,0:00:19.50,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}manuelles
+Dialogue: 0,0:00:19.50,0:00:20.98,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}soit ça irrite, soit ça
+Dialogue: 0,0:00:20.98,0:00:21.86,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ne fait rien
+Dialogue: 0,0:00:21.86,0:00:22.72,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Certaines, on dirait
+Dialogue: 0,0:00:22.72,0:00:23.52,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}carrément des râpes
+Dialogue: 0,0:00:23.52,0:00:24.48,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}à fromage
+Dialogue: 0,0:00:24.48,0:00:25.78,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Et puis une amie m'a
+Dialogue: 0,0:00:25.78,0:00:26.80,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}fait découvrir la râpe
+Dialogue: 0,0:00:26.80,0:00:27.78,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}électrique {\c&H1BA9DE&}Talyss{\c&H00FFFFFF&}
+Dialogue: 0,0:00:27.78,0:00:29.10,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Elle utilise des petits
+Dialogue: 0,0:00:29.10,0:00:30.22,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}disques abrasifs
+Dialogue: 0,0:00:30.22,0:00:31.16,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}à usage unique
+Dialogue: 0,0:00:31.16,0:00:32.40,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}et elle enlève toute
+Dialogue: 0,0:00:32.40,0:00:33.74,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}la peau morte, sans
+Dialogue: 0,0:00:33.74,0:00:34.44,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}douleur
+Dialogue: 0,0:00:34.44,0:00:35.70,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Vitesse réglable, et
+Dialogue: 0,0:00:35.70,0:00:36.56,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}ça marche sur peau
+Dialogue: 0,0:00:36.56,0:00:37.90,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}sèche ou humide
+Dialogue: 0,0:00:37.90,0:00:39.22,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Résultat : des pieds
+Dialogue: 0,0:00:39.22,0:00:40.04,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}incroyablement
+Dialogue: 0,0:00:40.04,0:00:41.24,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}doux et lisses
+Dialogue: 0,0:00:41.24,0:00:41.90,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}Le kit arrive avec
+Dialogue: 0,0:00:41.90,0:00:43.14,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}60 disques, de quoi
+Dialogue: 0,0:00:43.14,0:00:43.75,Cap,,0,0,0,,{\pos(360,1025)\fad(70,70)}tenir des mois
