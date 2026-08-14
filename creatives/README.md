@@ -87,23 +87,30 @@ même départ et les cartons sortiraient dans le désordre.
 
 ### 3 · Carte de fin
 
-> **À remplacer.** Une carte de fin maison (soie rose, « -40% » doré métallisé,
-> photo produit) doit prendre la place de celle-ci. Elle n'a pas encore pu être
-> intégrée : collée dans la conversation, elle n'arrivait que sous forme d'aperçu,
-> sans fichier lisible. Pour l'intégrer, déposer l'image dans ce dossier
-> (`endcard-source.png`), la normaliser en
-> `scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280`, écraser
-> `endcard.png`, puis re-rendre. Le point d'incrustation ne bouge pas.
+La carte est **fournie par le client** : `endcard-source.png` (941×1672), récupérée
+depuis la branche `claude/shopify-boutique-design-yywqe5` où elle avait été déposée
+à la racine. Soie rose, « Talyss » en serif, « -40 % » doré métallisé, rendu produit
+avec les disques abrasifs.
 
-`endcard.html` rendue en PNG par Chromium (×2 puis réduit en lanczos), incrustée
-à partir de **43,75 s** — l'image exacte de la coupe d'origine (image 1313 ; un
-seuil à 43,767 s laissait passer une image de l'ancienne carte « Mielle Glow »).
+Son ratio (0,5628) est à trois millièmes de la cible 720×1280 (0,5625) : un simple
+`scale=720:1280:force_original_aspect_ratio=increase:flags=lanczos,crop=720:1280`
+perd moins d'un demi-pixel de largeur. Aucun remplissage nécessaire, et tous les
+éléments sont conservés — vérifié : « OFFRE LIMITÉE », le « -40 % » entier,
+« Commandez maintenant » et « Peau douce garantie 90 jours ».
 
-Palette et texte repris du thème : crème `#f2eee2`, brun `#7e4e26`, accent
-`#a06a3f`, Montserrat + EB Garamond, et l'offre telle qu'elle est déjà écrite
-dans la boutique — « Jusqu'à -40 % sur les packs + livraison offerte »,
-« Peau douce garantie 90 jours ». **Aucune promotion n'a été inventée** :
-si l'offre change, éditez `endcard.html` et refaites le rendu.
+> Si une future carte a un ratio nettement différent (une image ChatGPT en 1024×1536,
+> par exemple), **ne pas garder le rognage « cover »** : il retirerait ~66 px de
+> chaque côté et couperait le « -40 % », qui court presque d'un bord à l'autre.
+> Ajuster sur la largeur et compléter le haut/bas avec une copie floutée de l'image
+> en arrière-plan, pour éviter la couture qu'un aplat crème laisserait sur la soie.
+
+Elle est incrustée à partir de **43,75 s** — l'image exacte de la coupe d'origine
+(image 1313 ; un seuil à 43,767 s laissait passer une image de l'ancienne carte
+« Mielle Glow »).
+
+`endcard.html` est la carte typographique qui servait avant, conservée comme repli :
+palette du thème (crème `#f2eee2`, brun `#7e4e26`, accent `#a06a3f`) et offre reprise
+telle quelle de la boutique, sans promotion inventée.
 
 ---
 
@@ -120,9 +127,9 @@ python3 subs.py         # words.json  -> subs.ass (karaoké + mots-clés)
 python3 bbox.py         # (contrôle) position des anciens sous-titres
 python3 verify-mask.py  # (garde-fou) l'ancien texte a-t-il disparu ?
 
-chromium --headless --force-device-scale-factor=2 --window-size=720,1280 \
-  --screenshot=endcard_2x.png file://$PWD/endcard.html
-ffmpeg -i endcard_2x.png -vf scale=720:1280:flags=lanczos endcard.png
+# carte de fin fournie -> normalisation (repli HTML : voir endcard.html)
+ffmpeg -i endcard-source.png \
+  -vf "scale=720:1280:force_original_aspect_ratio=increase:flags=lanczos,crop=720:1280" endcard.png
 
 ffmpeg -i source.mp4 -i vo_final2.wav \
   -loop 1 -framerate 30 -t 47 -i feather.png \
