@@ -3,6 +3,7 @@
   assign offer_blocks = section.blocks | where: 'type', 'offer'
   assign benefit_blocks = section.blocks | where: 'type', 'benefit'
   assign faq_blocks = section.blocks | where: 'type', 'faq'
+  assign app_blocks = section.blocks | where: 'type', '@app'
 
   # index de l'offre présélectionnée
   assign sel_index = 0
@@ -78,7 +79,7 @@
         <div class="ae-p__bar"><i style="width: {{ section.settings.scarcity_pct }}%"></i></div>
       {%- endif -%}
 
-      {%- if offer_blocks.size > 0 -%}
+      {%- if section.settings.show_offers and offer_blocks.size > 0 -%}
         <div class="ae-offers">
           {%- for block in offer_blocks -%}
             {%- liquid
@@ -117,13 +118,23 @@
         </div>
       {%- endif -%}
 
-      <form method="post" action="{{ routes.cart_add_url }}">
-        <input type="hidden" name="id" value="{{ default_vid }}" data-ae-id>
-        <button type="submit" class="ae-btn ae-p__atc">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L23 7H6"/></svg>
-          {{ section.settings.atc_label }}
-        </button>
-      </form>
+      {%- if app_blocks.size > 0 -%}
+        <div class="ae-appblocks">
+          {%- for block in app_blocks -%}
+            {% render block %}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_atc -%}
+        <form method="post" action="{{ routes.cart_add_url }}">
+          <input type="hidden" name="id" value="{{ default_vid }}" data-ae-id>
+          <button type="submit" class="ae-btn ae-p__atc">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L23 7H6"/></svg>
+            {{ section.settings.atc_label }}
+          </button>
+        </form>
+      {%- endif -%}
 
       {%- if section.settings.guarantee_text != blank -%}
         <p class="ae-p__guarantee"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/></svg> {{ section.settings.guarantee_text }}</p>
@@ -224,6 +235,10 @@
     { "type": "checkbox", "id": "show_scarcity", "label": "Afficher la ligne d'urgence", "default": true },
     { "type": "text", "id": "scarcity_text", "label": "Texte d'urgence", "default": "DERNIERS PACKS DISPONIBLES — FIN DE L'OFFRE AUJOURD'HUI !" },
     { "type": "range", "id": "scarcity_pct", "label": "Jauge (%)", "min": 10, "max": 100, "step": 5, "default": 85 },
+    { "type": "header", "content": "Offres" },
+    { "type": "paragraph", "content": "Pour utiliser Moon Bundles : ajoutez son bloc d'app ci-dessous, puis décochez « Afficher mes offres intégrées » (et le bouton d'achat si le widget affiche le sien)." },
+    { "type": "checkbox", "id": "show_offers", "label": "Afficher mes offres intégrées", "default": true },
+    { "type": "checkbox", "id": "show_atc", "label": "Afficher le bouton d'ajout au panier du thème", "default": true },
     { "type": "text", "id": "atc_label", "label": "Bouton d'achat", "default": "Ajouter au panier" },
     { "type": "text", "id": "guarantee_text", "label": "Ligne de garantie", "default": "Garantie Peau Douce 90 jours — satisfait ou remboursé" },
     { "type": "text", "id": "ship_title", "label": "Encart livraison — titre", "default": "Livraison rapide et suivie" },
@@ -237,6 +252,7 @@
     { "type": "text", "id": "description_label", "label": "Libellé de la description", "default": "Description" }
   ],
   "blocks": [
+    { "type": "@app" },
     {
       "type": "offer",
       "name": "Offre",

@@ -15,7 +15,7 @@ avec sélecteur de packs + compte à rebours.
 | `sections/aelo-steps.liquid` | « Une ponceuse qui travaille *Pour Vous* » — 3 étapes |
 | `sections/aelo-reviews.liquid` | Carrousel d'avis, étoiles vertes style Trustpilot |
 | `sections/aelo-approved.liquid` | Carte « Approuvée par … » avec checklist + CTA |
-| `sections/aelo-product.liquid` | Page produit : galerie, bénéfices, urgence, offres radio (Découverte / Sérénité / Pack Duo), compte à rebours, garantie, FAQ |
+| `sections/aelo-product.liquid` | Page produit : galerie, bénéfices, urgence, offres radio (Découverte / Sérénité / Pack Duo), compte à rebours, garantie, FAQ. Accepte aussi les **blocs d'app** (`@app`) — voir Moon Bundles ci-dessous |
 | `sections/header-group.json` | Bandeau « OFFRE LIMITÉE » crème + logo centré |
 | `templates/index.json` | Page d'accueil recomposée |
 | `templates/product.json` | Page produit recomposée |
@@ -24,6 +24,22 @@ avec sélecteur de packs + compte à rebours.
 Ces fichiers sont déployés sur le thème **« Talyss — v5 · Style AELOPARIS »**
 (non publié) de la boutique `0fxqbv-9z.myshopify.com`. Les autres fichiers du
 thème proviennent de Horizon et ne sont pas versionnés ici.
+
+## Moon Bundles (app de bundles)
+
+L'app **Moon Bundles** (CScorp LLC) est installée sur la boutique. Ses bundles se
+configurent dans l'app elle-même (base de données de l'app, pas l'API Shopify), et son
+widget s'insère dans le thème sous forme de **bloc d'app**.
+
+`sections/aelo-product.liquid` déclare `{"type": "@app"}` dans son schéma et rend les
+blocs d'app juste au-dessus du bouton d'ajout au panier. Deux interrupteurs permettent
+d'éviter les doublons avec les offres codées en dur :
+
+- `show_offers` — décocher pour masquer le sélecteur d'offres intégré
+- `show_atc` — décocher si le widget Moon Bundles affiche son propre bouton d'achat
+
+Marche à suivre dans l'éditeur de thème : section « AELO — Page produit » →
+*Ajouter un bloc* → **Moon Bundles** → décocher « Afficher mes offres intégrées ».
 
 ## À personnaliser dans l'éditeur de thème
 
