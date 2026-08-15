@@ -25,6 +25,22 @@ Ces fichiers sont déployés sur le thème **« Talyss — v5 · Style AELOPARIS
 (non publié) de la boutique `0fxqbv-9z.myshopify.com`. Les autres fichiers du
 thème proviennent de Horizon et ne sont pas versionnés ici.
 
+## Optimisation mobile (thème v7)
+
+- `snippets/aelo-image.liquid` — images responsives (`srcset` 400→1400 px) partagées par
+  le hero, les étapes et la section « Approuvée par ». Accepte un objet image ou une URL
+  du CDN. **Attention au découpage Liquid** : le descripteur (`400w`) doit être précédé
+  d'un espace réel, sinon le srcset est invalide.
+- `sections/aelo-product.liquid` — barre d'achat fixe en bas sur mobile (révélée par
+  `IntersectionObserver` quand le bouton principal sort de l'écran, bouton relié au
+  formulaire par l'attribut `form=`), galerie en `scroll-snap` avec points sur mobile et
+  vignettes cliquables sur bureau.
+- `assets/aelo.css` — paliers 900 / 640 / 430 px, variable `--pad` pour les carrousels
+  pleine largeur, `@media (hover:hover)` pour éviter les états collés au tap,
+  `prefers-reduced-motion`.
+
+Paliers de prix (variantes du produit ponceuse) : 1 = 34,99 € · 2 = 59,90 € · 3 = 79,90 €.
+
 ## Moon Bundles (app de bundles)
 
 L'app **Moon Bundles** (CScorp LLC) est installée sur la boutique. Ses bundles se

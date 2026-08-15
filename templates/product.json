@@ -11,8 +11,9 @@
         "off1": {
           "type": "offer",
           "settings": {
+            "product": "",
             "variant_id": "54330966671703",
-            "title": "1 Acheter — Découverte",
+            "title": "1 ponceuse",
             "subtitle": "1 ponceuse + 20 disques",
             "qty_badge": "x1",
             "ribbon_text": "",
@@ -23,11 +24,12 @@
         "off2": {
           "type": "offer",
           "settings": {
-            "variant_id": "54330966704471",
-            "title": "Pack Sérénité — 80 disques",
-            "subtitle": "≈ 9 mois de routine incluse",
-            "qty_badge": "x80",
-            "ribbon_text": "PLUS QUE QUELQUES HEURES",
+            "product": "",
+            "variant_id": "54347591942487",
+            "title": "2 ponceuses",
+            "subtitle": "soit 29,95 € l'unité",
+            "qty_badge": "x2",
+            "ribbon_text": "LE PLUS VENDU",
             "ribbon_countdown": true,
             "preselected": true
           }
@@ -35,12 +37,12 @@
         "off3": {
           "type": "offer",
           "settings": {
-            "product": "pack-duo-talyss",
-            "variant_id": "54336761037143",
-            "title": "Pack Duo — 2 ponceuses",
-            "subtitle": "40 disques — idéal à deux ou à offrir",
-            "qty_badge": "x2",
-            "ribbon_text": "",
+            "product": "",
+            "variant_id": "54347591975255",
+            "title": "3 ponceuses",
+            "subtitle": "soit 26,63 € l'unité",
+            "qty_badge": "x3",
+            "ribbon_text": "-33 % · LE PLUS AVANTAGEUX",
             "ribbon_countdown": false,
             "preselected": false
           }
@@ -69,12 +71,16 @@
       },
       "block_order": ["ben1", "ben2", "ben3", "ben4", "ben5", "off1", "off2", "off3", "faq1", "faq2", "faq3"],
       "settings": {
-        "rating_text": "Noté <b>Excellent</b> — Garantie Peau Douce 90 jours",
+        "rating_text": "Noté Excellent — Garantie Peau Douce 90 jours",
         "tagline": "Des pieds tout doux en moins de 5 minutes",
         "show_scarcity": true,
         "scarcity_text": "DERNIERS PACKS DISPONIBLES — FIN DE L'OFFRE AUJOURD'HUI !",
         "scarcity_pct": 85,
+        "show_offers": true,
+        "show_atc": true,
         "atc_label": "Ajouter au panier",
+        "show_sticky": true,
+        "sticky_label": "Ajouter",
         "guarantee_text": "Garantie Peau Douce 90 jours — satisfait ou remboursé",
         "ship_title": "Livraison rapide et suivie",
         "ship_sub": "Commande préparée avec soin, suivi envoyé par e-mail",
@@ -142,12 +148,32 @@
           "static": true,
           "settings": {
             "content_direction": "row",
+            "vertical_on_mobile": true,
             "horizontal_alignment": "space-between",
             "vertical_alignment": "flex-end",
             "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
             "width": "fill",
-            "height": "fit"
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
             "cs_title": {
@@ -155,9 +181,25 @@
               "settings": {
                 "text": "<h3>Complétez votre routine</h3>",
                 "width": "fit-content",
+                "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h4"
-              }
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": ["cs_title"]
@@ -167,21 +209,79 @@
           "static": true,
           "settings": {
             "product_card_gap": 8,
+            "background_color": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
             "border_radius": 8,
-            "padding-block-end": 8
+            "padding-block-start": 0,
+            "padding-block-end": 8,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
             "cs_gallery": {
               "type": "_product-card-gallery",
-              "settings": { "image_ratio": "square", "border_radius": 8 }
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 8,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             },
             "cs_ptitle": {
               "type": "product-title",
-              "settings": { "width": "100%", "alignment": "left", "type_preset": "rte", "padding-block-start": 4 }
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             },
             "cs_price": {
               "type": "price",
-              "settings": { "show_sale_price_first": true, "type_preset": "h6", "width": "100%", "alignment": "left" }
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": ["cs_gallery", "cs_ptitle", "cs_price"]
@@ -190,15 +290,19 @@
       "settings": {
         "collection": "soin-des-pieds",
         "layout_type": "grid",
-        "carousel_on_mobile": false,
+        "carousel_on_mobile": true,
         "max_products": 4,
         "columns": 2,
         "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
         "columns_gap": 16,
         "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "none",
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 24,
+        "background_color": "",
         "padding-block-start": 48,
         "padding-block-end": 56
       }

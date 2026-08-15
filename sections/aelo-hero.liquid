@@ -1,21 +1,20 @@
 {{ 'aelo.css' | asset_url | stylesheet_tag }}
 {%- liquid
   assign fp = section.settings.product
-  assign hero_img = ''
-  if section.settings.image
-    assign hero_img = section.settings.image | image_url: width: 1400
-  elsif section.settings.image_url != blank
-    assign hero_img = section.settings.image_url
-  elsif fp
-    assign hero_img = fp.featured_image | image_url: width: 1400
+  assign hero_obj = section.settings.image
+  if hero_obj == blank and section.settings.image_url == blank and fp
+    assign hero_obj = fp.featured_image
   endif
 -%}
 <section class="ae ae-hero" style="padding-block: {{ section.settings.pad_top }}px {{ section.settings.pad_bottom }}px;">
   <div class="ae-hero__grid">
     <div class="ae-hero__media">
-      {%- if hero_img != blank -%}
-        <img src="{{ hero_img }}" alt="{{ section.settings.image_alt | escape }}" width="1200" height="1200" fetchpriority="high">
-      {%- endif -%}
+      {% render 'aelo-image',
+        image: hero_obj,
+        url: section.settings.image_url,
+        alt: section.settings.image_alt,
+        sizes: '(max-width: 900px) 100vw, 50vw',
+        priority: true %}
     </div>
     <div class="ae-hero__content">
       {%- if section.settings.rating_text != blank -%}

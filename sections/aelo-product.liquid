@@ -15,8 +15,10 @@
     endif
   endfor
 
-  # variante par défaut (pour le champ caché du formulaire)
+  # variante par défaut + libellé/prix pour la barre fixe
   assign default_vid = product.first_available_variant.id | default: product.variants.first.id
+  assign default_label = product.title
+  assign default_price = product.price | money
   for block in offer_blocks
     if forloop.index0 == sel_index
       assign op = block.settings.product | default: product
@@ -30,22 +32,46 @@
         endfor
       endif
       assign default_vid = ov.id
+      assign default_label = block.settings.title | default: ov.title
+      assign default_price = ov.price | money
     endif
   endfor
+
+  assign show_sticky = false
+  if section.settings.show_sticky and section.settings.show_atc
+    assign show_sticky = true
+  endif
 -%}
 <section class="ae ae-p" id="ae-p-{{ section.id }}">
   <div class="ae-p__grid">
 
     <div class="ae-p__gallery">
       <div class="ae-p__main">
-        <img src="{{ product.featured_image | image_url: width: 1200 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" width="1200" height="1200" data-ae-main>
+        <div class="ae-p__slides" data-ae-slides>
+          {%- for img in product.images limit: 10 -%}
+            <div class="ae-p__slide{% if forloop.first %} on{% endif %}">
+              <img
+                src="{{ img | image_url: width: 800 }}"
+                srcset="{{ img | image_url: width: 400 }} 400w, {{ img | image_url: width: 600 }} 600w, {{ img | image_url: width: 800 }} 800w, {{ img | image_url: width: 1000 }} 1000w, {{ img | image_url: width: 1200 }} 1200w"
+                sizes="(max-width: 900px) 100vw, 52vw"
+                alt="{{ img.alt | default: product.title | escape }}"
+                width="1200" height="1200"
+                {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy" decoding="async"{% endif %}>
+            </div>
+          {%- endfor -%}
+        </div>
       </div>
-      {%- assign imgs = product.images -%}
-      {%- if imgs.size > 1 -%}
+
+      {%- if product.images.size > 1 -%}
+        <div class="ae-p__dots" data-ae-dots>
+          {%- for img in product.images limit: 10 -%}
+            <button type="button" class="{% if forloop.first %}on{% endif %}" data-ae-dot="{{ forloop.index0 }}" aria-label="Image {{ forloop.index }}"></button>
+          {%- endfor -%}
+        </div>
         <div class="ae-p__thumbs">
-          {%- for img in imgs limit: 10 -%}
-            <button type="button" class="{% if forloop.first %}on{% endif %}" data-ae-thumb="{{ img | image_url: width: 1200 }}" aria-label="Voir l'image {{ forloop.index }}">
-              <img src="{{ img | image_url: width: 160 }}" alt="" loading="lazy">
+          {%- for img in product.images limit: 10 -%}
+            <button type="button" class="{% if forloop.first %}on{% endif %}" data-ae-thumb="{{ forloop.index0 }}" aria-label="Voir l'image {{ forloop.index }}">
+              <img src="{{ img | image_url: width: 160 }}" alt="" loading="lazy" decoding="async" width="80" height="80">
             </button>
           {%- endfor -%}
         </div>
@@ -93,19 +119,22 @@
                   endif
                 endfor
               endif
+              assign o_label = block.settings.title | default: ov.title
             -%}
             <label class="ae-offer" {{ block.shopify_attributes }}>
               {%- if block.settings.ribbon_text != blank -%}
                 <span class="ae-offer__ribbon">{{ block.settings.ribbon_text }}{% if block.settings.ribbon_countdown %}<b data-ae-countdown></b>{% endif %}</span>
               {%- endif -%}
               <span class="ae-offer__row">
-                <input type="radio" name="ae-offer-{{ section.id }}" value="{{ ov.id }}" {% if forloop.index0 == sel_index %}checked{% endif %}>
+                <input type="radio" name="ae-offer-{{ section.id }}" value="{{ ov.id }}"
+                       data-ae-label="{{ o_label | escape }}" data-ae-price="{{ ov.price | money }}"
+                       {% if forloop.index0 == sel_index %}checked{% endif %}>
                 <span class="ae-offer__img">
-                  <img src="{{ op.featured_image | image_url: width: 120 }}" alt="" loading="lazy">
+                  <img src="{{ op.featured_image | image_url: width: 120 }}" alt="" loading="lazy" decoding="async" width="54" height="54">
                   {%- if block.settings.qty_badge != blank -%}<span class="ae-offer__qty">{{ block.settings.qty_badge }}</span>{%- endif -%}
                 </span>
                 <span class="ae-offer__label">
-                  <b>{{ block.settings.title | default: ov.title }}</b>
+                  <b>{{ o_label }}</b>
                   {%- if block.settings.subtitle != blank -%}<small>( {{ block.settings.subtitle }} )</small>{%- endif -%}
                 </span>
                 <span class="ae-offer__price">
@@ -127,9 +156,9 @@
       {%- endif -%}
 
       {%- if section.settings.show_atc -%}
-        <form method="post" action="{{ routes.cart_add_url }}">
+        <form method="post" action="{{ routes.cart_add_url }}" id="ae-form-{{ section.id }}">
           <input type="hidden" name="id" value="{{ default_vid }}" data-ae-id>
-          <button type="submit" class="ae-btn ae-p__atc">
+          <button type="submit" class="ae-btn ae-p__atc" data-ae-atc>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L23 7H6"/></svg>
             {{ section.settings.atc_label }}
           </button>
@@ -185,30 +214,94 @@
       </div>
     </div>
   </div>
+
+  {%- if show_sticky -%}
+    <div class="ae-stickybar" data-ae-sticky>
+      <img src="{{ product.featured_image | image_url: width: 120 }}" alt="" width="46" height="46" loading="lazy" decoding="async">
+      <span class="ae-stickybar__txt">
+        <b data-ae-sticky-label>{{ default_label }}</b>
+        <span data-ae-sticky-price>{{ default_price }}</span>
+      </span>
+      <button type="submit" form="ae-form-{{ section.id }}" class="ae-btn ae-stickybar__btn">{{ section.settings.sticky_label | default: section.settings.atc_label }}</button>
+    </div>
+  {%- endif -%}
 </section>
 <script>
 (function () {
   var root = document.getElementById('ae-p-{{ section.id }}');
   if (!root) return;
 
-  /* Galerie : clic vignette -> image principale */
-  var main = root.querySelector('[data-ae-main]');
-  root.querySelectorAll('[data-ae-thumb]').forEach(function (btn) {
+  /* ---- Galerie : vignettes (bureau) + swipe avec points (mobile) ---- */
+  var slides = root.querySelector('[data-ae-slides]');
+  var slideEls = slides ? Array.prototype.slice.call(slides.children) : [];
+  var thumbs = Array.prototype.slice.call(root.querySelectorAll('[data-ae-thumb]'));
+  var dots = Array.prototype.slice.call(root.querySelectorAll('[data-ae-dot]'));
+
+  function activate(i) {
+    slideEls.forEach(function (s, n) { s.classList.toggle('on', n === i); });
+    thumbs.forEach(function (t, n) { t.classList.toggle('on', n === i); });
+    dots.forEach(function (d, n) { d.classList.toggle('on', n === i); });
+  }
+
+  thumbs.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      main.src = btn.getAttribute('data-ae-thumb');
-      root.querySelectorAll('[data-ae-thumb]').forEach(function (b) { b.classList.remove('on'); });
-      btn.classList.add('on');
+      var i = parseInt(btn.getAttribute('data-ae-thumb'), 10);
+      activate(i);
+      if (slides && slides.scrollWidth > slides.clientWidth) {
+        slides.scrollTo({ left: i * slides.clientWidth, behavior: 'smooth' });
+      }
     });
   });
 
-  /* Offres : radio -> champ caché du formulaire */
-  var hidden = root.querySelector('[data-ae-id]');
-  root.querySelectorAll('input[name="ae-offer-{{ section.id }}"]').forEach(function (r) {
-    r.addEventListener('change', function () { if (hidden) hidden.value = r.value; });
-    if (r.checked && hidden) hidden.value = r.value;
+  dots.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var i = parseInt(btn.getAttribute('data-ae-dot'), 10);
+      if (slides) slides.scrollTo({ left: i * slides.clientWidth, behavior: 'smooth' });
+    });
   });
 
-  /* Compte à rebours jusqu'à minuit */
+  if (slides) {
+    var raf;
+    slides.addEventListener('scroll', function () {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () {
+        if (slides.clientWidth === 0) return;
+        var i = Math.round(slides.scrollLeft / slides.clientWidth);
+        dots.forEach(function (d, n) { d.classList.toggle('on', n === i); });
+        thumbs.forEach(function (t, n) { t.classList.toggle('on', n === i); });
+      });
+    }, { passive: true });
+  }
+
+  /* ---- Offres : radio -> champ caché + barre fixe ---- */
+  var hidden = root.querySelector('[data-ae-id]');
+  var sLabel = root.querySelector('[data-ae-sticky-label]');
+  var sPrice = root.querySelector('[data-ae-sticky-price]');
+
+  function syncOffer(r) {
+    if (hidden) hidden.value = r.value;
+    if (sLabel && r.getAttribute('data-ae-label')) sLabel.textContent = r.getAttribute('data-ae-label');
+    if (sPrice && r.getAttribute('data-ae-price')) sPrice.textContent = r.getAttribute('data-ae-price');
+  }
+
+  root.querySelectorAll('input[name="ae-offer-{{ section.id }}"]').forEach(function (r) {
+    r.addEventListener('change', function () { syncOffer(r); });
+    if (r.checked) syncOffer(r);
+  });
+
+  /* ---- Barre d'achat fixe : visible une fois le bouton principal dépassé ---- */
+  var bar = root.querySelector('[data-ae-sticky]');
+  var atc = root.querySelector('[data-ae-atc]');
+  if (bar && atc && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var passed = !e.isIntersecting && e.boundingClientRect.top < 0;
+        bar.classList.toggle('on', passed);
+      });
+    }, { threshold: 0 }).observe(atc);
+  }
+
+  /* ---- Compte à rebours jusqu'à minuit ---- */
   var cds = root.querySelectorAll('[data-ae-countdown]');
   if (cds.length) {
     var tick = function () {
@@ -240,6 +333,10 @@
     { "type": "checkbox", "id": "show_offers", "label": "Afficher mes offres intégrées", "default": true },
     { "type": "checkbox", "id": "show_atc", "label": "Afficher le bouton d'ajout au panier du thème", "default": true },
     { "type": "text", "id": "atc_label", "label": "Bouton d'achat", "default": "Ajouter au panier" },
+    { "type": "header", "content": "Mobile" },
+    { "type": "checkbox", "id": "show_sticky", "label": "Barre d'achat fixe en bas (mobile)", "default": true },
+    { "type": "text", "id": "sticky_label", "label": "Bouton de la barre fixe", "default": "Ajouter" },
+    { "type": "header", "content": "Réassurance" },
     { "type": "text", "id": "guarantee_text", "label": "Ligne de garantie", "default": "Garantie Peau Douce 90 jours — satisfait ou remboursé" },
     { "type": "text", "id": "ship_title", "label": "Encart livraison — titre", "default": "Livraison rapide et suivie" },
     { "type": "text", "id": "ship_sub", "label": "Encart livraison — sous-titre", "default": "Commande préparée avec soin, suivi envoyé par e-mail" },

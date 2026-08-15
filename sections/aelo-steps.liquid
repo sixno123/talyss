@@ -5,11 +5,12 @@
     <div class="ae-steps__grid">
       {%- for block in section.blocks -%}
         <div class="ae-step" {{ block.shopify_attributes }}>
-          {%- if block.settings.image -%}
-            <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="800" height="840">
-          {%- elsif block.settings.image_url != blank -%}
-            <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="800" height="840">
-          {%- endif -%}
+          {% render 'aelo-image',
+            image: block.settings.image,
+            url: block.settings.image_url,
+            alt: block.settings.title,
+            sizes: '(max-width: 900px) 78vw, 33vw',
+            w: 800, h: 840 %}
           <div class="ae-step__head">
             <span class="ae-step__num">{{ forloop.index }}</span>
             <span>{{ block.settings.title }}</span>

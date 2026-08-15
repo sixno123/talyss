@@ -3,11 +3,12 @@
   <div class="ae-wrap">
     <div class="ae-approved__card">
       <div class="ae-approved__media">
-        {%- if section.settings.image -%}
-          <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="{{ section.settings.image_alt | escape }}" loading="lazy">
-        {%- elsif section.settings.image_url != blank -%}
-          <img src="{{ section.settings.image_url }}" alt="{{ section.settings.image_alt | escape }}" loading="lazy">
-        {%- endif -%}
+        {% render 'aelo-image',
+          image: section.settings.image,
+          url: section.settings.image_url,
+          alt: section.settings.image_alt,
+          sizes: '(max-width: 900px) 100vw, 46vw',
+          w: 1000, h: 1000 %}
       </div>
       <div class="ae-approved__body">
         <h2>{{ section.settings.heading }} <span class="ae-serif">{{ section.settings.heading_accent | newline_to_br }}</span></h2>

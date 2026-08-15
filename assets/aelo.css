@@ -1,27 +1,32 @@
 /* Talyss — habillage "AELOPARIS" : crème, brun, serif d'accent */
 .ae,.ae *{box-sizing:border-box;margin:0;padding:0}
-.ae{--ink:#1b1b1b;--mut:#5c5c5c;--cream:#f2eee2;--cream2:#f7f4eb;--line:#e7e1d3;--brown:#7e4e26;--brown-d:#653d1c;--serif-c:#a06a3f;--green:#00b67a;--red:#d02c2c;--gold:#f5a623;
+.ae{--ink:#1b1b1b;--mut:#5c5c5c;--cream:#f2eee2;--cream2:#f7f4eb;--line:#e7e1d3;--brown:#7e4e26;--brown-d:#653d1c;--serif-c:#a06a3f;--green:#00b67a;--red:#d02c2c;--gold:#f5a623;--pad:24px;
 color:var(--ink);font-family:var(--font-body--family,'Inter',Arial,sans-serif);-webkit-font-smoothing:antialiased}
-.ae-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.ae-wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
 .ae-serif{font-family:var(--font-heading--family,'Playfair Display',Georgia,serif);color:var(--serif-c);font-weight:500}
 .ae h2.ae-h{font-size:clamp(28px,3.6vw,44px);font-weight:800;line-height:1.12;letter-spacing:-.01em;text-align:center}
 .ae-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--brown);color:#fff!important;border:0;border-radius:999px;padding:17px 34px;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;transition:background .15s,transform .15s;font-family:inherit}
-.ae-btn:hover{background:var(--brown-d);transform:translateY(-1px)}
 .ae-tpstars{display:inline-flex;gap:3px;vertical-align:middle}
 .ae-tpstars i{width:20px;height:20px;background:var(--green);display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
 .ae-tpstars.sm i{width:15px;height:15px}
 .ae-tpstars i svg{width:60%;height:60%}
+/* confort tactile */
+.ae-btn,.ae-offer,.ae-acc summary,.ae-p__thumbs button,.ae-p__dots button,.ae-reviews__nav button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(126,78,38,.14)}
+@media (hover:hover){
+.ae-btn:hover{background:var(--brown-d);transform:translateY(-1px)}
+.ae-reviews__nav button:hover{border-color:var(--ink)}
+}
 
 /* ---- Hero ---- */
 .ae-hero{background:#fff}
-.ae-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1440px;margin:0 auto;padding:0 24px}
+.ae-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1440px;margin:0 auto;padding:0 var(--pad)}
 .ae-hero__media img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
 .ae-hero__content{max-width:560px}
 .ae-rating{display:flex;align-items:center;gap:10px;font-size:15px;margin-bottom:18px;flex-wrap:wrap}
 .ae-hero__kicker{font-weight:700;font-size:17px;margin-bottom:10px}
 .ae-hero__title{font-size:clamp(34px,4.4vw,56px);line-height:1.08;font-weight:800;letter-spacing:-.01em;margin-bottom:18px;text-transform:uppercase}
 .ae-hero__sub{font-size:17px;color:var(--mut);line-height:1.6;margin-bottom:28px;max-width:480px}
-@media(max-width:900px){.ae-hero__grid{grid-template-columns:1fr;gap:26px;padding:0}.ae-hero__content{padding:0 24px 8px;max-width:none}}
+@media(max-width:900px){.ae-hero__grid{grid-template-columns:1fr;gap:26px;padding:0}.ae-hero__content{padding:0 var(--pad) 8px;max-width:none}}
 
 /* ---- Marquee ---- */
 .ae-marquee{overflow:hidden;background:#fff}
@@ -36,13 +41,12 @@ color:var(--ink);font-family:var(--font-body--family,'Inter',Arial,sans-serif);-
 .ae-step__head{display:flex;gap:10px;align-items:center;margin:18px 0 10px;font-weight:700;font-size:17px}
 .ae-step__num{width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:13.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
 .ae-step p{color:var(--mut);font-size:15px;line-height:1.65}
-@media(max-width:900px){.ae-steps__grid{grid-template-columns:1fr;gap:34px}}
 
 /* ---- Avis ---- */
 .ae-reviews{background:#fff;position:relative}
 .ae-reviews__track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 30px;scrollbar-width:none;position:relative;z-index:1}
 .ae-reviews__track::-webkit-scrollbar{display:none}
-.ae-review{flex:0 0 320px;scroll-snap-align:start;background:#fff;border:1px solid #efefef;border-radius:4px;box-shadow:0 12px 34px rgba(0,0,0,.07);padding:24px;display:flex;flex-direction:column}
+.ae-review{flex:0 0 min(78vw,320px);scroll-snap-align:start;background:#fff;border:1px solid #efefef;border-radius:4px;box-shadow:0 12px 34px rgba(0,0,0,.07);padding:24px;display:flex;flex-direction:column}
 .ae-review h3{font-size:15px;font-weight:700;margin:14px 0 8px}
 .ae-review p{font-size:13.5px;color:#444;line-height:1.62;flex:1 1 auto}
 .ae-review__author{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:13px}
@@ -51,7 +55,6 @@ color:var(--ink);font-family:var(--font-body--family,'Inter',Arial,sans-serif);-
 .ae-review__verified svg{width:14px;height:14px}
 .ae-reviews__nav{display:flex;justify-content:center;gap:14px;position:relative;z-index:1}
 .ae-reviews__nav button{width:46px;height:46px;border-radius:50%;border:1px solid #ddd;background:#fff;cursor:pointer;font-size:17px;display:inline-flex;align-items:center;justify-content:center}
-.ae-reviews__nav button:hover{border-color:var(--ink)}
 .ae-reviews__fade{position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,rgba(0,182,122,0) 0%,rgba(0,182,122,.22) 100%);pointer-events:none}
 
 /* ---- Approuvé par ---- */
@@ -69,9 +72,15 @@ color:var(--ink);font-family:var(--font-body--family,'Inter',Arial,sans-serif);-
 
 /* ---- Page produit ---- */
 .ae-p{background:#fff}
-.ae-p__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start;max-width:1260px;margin:0 auto;padding:28px 24px 56px}
+.ae-p__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start;max-width:1260px;margin:0 auto;padding:28px var(--pad) 56px}
 .ae-p__gallery{position:sticky;top:96px}
-.ae-p__main img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;display:block}
+.ae-p__slides{display:block}
+.ae-p__slide{display:none}
+.ae-p__slide.on{display:block}
+.ae-p__slide img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;display:block}
+.ae-p__dots{display:none;gap:7px;justify-content:center;margin-top:12px}
+.ae-p__dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#d9d4c7;cursor:pointer;transition:width .18s,background .18s}
+.ae-p__dots button.on{background:var(--brown);width:22px;border-radius:99px}
 .ae-p__thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto}
 .ae-p__thumbs button{flex:0 0 64px;width:64px;height:64px;padding:0;border:1px solid var(--line);border-radius:4px;background:#fff;cursor:pointer;overflow:hidden}
 .ae-p__thumbs button.on{border-color:var(--ink)}
@@ -130,4 +139,75 @@ color:var(--ink);font-family:var(--font-body--family,'Inter',Arial,sans-serif);-
 .ae-acc details[open] summary::after{content:'\2013'}
 .ae-acc__body{padding:0 4px 18px;font-size:14.5px;color:#444;line-height:1.65}
 .ae-acc__body p{margin-bottom:10px}
-@media(max-width:900px){.ae-p__grid{grid-template-columns:1fr;gap:24px;padding-top:12px}.ae-p__gallery{position:static}.ae-p__panel{max-width:none}}
+
+/* ---- Barre d'achat fixe (mobile) ---- */
+.ae-stickybar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;align-items:center;gap:12px;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(0,0,0,.13);padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .22s ease}
+.ae-stickybar.on{transform:translateY(0)}
+.ae-stickybar img{width:46px;height:46px;border-radius:8px;object-fit:cover;display:block;flex:0 0 auto}
+.ae-stickybar__txt{flex:1 1 auto;min-width:0;line-height:1.25}
+.ae-stickybar__txt b{display:block;font-size:12.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ae-stickybar__txt span{font-size:15px;font-weight:800;color:var(--brown)}
+.ae-stickybar__btn{flex:0 0 auto;padding:14px 22px;font-size:14px;min-height:48px}
+
+/* ---- Tablette / mobile ---- */
+@media(max-width:900px){
+.ae-p__grid{grid-template-columns:1fr;gap:24px;padding-top:12px;padding-bottom:96px}
+.ae-p__gallery{position:static}
+.ae-p__panel{max-width:none}
+/* galerie swipable */
+.ae-p__slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:4px}
+.ae-p__slides::-webkit-scrollbar{display:none}
+.ae-p__slide{display:block;flex:0 0 100%;scroll-snap-align:center}
+.ae-p__dots{display:flex}
+.ae-p__thumbs{display:none}
+.ae-stickybar{display:flex}
+/* étapes en carrousel */
+.ae-steps__grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:14px;margin-top:30px;margin-inline:calc(var(--pad) * -1);padding:0 var(--pad) 4px}
+.ae-steps__grid::-webkit-scrollbar{display:none}
+.ae-step{flex:0 0 min(78vw,320px);scroll-snap-align:start}
+.ae-step img{aspect-ratio:4/3}
+/* avis pleine largeur */
+.ae-reviews__track{margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad)}
+}
+
+@media(max-width:640px){
+.ae{--pad:18px}
+.ae-hero__title{font-size:clamp(28px,8.2vw,56px);text-wrap:balance}
+.ae-hero__kicker{font-size:15.5px}
+.ae-hero__sub{font-size:15.5px;margin-bottom:22px}
+.ae-hero .ae-btn{width:100%}
+.ae-btn{min-height:52px;padding:15px 26px}
+.ae h2.ae-h{font-size:clamp(24px,6.4vw,44px)}
+.ae-marquee__track{gap:40px}
+.ae-marquee__track span{font-size:clamp(30px,11vw,92px)}
+.ae-review{padding:20px}
+.ae-review p{font-size:14px}
+.ae-reviews__nav{display:none}
+.ae-reviews__fade{height:90px}
+.ae-approved__body{padding:28px 20px}
+.ae-p__title{font-size:clamp(24px,6.6vw,34px)}
+.ae-ship__row{font-size:12.5px}
+}
+
+@media(max-width:430px){
+.ae-offer{padding:13px}
+.ae-offer:has(input:checked){padding:12px}
+.ae-offer__row{gap:11px}
+.ae-offer__img{flex:0 0 48px}
+.ae-offer__img img{width:48px;height:48px}
+.ae-offer__label b{font-size:13.5px}
+.ae-offer__label small{font-size:11.5px}
+.ae-offer__price b{font-size:17px}
+.ae-offer__price s{font-size:11.5px}
+.ae-offer__ribbon{right:0;font-size:10px;padding:5px 9px;max-width:calc(100% - 20px);overflow:hidden;text-overflow:ellipsis}
+.ae-payicons{gap:5px}
+.ae-payicons span{font-size:9.5px;padding:3px 7px}
+.ae-stickybar{gap:10px;padding-inline:12px}
+.ae-stickybar__btn{padding:13px 18px}
+}
+
+@media(prefers-reduced-motion:reduce){
+.ae-marquee__track{animation:none}
+.ae-p__scarcity::before{animation:none}
+.ae-btn,.ae-stickybar,.ae-p__dots button{transition:none}
+}
