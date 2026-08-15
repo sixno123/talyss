@@ -6,20 +6,22 @@ La voix est découpée dans la bande existante en s'appuyant sur words.json
 une transcription.
 """
 import json, subprocess, unicodedata, re
-from PIL import ImageFont
+from PIL import Image, ImageDraw, ImageFont
 
 W, H = 720, 1280
 SRC = "/root/.claude/uploads/b6b4b174-cc8a-5915-a346-1947ec943bb5/5749cb0a-adsansson.mp4"
 WORK = "/tmp/claude-0/-home-user-talyss/b6b4b174-cc8a-5915-a346-1947ec943bb5/scratchpad/work"
 
-# Aplat noir. Deux contraintes à tenir en même temps : couvrir l'ancien texte
-# incrusté (960-1090) ET garder les sous-titres au-dessus de l'interface Reels,
-# qui démarre vers y=1024. On agrandit donc le bandeau vers le HAUT — le
-# déplacer découvrirait le bas de l'ancien texte.
-BAND_TOP, BAND_H = 870, 230          # 870-1100 : couvre 960-1090 avec marge
-CAP_Y = BAND_TOP + BAND_H // 2       # 985 : bloc de texte ~950-1020, zone sûre
+# Pastille noire arrondie, pas une barre pleine largeur : elle doit couvrir
+# l'ancien texte incrusté (x 142-581, y 960-1090) et rien de plus. Détachée des
+# bords et à coins arrondis, elle se lit comme un cartouche de sous-titre plutôt
+# que comme un bandeau posé sur l'image.
+PLATE_X, PLATE_Y = 45, 936           # 45-675 x 936-1104
+PLATE_W, PLATE_H = 630, 168
+PLATE_R = 32                         # rayon des coins
+CAP_Y = 998                          # bloc de texte ~963-1033, centré dans la pastille
 FONT_PX = 54
-MAX_TEXT_W = 610                     # ~55 px de respiration de chaque côté
+MAX_TEXT_W = 560                     # tient dans la pastille (630 px) avec marge
 GOLD, WHITE = "&H1BA9DE&", "&H00FFFFFF&"
 KEYWORDS = ["Talyss", "sans douleur", "doux et lisses", "peau morte", "râpe électrique"]
 
@@ -196,17 +198,28 @@ with open("subs20.ass", "w", encoding="utf-8") as f:
             events += 1
 print(f"{len(cards)} cartons, {events} événements ASS")
 
+# ---------------------------------------------------------------- pastille
+# Dessinée 4× puis réduite : PIL crénelle les coins arrondis, le sur-échantillonnage
+# les lisse et évite l'escalier visible sur un aplat noir.
+S = 4
+plate = Image.new("RGBA", (PLATE_W * S, PLATE_H * S), (0, 0, 0, 0))
+ImageDraw.Draw(plate).rounded_rectangle(
+    [0, 0, PLATE_W * S - 1, PLATE_H * S - 1], radius=PLATE_R * S, fill=(0, 0, 0, 255))
+plate.resize((PLATE_W, PLATE_H), Image.LANCZOS).save("plate.png")
+assert PLATE_Y <= 960 and PLATE_Y + PLATE_H >= 1090, "la pastille ne couvre pas l'ancien texte"
+assert PLATE_X <= 142 and PLATE_X + PLATE_W >= 581, "pastille trop étroite"
+
 # ---------------------------------------------------------------- rendu final
-band = (f"drawbox=x=0:y={BAND_TOP}:w={W}:h={BAND_H}:color=black@1:t=fill:"
-        f"enable='lt(t,{shots_dur:.3f})'")
 subprocess.run([
     "ffmpeg", "-y", "-v", "error",
     "-i", "cut.mp4", "-i", "vo20.wav",
+    "-loop", "1", "-framerate", "30", "-t", f"{total:.3f}", "-i", "plate.png",
     "-loop", "1", "-framerate", "30", "-t", f"{total:.3f}",
     "-i", f"{WORK}/endcard.png",
     "-filter_complex",
-    f"[0:v]{band},ass=subs20.ass[sub];"
-    f"[sub][2:v]overlay=0:0:enable='gte(t,{shots_dur:.3f})',format=yuv420p[v]",
+    f"[0:v][2:v]overlay={PLATE_X}:{PLATE_Y}:enable='lt(t,{shots_dur:.3f})'[plated];"
+    f"[plated]ass=subs20.ass[sub];"
+    f"[sub][3:v]overlay=0:0:enable='gte(t,{shots_dur:.3f})',format=yuv420p[v]",
     "-map", "[v]", "-map", "1:a",
     "-t", f"{total:.3f}",
     "-c:v", "libx264", "-crf", "18", "-preset", "medium",

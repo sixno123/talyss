@@ -49,22 +49,26 @@ karaoké mot par mot et les mots-clés dorés se recalculent tout seuls.
 **Fond plein noir** au lieu du bandeau flouté de la créa 47 s : un aplat opaque
 efface l'ancien texte incrusté sans avoir besoin de flou.
 
-Deux contraintes se croisent sur sa position, et elles tirent en sens inverse :
+Pas une barre pleine largeur, mais un **cartouche arrondi détaché des bords** —
+`x 45–675`, `y 936–1104`, coins à 32 px — dessiné 4× puis réduit en lanczos, car
+PIL crénelle les arrondis et l'escalier se voit sur un aplat noir. Le texte est
+centré à `y 998`.
 
-- il doit couvrir l'ancien texte incrusté, à `y 960–1090` ;
-- les sous-titres doivent rester au-dessus de l'interface Reels, qui démarre
-  vers `y 1024`.
+Ce cartouche **ne peut pas s'ajuster à la largeur de chaque carton** : il doit
+couvrir l'ancien texte incrusté sur toute son emprise (`x 142–581`, `y 960–1090`).
+D'où une taille fixe, avec deux assertions dans `build.py` qui échouent si on le
+réduit trop. Les cartons courts laissent donc du noir de part et d'autre : c'est
+le prix du masquage, pas un oubli de mise en page.
 
-D'où un bandeau **agrandi vers le haut** (`y 870–1100`) avec le texte à `y 985` :
-le bloc de texte tombe vers 950–1020, dans la zone sûre, et le bas du bandeau
-couvre quand même l'ancien texte. Le déplacer vers le haut sans l'agrandir
-aurait redécouvert le bas des anciens sous-titres.
+Le compromis de position se joue entre cette emprise et l'interface Reels, qui
+recouvre le bas de l'écran à partir de `y 1024` : le bloc de texte tombe vers
+963–1033, soit tout juste à la limite.
 
 Découpe des cartons : fermeture forcée en fin de phrase (sinon la fin d'une
 réplique et le début de la suivante partagent une ligne) **et** mesure de la
 largeur réelle en Montserrat ExtraBold 54 px — compter les mots ne suffit pas,
-quatre mots longs débordent du cadre. 23 cartons, le plus large à 609 px pour
-une limite de 610.
+quatre mots longs débordent. 26 cartons, le plus large à 552 px, soit 39 px de
+marge minimale à l'intérieur du cartouche.
 
 ## Points de vigilance
 

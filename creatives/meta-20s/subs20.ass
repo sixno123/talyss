@@ -11,62 +11,62 @@ Style: Cap,Montserrat ExtraBold,54,&H00FFFFFF,&H00101010,&H80000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.04,0:00:00.78,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}Avant,{\c&H00FFFFFF&} c'était
-Dialogue: 0,0:00:00.78,0:00:01.00,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}Avant, {\c&H1BA9DE&}c'était{\c&H00FFFFFF&}
-Dialogue: 0,0:00:01.00,0:00:01.58,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}pédicure{\c&H00FFFFFF&} toutes les 3
-Dialogue: 0,0:00:01.58,0:00:01.78,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}pédicure {\c&H1BA9DE&}toutes{\c&H00FFFFFF&} les 3
-Dialogue: 0,0:00:01.78,0:00:01.96,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}pédicure toutes {\c&H1BA9DE&}les{\c&H00FFFFFF&} 3
-Dialogue: 0,0:00:01.96,0:00:02.16,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}pédicure toutes les {\c&H1BA9DE&}3{\c&H00FFFFFF&}
-Dialogue: 0,0:00:02.16,0:00:02.80,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}semaines,{\c&H00FFFFFF&} parce que
-Dialogue: 0,0:00:02.80,0:00:03.08,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}semaines, {\c&H1BA9DE&}parce{\c&H00FFFFFF&} que
-Dialogue: 0,0:00:03.08,0:00:03.24,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}semaines, parce {\c&H1BA9DE&}que{\c&H00FFFFFF&}
-Dialogue: 0,0:00:03.24,0:00:03.38,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}mes{\c&H00FFFFFF&} talons étaient
-Dialogue: 0,0:00:03.38,0:00:03.76,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}mes {\c&H1BA9DE&}talons{\c&H00FFFFFF&} étaient
-Dialogue: 0,0:00:03.76,0:00:04.04,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}mes talons {\c&H1BA9DE&}étaient{\c&H00FFFFFF&}
-Dialogue: 0,0:00:04.04,0:00:04.36,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}une{\c&H00FFFFFF&} catastrophe.
-Dialogue: 0,0:00:04.36,0:00:05.11,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}une {\c&H1BA9DE&}catastrophe.{\c&H00FFFFFF&}
-Dialogue: 0,0:00:05.11,0:00:05.35,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}râpes{\c&H00FFFFFF&} manuelles, soit
-Dialogue: 0,0:00:05.35,0:00:06.29,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}râpes {\c&H1BA9DE&}manuelles,{\c&H00FFFFFF&} soit
-Dialogue: 0,0:00:06.29,0:00:06.51,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}râpes manuelles, {\c&H1BA9DE&}soit{\c&H00FFFFFF&}
-Dialogue: 0,0:00:06.51,0:00:06.71,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}ça{\c&H00FFFFFF&} irrite, soit ça
-Dialogue: 0,0:00:06.71,0:00:07.39,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}ça {\c&H1BA9DE&}irrite,{\c&H00FFFFFF&} soit ça
-Dialogue: 0,0:00:07.39,0:00:07.61,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}ça irrite, {\c&H1BA9DE&}soit{\c&H00FFFFFF&} ça
-Dialogue: 0,0:00:07.61,0:00:07.77,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}ça irrite, soit {\c&H1BA9DE&}ça{\c&H00FFFFFF&}
-Dialogue: 0,0:00:07.77,0:00:07.85,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}ne{\c&H00FFFFFF&} fait rien.
-Dialogue: 0,0:00:07.85,0:00:07.97,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}ne {\c&H1BA9DE&}fait{\c&H00FFFFFF&} rien.
-Dialogue: 0,0:00:07.97,0:00:08.47,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}ne fait {\c&H1BA9DE&}rien.{\c&H00FFFFFF&}
-Dialogue: 0,0:00:08.47,0:00:08.61,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}Et{\c&H00FFFFFF&} puis, une amie
-Dialogue: 0,0:00:08.61,0:00:09.15,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Et {\c&H1BA9DE&}puis,{\c&H00FFFFFF&} une amie
-Dialogue: 0,0:00:09.15,0:00:09.33,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Et puis, {\c&H1BA9DE&}une{\c&H00FFFFFF&} amie
-Dialogue: 0,0:00:09.33,0:00:09.59,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}Et puis, une {\c&H1BA9DE&}amie{\c&H00FFFFFF&}
-Dialogue: 0,0:00:09.59,0:00:09.77,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}m'a{\c&H00FFFFFF&} fait découvrir la
-Dialogue: 0,0:00:09.77,0:00:09.89,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}m'a {\c&H1BA9DE&}fait{\c&H00FFFFFF&} découvrir la
-Dialogue: 0,0:00:09.89,0:00:10.25,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}m'a fait {\c&H1BA9DE&}découvrir{\c&H00FFFFFF&} la
-Dialogue: 0,0:00:10.25,0:00:10.55,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}m'a fait découvrir {\c&H1BA9DE&}la{\c&H00FFFFFF&}
-Dialogue: 0,0:00:10.55,0:00:10.79,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}râpe{\c&H00FFFFFF&} électrique
-Dialogue: 0,0:00:10.79,0:00:11.29,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}{\c&H1BA9DE&}râpe{\c&H00FFFFFF&} {\c&H1BA9DE&}électrique{\c&H00FFFFFF&}
-Dialogue: 0,0:00:11.29,0:00:11.95,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H1BA9DE&}Talyss.{\c&H00FFFFFF&}
-Dialogue: 0,0:00:11.95,0:00:12.07,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}elle{\c&H00FFFFFF&} enlève toute la
-Dialogue: 0,0:00:12.07,0:00:12.45,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}elle {\c&H1BA9DE&}enlève{\c&H00FFFFFF&} toute la
-Dialogue: 0,0:00:12.45,0:00:12.67,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}elle enlève {\c&H1BA9DE&}toute{\c&H00FFFFFF&} la
-Dialogue: 0,0:00:12.67,0:00:12.89,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}elle enlève toute {\c&H1BA9DE&}la{\c&H00FFFFFF&}
-Dialogue: 0,0:00:12.89,0:00:13.09,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}peau{\c&H00FFFFFF&} morte, sans
-Dialogue: 0,0:00:13.09,0:00:13.47,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}{\c&H1BA9DE&}peau{\c&H00FFFFFF&} {\c&H1BA9DE&}morte,{\c&H00FFFFFF&} sans
-Dialogue: 0,0:00:13.47,0:00:14.01,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}{\c&H1BA9DE&}peau{\c&H00FFFFFF&} {\c&H1BA9DE&}morte,{\c&H00FFFFFF&} {\c&H1BA9DE&}sans{\c&H00FFFFFF&}
-Dialogue: 0,0:00:14.01,0:00:14.73,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H1BA9DE&}douleur.{\c&H00FFFFFF&}
-Dialogue: 0,0:00:14.73,0:00:15.49,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}Résultat :{\c&H00FFFFFF&} des pieds
-Dialogue: 0,0:00:15.49,0:00:15.59,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Résultat : {\c&H1BA9DE&}des{\c&H00FFFFFF&} pieds
-Dialogue: 0,0:00:15.59,0:00:16.05,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}Résultat : des {\c&H1BA9DE&}pieds{\c&H00FFFFFF&}
-Dialogue: 0,0:00:16.05,0:00:16.87,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H1BA9DE&}incroyablement{\c&H00FFFFFF&}
-Dialogue: 0,0:00:16.87,0:00:17.19,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}doux{\c&H00FFFFFF&} et lisses.
-Dialogue: 0,0:00:17.19,0:00:17.33,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}{\c&H1BA9DE&}doux{\c&H00FFFFFF&} {\c&H1BA9DE&}et{\c&H00FFFFFF&} lisses.
-Dialogue: 0,0:00:17.33,0:00:17.94,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}{\c&H1BA9DE&}doux{\c&H00FFFFFF&} {\c&H1BA9DE&}et{\c&H00FFFFFF&} {\c&H1BA9DE&}lisses.{\c&H00FFFFFF&}
-Dialogue: 0,0:00:17.94,0:00:18.04,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}Les{\c&H00FFFFFF&} stocks partent
-Dialogue: 0,0:00:18.04,0:00:18.28,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Les {\c&H1BA9DE&}stocks{\c&H00FFFFFF&} partent
-Dialogue: 0,0:00:18.28,0:00:18.66,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}Les stocks {\c&H1BA9DE&}partent{\c&H00FFFFFF&}
-Dialogue: 0,0:00:18.66,0:00:19.08,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}vite,{\c&H00FFFFFF&} alors
-Dialogue: 0,0:00:19.08,0:00:19.22,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}vite, {\c&H1BA9DE&}alors{\c&H00FFFFFF&}
-Dialogue: 0,0:00:19.22,0:00:19.70,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H1BA9DE&}commandez{\c&H00FFFFFF&}
-Dialogue: 0,0:00:19.70,0:00:19.98,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H1BA9DE&}maintenant{\c&H00FFFFFF&} sur
-Dialogue: 0,0:00:19.98,0:00:20.24,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}maintenant {\c&H1BA9DE&}sur{\c&H00FFFFFF&}
-Dialogue: 0,0:00:20.24,0:00:20.72,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H1BA9DE&}Talyss !{\c&H00FFFFFF&}
+Dialogue: 0,0:00:00.04,0:00:00.78,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}Avant,{\c&H00FFFFFF&} c'était
+Dialogue: 0,0:00:00.78,0:00:01.00,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}Avant, {\c&H1BA9DE&}c'était{\c&H00FFFFFF&}
+Dialogue: 0,0:00:01.00,0:00:01.58,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}pédicure{\c&H00FFFFFF&} toutes les
+Dialogue: 0,0:00:01.58,0:00:01.78,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}pédicure {\c&H1BA9DE&}toutes{\c&H00FFFFFF&} les
+Dialogue: 0,0:00:01.78,0:00:01.96,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}pédicure toutes {\c&H1BA9DE&}les{\c&H00FFFFFF&}
+Dialogue: 0,0:00:01.96,0:00:02.16,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}3{\c&H00FFFFFF&} semaines, parce
+Dialogue: 0,0:00:02.16,0:00:02.80,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}3 {\c&H1BA9DE&}semaines,{\c&H00FFFFFF&} parce
+Dialogue: 0,0:00:02.80,0:00:03.08,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}3 semaines, {\c&H1BA9DE&}parce{\c&H00FFFFFF&}
+Dialogue: 0,0:00:03.08,0:00:03.24,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}que{\c&H00FFFFFF&} mes talons
+Dialogue: 0,0:00:03.24,0:00:03.38,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}que {\c&H1BA9DE&}mes{\c&H00FFFFFF&} talons
+Dialogue: 0,0:00:03.38,0:00:03.76,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}que mes {\c&H1BA9DE&}talons{\c&H00FFFFFF&}
+Dialogue: 0,0:00:03.76,0:00:04.04,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}étaient{\c&H00FFFFFF&} une
+Dialogue: 0,0:00:04.04,0:00:04.36,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}étaient {\c&H1BA9DE&}une{\c&H00FFFFFF&}
+Dialogue: 0,0:00:04.36,0:00:05.11,Cap,,0,0,0,,{\pos(360,998)\fad(60,60)}{\c&H1BA9DE&}catastrophe.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:05.11,0:00:05.35,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}râpes{\c&H00FFFFFF&} manuelles,
+Dialogue: 0,0:00:05.35,0:00:06.29,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}râpes {\c&H1BA9DE&}manuelles,{\c&H00FFFFFF&}
+Dialogue: 0,0:00:06.29,0:00:06.51,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}soit{\c&H00FFFFFF&} ça irrite,
+Dialogue: 0,0:00:06.51,0:00:06.71,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}soit {\c&H1BA9DE&}ça{\c&H00FFFFFF&} irrite,
+Dialogue: 0,0:00:06.71,0:00:07.39,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}soit ça {\c&H1BA9DE&}irrite,{\c&H00FFFFFF&}
+Dialogue: 0,0:00:07.39,0:00:07.61,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}soit{\c&H00FFFFFF&} ça ne fait
+Dialogue: 0,0:00:07.61,0:00:07.77,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}soit {\c&H1BA9DE&}ça{\c&H00FFFFFF&} ne fait
+Dialogue: 0,0:00:07.77,0:00:07.85,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}soit ça {\c&H1BA9DE&}ne{\c&H00FFFFFF&} fait
+Dialogue: 0,0:00:07.85,0:00:07.97,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}soit ça ne {\c&H1BA9DE&}fait{\c&H00FFFFFF&}
+Dialogue: 0,0:00:07.97,0:00:08.47,Cap,,0,0,0,,{\pos(360,998)\fad(60,60)}{\c&H1BA9DE&}rien.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:08.47,0:00:08.61,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}Et{\c&H00FFFFFF&} puis, une amie
+Dialogue: 0,0:00:08.61,0:00:09.15,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}Et {\c&H1BA9DE&}puis,{\c&H00FFFFFF&} une amie
+Dialogue: 0,0:00:09.15,0:00:09.33,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}Et puis, {\c&H1BA9DE&}une{\c&H00FFFFFF&} amie
+Dialogue: 0,0:00:09.33,0:00:09.59,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}Et puis, une {\c&H1BA9DE&}amie{\c&H00FFFFFF&}
+Dialogue: 0,0:00:09.59,0:00:09.77,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}m'a{\c&H00FFFFFF&} fait découvrir
+Dialogue: 0,0:00:09.77,0:00:09.89,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}m'a {\c&H1BA9DE&}fait{\c&H00FFFFFF&} découvrir
+Dialogue: 0,0:00:09.89,0:00:10.25,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}m'a fait {\c&H1BA9DE&}découvrir{\c&H00FFFFFF&}
+Dialogue: 0,0:00:10.25,0:00:10.55,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}la{\c&H00FFFFFF&} râpe électrique
+Dialogue: 0,0:00:10.55,0:00:10.79,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}la {\c&H1BA9DE&}râpe{\c&H00FFFFFF&} électrique
+Dialogue: 0,0:00:10.79,0:00:11.29,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}la {\c&H1BA9DE&}râpe{\c&H00FFFFFF&} {\c&H1BA9DE&}électrique{\c&H00FFFFFF&}
+Dialogue: 0,0:00:11.29,0:00:11.95,Cap,,0,0,0,,{\pos(360,998)\fad(60,60)}{\c&H1BA9DE&}Talyss.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:11.95,0:00:12.07,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}elle{\c&H00FFFFFF&} enlève toute la
+Dialogue: 0,0:00:12.07,0:00:12.45,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}elle {\c&H1BA9DE&}enlève{\c&H00FFFFFF&} toute la
+Dialogue: 0,0:00:12.45,0:00:12.67,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}elle enlève {\c&H1BA9DE&}toute{\c&H00FFFFFF&} la
+Dialogue: 0,0:00:12.67,0:00:12.89,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}elle enlève toute {\c&H1BA9DE&}la{\c&H00FFFFFF&}
+Dialogue: 0,0:00:12.89,0:00:13.09,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}peau{\c&H00FFFFFF&} morte, sans
+Dialogue: 0,0:00:13.09,0:00:13.47,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}{\c&H1BA9DE&}peau{\c&H00FFFFFF&} {\c&H1BA9DE&}morte,{\c&H00FFFFFF&} sans
+Dialogue: 0,0:00:13.47,0:00:14.01,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}{\c&H1BA9DE&}peau{\c&H00FFFFFF&} {\c&H1BA9DE&}morte,{\c&H00FFFFFF&} {\c&H1BA9DE&}sans{\c&H00FFFFFF&}
+Dialogue: 0,0:00:14.01,0:00:14.73,Cap,,0,0,0,,{\pos(360,998)\fad(60,60)}{\c&H1BA9DE&}douleur.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:14.73,0:00:15.49,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}Résultat :{\c&H00FFFFFF&} des
+Dialogue: 0,0:00:15.49,0:00:15.59,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}Résultat : {\c&H1BA9DE&}des{\c&H00FFFFFF&}
+Dialogue: 0,0:00:15.59,0:00:16.05,Cap,,0,0,0,,{\pos(360,998)\fad(60,60)}{\c&H1BA9DE&}pieds{\c&H00FFFFFF&}
+Dialogue: 0,0:00:16.05,0:00:16.87,Cap,,0,0,0,,{\pos(360,998)\fad(60,60)}{\c&H1BA9DE&}incroyablement{\c&H00FFFFFF&}
+Dialogue: 0,0:00:16.87,0:00:17.19,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}doux{\c&H00FFFFFF&} et lisses.
+Dialogue: 0,0:00:17.19,0:00:17.33,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}{\c&H1BA9DE&}doux{\c&H00FFFFFF&} {\c&H1BA9DE&}et{\c&H00FFFFFF&} lisses.
+Dialogue: 0,0:00:17.33,0:00:17.94,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}{\c&H1BA9DE&}doux{\c&H00FFFFFF&} {\c&H1BA9DE&}et{\c&H00FFFFFF&} {\c&H1BA9DE&}lisses.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:17.94,0:00:18.04,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}Les{\c&H00FFFFFF&} stocks partent
+Dialogue: 0,0:00:18.04,0:00:18.28,Cap,,0,0,0,,{\pos(360,998)\fad(0,0)}Les {\c&H1BA9DE&}stocks{\c&H00FFFFFF&} partent
+Dialogue: 0,0:00:18.28,0:00:18.66,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}Les stocks {\c&H1BA9DE&}partent{\c&H00FFFFFF&}
+Dialogue: 0,0:00:18.66,0:00:19.08,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}vite,{\c&H00FFFFFF&} alors
+Dialogue: 0,0:00:19.08,0:00:19.22,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}vite, {\c&H1BA9DE&}alors{\c&H00FFFFFF&}
+Dialogue: 0,0:00:19.22,0:00:19.70,Cap,,0,0,0,,{\pos(360,998)\fad(60,60)}{\c&H1BA9DE&}commandez{\c&H00FFFFFF&}
+Dialogue: 0,0:00:19.70,0:00:19.98,Cap,,0,0,0,,{\pos(360,998)\fad(60,0)}{\c&H1BA9DE&}maintenant{\c&H00FFFFFF&} sur
+Dialogue: 0,0:00:19.98,0:00:20.24,Cap,,0,0,0,,{\pos(360,998)\fad(0,60)}maintenant {\c&H1BA9DE&}sur{\c&H00FFFFFF&}
+Dialogue: 0,0:00:20.24,0:00:20.72,Cap,,0,0,0,,{\pos(360,998)\fad(60,60)}{\c&H1BA9DE&}Talyss !{\c&H00FFFFFF&}
