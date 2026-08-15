@@ -1,0 +1,132 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Montserrat ExtraBold,52,&H001B1B1B&,&H00FFFFFF,&H80FFFFFF,0,0,0,0,100,100,0.4,0,1,0,0,5,40,40,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.44,0:00:00.80,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}Toi{\c&H001B1B1B&} tu as les
+Dialogue: 0,0:00:00.80,0:00:00.96,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Toi {\c&H00264E7E&}tu{\c&H001B1B1B&} as les
+Dialogue: 0,0:00:00.96,0:00:01.02,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Toi tu {\c&H00264E7E&}as{\c&H001B1B1B&} les
+Dialogue: 0,0:00:01.02,0:00:01.20,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}Toi tu as {\c&H00264E7E&}les{\c&H001B1B1B&}
+Dialogue: 0,0:00:01.20,0:00:01.44,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}pieds{\c&H001B1B1B&} croûtés là,
+Dialogue: 0,0:00:01.44,0:00:01.66,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}pieds {\c&H00264E7E&}croûtés{\c&H001B1B1B&} là,
+Dialogue: 0,0:00:01.66,0:00:02.34,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}pieds croûtés {\c&H00264E7E&}là,{\c&H001B1B1B&}
+Dialogue: 0,0:00:02.34,0:00:02.46,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}toi{\c&H001B1B1B&} tu as les
+Dialogue: 0,0:00:02.46,0:00:02.60,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}toi {\c&H00264E7E&}tu{\c&H001B1B1B&} as les
+Dialogue: 0,0:00:02.60,0:00:02.66,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}toi tu {\c&H00264E7E&}as{\c&H001B1B1B&} les
+Dialogue: 0,0:00:02.66,0:00:02.82,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}toi tu as {\c&H00264E7E&}les{\c&H001B1B1B&}
+Dialogue: 0,0:00:02.82,0:00:03.06,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}pieds{\c&H001B1B1B&} ravagés par
+Dialogue: 0,0:00:03.06,0:00:03.34,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}pieds {\c&H00264E7E&}ravagés{\c&H001B1B1B&} par
+Dialogue: 0,0:00:03.34,0:00:03.48,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}pieds ravagés {\c&H00264E7E&}par{\c&H001B1B1B&}
+Dialogue: 0,0:00:03.48,0:00:03.58,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}la{\c&H001B1B1B&} misère là,
+Dialogue: 0,0:00:03.58,0:00:03.86,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}la {\c&H00264E7E&}misère{\c&H001B1B1B&} là,
+Dialogue: 0,0:00:03.86,0:00:04.22,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}la misère {\c&H00264E7E&}là,{\c&H001B1B1B&}
+Dialogue: 0,0:00:04.22,0:00:04.40,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}les{\c&H001B1B1B&} pieds qui
+Dialogue: 0,0:00:04.40,0:00:04.66,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}les {\c&H00264E7E&}pieds{\c&H001B1B1B&} qui
+Dialogue: 0,0:00:04.66,0:00:04.72,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}les pieds {\c&H00264E7E&}qui{\c&H001B1B1B&}
+Dialogue: 0,0:00:04.72,0:00:04.94,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}déchirent{\c&H001B1B1B&} le
+Dialogue: 0,0:00:04.94,0:00:05.08,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}déchirent {\c&H00264E7E&}le{\c&H001B1B1B&}
+Dialogue: 0,0:00:05.08,0:00:05.76,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H00264E7E&}moustiquaire.{\c&H001B1B1B&}
+Dialogue: 0,0:00:05.76,0:00:05.90,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}Les{\c&H001B1B1B&} filles, si vous
+Dialogue: 0,0:00:05.90,0:00:06.34,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Les {\c&H00264E7E&}filles,{\c&H001B1B1B&} si vous
+Dialogue: 0,0:00:06.34,0:00:06.42,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Les filles, {\c&H00264E7E&}si{\c&H001B1B1B&} vous
+Dialogue: 0,0:00:06.42,0:00:06.54,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}Les filles, si {\c&H00264E7E&}vous{\c&H001B1B1B&}
+Dialogue: 0,0:00:06.54,0:00:06.72,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}voulez{\c&H001B1B1B&} pas finir
+Dialogue: 0,0:00:06.72,0:00:06.90,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}voulez {\c&H00264E7E&}pas{\c&H001B1B1B&} finir
+Dialogue: 0,0:00:06.90,0:00:07.18,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}voulez pas {\c&H00264E7E&}finir{\c&H001B1B1B&}
+Dialogue: 0,0:00:07.18,0:00:07.36,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}comme{\c&H001B1B1B&} ça, écoutez
+Dialogue: 0,0:00:07.36,0:00:08.00,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}comme {\c&H00264E7E&}ça,{\c&H001B1B1B&} écoutez
+Dialogue: 0,0:00:08.00,0:00:08.26,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}comme ça, {\c&H00264E7E&}écoutez{\c&H001B1B1B&}
+Dialogue: 0,0:00:08.26,0:00:08.92,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}bien,{\c&H001B1B1B&} crème, râpe,
+Dialogue: 0,0:00:08.92,0:00:09.48,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}bien, {\c&H00264E7E&}crème,{\c&H001B1B1B&} râpe,
+Dialogue: 0,0:00:09.48,0:00:10.02,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}bien, crème, {\c&H00264E7E&}râpe,{\c&H001B1B1B&}
+Dialogue: 0,0:00:10.02,0:00:10.28,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}pierre,{\c&H001B1B1B&} ponce, j'ai
+Dialogue: 0,0:00:10.28,0:00:10.76,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}pierre, {\c&H00264E7E&}ponce,{\c&H001B1B1B&} j'ai
+Dialogue: 0,0:00:10.76,0:00:10.90,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}pierre, ponce, {\c&H00264E7E&}j'ai{\c&H001B1B1B&}
+Dialogue: 0,0:00:10.90,0:00:11.08,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}tout{\c&H001B1B1B&} testé, résultat,
+Dialogue: 0,0:00:11.08,0:00:11.70,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}tout {\c&H00264E7E&}testé,{\c&H001B1B1B&} résultat,
+Dialogue: 0,0:00:11.70,0:00:12.34,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}tout testé, {\c&H00264E7E&}résultat,{\c&H001B1B1B&}
+Dialogue: 0,0:00:12.34,0:00:12.76,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H00264E7E&}rien.{\c&H001B1B1B&}
+Dialogue: 0,0:00:12.76,0:00:12.80,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}Et{\c&H001B1B1B&} la corne ça
+Dialogue: 0,0:00:12.80,0:00:12.94,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Et {\c&H00264E7E&}la{\c&H001B1B1B&} corne ça
+Dialogue: 0,0:00:12.94,0:00:13.18,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Et la {\c&H00264E7E&}corne{\c&H001B1B1B&} ça
+Dialogue: 0,0:00:13.18,0:00:13.30,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}Et la corne {\c&H00264E7E&}ça{\c&H001B1B1B&}
+Dialogue: 0,0:00:13.30,0:00:13.44,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}garde{\c&H001B1B1B&} la transpi,
+Dialogue: 0,0:00:13.44,0:00:13.62,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}garde {\c&H00264E7E&}la{\c&H001B1B1B&} transpi,
+Dialogue: 0,0:00:13.62,0:00:14.42,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}garde la {\c&H00264E7E&}transpi,{\c&H001B1B1B&}
+Dialogue: 0,0:00:14.42,0:00:14.58,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}donc{\c&H001B1B1B&} oui, odeur,
+Dialogue: 0,0:00:14.58,0:00:14.94,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}donc {\c&H00264E7E&}oui,{\c&H001B1B1B&} odeur,
+Dialogue: 0,0:00:14.94,0:00:15.48,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}donc oui, {\c&H00264E7E&}odeur,{\c&H001B1B1B&}
+Dialogue: 0,0:00:15.48,0:00:16.18,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}bactéries,{\c&H001B1B1B&} pas
+Dialogue: 0,0:00:16.18,0:00:16.32,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}bactéries, {\c&H00264E7E&}pas{\c&H001B1B1B&}
+Dialogue: 0,0:00:16.32,0:00:16.82,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H00264E7E&}glam.{\c&H001B1B1B&}
+Dialogue: 0,0:00:16.82,0:00:16.96,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}Puis{\c&H001B1B1B&} j'ai testé
+Dialogue: 0,0:00:16.96,0:00:17.16,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Puis {\c&H00264E7E&}j'ai{\c&H001B1B1B&} testé
+Dialogue: 0,0:00:17.16,0:00:17.62,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}Puis j'ai {\c&H00264E7E&}testé{\c&H001B1B1B&}
+Dialogue: 0,0:00:17.62,0:00:18.34,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H00264E7E&}Talyss,{\c&H001B1B1B&}
+Dialogue: 0,0:00:18.34,0:00:18.86,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}franchement,{\c&H001B1B1B&} deux
+Dialogue: 0,0:00:18.86,0:00:19.00,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}franchement, {\c&H00264E7E&}deux{\c&H001B1B1B&}
+Dialogue: 0,0:00:19.00,0:00:19.66,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}minutes,{\c&H001B1B1B&} zéro
+Dialogue: 0,0:00:19.66,0:00:19.88,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}minutes, {\c&H00264E7E&}zéro{\c&H001B1B1B&}
+Dialogue: 0,0:00:19.88,0:00:20.44,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}galère,{\c&H001B1B1B&} tu passes,
+Dialogue: 0,0:00:20.44,0:00:20.54,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}{\c&H00264E7E&}galère,{\c&H001B1B1B&} {\c&H00264E7E&}tu{\c&H001B1B1B&} passes,
+Dialogue: 0,0:00:20.54,0:00:21.08,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}{\c&H00264E7E&}galère,{\c&H001B1B1B&} tu {\c&H00264E7E&}passes,{\c&H001B1B1B&}
+Dialogue: 0,0:00:21.08,0:00:21.18,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}la{\c&H001B1B1B&} corne disparaît,
+Dialogue: 0,0:00:21.18,0:00:21.38,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}la {\c&H00264E7E&}corne{\c&H001B1B1B&} disparaît,
+Dialogue: 0,0:00:21.38,0:00:22.06,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}la {\c&H00264E7E&}corne{\c&H001B1B1B&} {\c&H00264E7E&}disparaît,{\c&H001B1B1B&}
+Dialogue: 0,0:00:22.06,0:00:22.78,Cap,,0,0,0,,{\pos(360,985)\fad(60,60)}{\c&H00264E7E&}résultat.{\c&H001B1B1B&}
+Dialogue: 0,0:00:22.78,0:00:22.88,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}T'as{\c&H001B1B1B&} le talon ultra
+Dialogue: 0,0:00:22.88,0:00:23.04,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}T'as {\c&H00264E7E&}le talon{\c&H001B1B1B&} ultra
+Dialogue: 0,0:00:23.04,0:00:23.40,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}T'as le talon {\c&H00264E7E&}ultra{\c&H001B1B1B&}
+Dialogue: 0,0:00:23.40,0:00:23.78,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}lisse{\c&H001B1B1B&} et effet spa
+Dialogue: 0,0:00:23.78,0:00:23.98,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}{\c&H00264E7E&}lisse{\c&H001B1B1B&} {\c&H00264E7E&}et{\c&H001B1B1B&} effet spa
+Dialogue: 0,0:00:23.98,0:00:24.26,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}{\c&H00264E7E&}lisse{\c&H001B1B1B&} et {\c&H00264E7E&}effet{\c&H001B1B1B&} spa
+Dialogue: 0,0:00:24.26,0:00:24.38,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}{\c&H00264E7E&}lisse{\c&H001B1B1B&} et effet {\c&H00264E7E&}spa{\c&H001B1B1B&}
+Dialogue: 0,0:00:24.38,0:00:24.98,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}pédicure,{\c&H001B1B1B&} alors que
+Dialogue: 0,0:00:24.98,0:00:25.16,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}pédicure, {\c&H00264E7E&}alors{\c&H001B1B1B&} que
+Dialogue: 0,0:00:25.16,0:00:25.34,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}pédicure, alors {\c&H00264E7E&}que{\c&H001B1B1B&}
+Dialogue: 0,0:00:25.34,0:00:25.44,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}je{\c&H001B1B1B&} suis posée sur
+Dialogue: 0,0:00:25.44,0:00:25.60,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}je {\c&H00264E7E&}suis{\c&H001B1B1B&} posée sur
+Dialogue: 0,0:00:25.60,0:00:25.88,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}je suis {\c&H00264E7E&}posée{\c&H001B1B1B&} sur
+Dialogue: 0,0:00:25.88,0:00:26.02,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}je suis posée {\c&H00264E7E&}sur{\c&H001B1B1B&}
+Dialogue: 0,0:00:26.02,0:00:26.14,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}mon{\c&H001B1B1B&} canapé et
+Dialogue: 0,0:00:26.14,0:00:26.68,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}mon {\c&H00264E7E&}canapé{\c&H001B1B1B&} et
+Dialogue: 0,0:00:26.68,0:00:26.80,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}mon canapé {\c&H00264E7E&}et{\c&H001B1B1B&}
+Dialogue: 0,0:00:26.80,0:00:27.04,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}avec{\c&H001B1B1B&} les 60 disques
+Dialogue: 0,0:00:27.04,0:00:27.22,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}avec {\c&H00264E7E&}les{\c&H001B1B1B&} 60 disques
+Dialogue: 0,0:00:27.22,0:00:27.54,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}avec les {\c&H00264E7E&}60{\c&H001B1B1B&} disques
+Dialogue: 0,0:00:27.54,0:00:27.96,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}avec les {\c&H00264E7E&}60{\c&H001B1B1B&} {\c&H00264E7E&}disques{\c&H001B1B1B&}
+Dialogue: 0,0:00:27.96,0:00:28.48,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}inclus,{\c&H001B1B1B&} je suis large
+Dialogue: 0,0:00:28.48,0:00:28.56,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}inclus, {\c&H00264E7E&}je{\c&H001B1B1B&} suis large
+Dialogue: 0,0:00:28.56,0:00:28.70,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}inclus, je {\c&H00264E7E&}suis{\c&H001B1B1B&} large
+Dialogue: 0,0:00:28.70,0:00:28.88,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}inclus, je suis {\c&H00264E7E&}large{\c&H001B1B1B&}
+Dialogue: 0,0:00:28.88,0:00:29.14,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}tout{\c&H001B1B1B&} l'été.
+Dialogue: 0,0:00:29.14,0:00:29.40,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}tout {\c&H00264E7E&}l'été.{\c&H001B1B1B&}
+Dialogue: 0,0:00:29.40,0:00:29.70,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}Si{\c&H001B1B1B&} tu veux des
+Dialogue: 0,0:00:29.70,0:00:29.82,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Si {\c&H00264E7E&}tu{\c&H001B1B1B&} veux des
+Dialogue: 0,0:00:29.82,0:00:29.94,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}Si tu {\c&H00264E7E&}veux{\c&H001B1B1B&} des
+Dialogue: 0,0:00:29.94,0:00:30.06,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}Si tu veux {\c&H00264E7E&}des{\c&H001B1B1B&}
+Dialogue: 0,0:00:30.06,0:00:30.44,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}pieds{\c&H001B1B1B&} sexy et ready
+Dialogue: 0,0:00:30.44,0:00:30.66,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}pieds {\c&H00264E7E&}sexy{\c&H001B1B1B&} et ready
+Dialogue: 0,0:00:30.66,0:00:30.96,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}pieds sexy {\c&H00264E7E&}et{\c&H001B1B1B&} ready
+Dialogue: 0,0:00:30.96,0:00:31.32,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}pieds sexy et {\c&H00264E7E&}ready{\c&H001B1B1B&}
+Dialogue: 0,0:00:31.32,0:00:31.46,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}pour{\c&H001B1B1B&} sortir en
+Dialogue: 0,0:00:31.46,0:00:31.78,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}pour {\c&H00264E7E&}sortir{\c&H001B1B1B&} en
+Dialogue: 0,0:00:31.78,0:00:31.98,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}pour sortir {\c&H00264E7E&}en{\c&H001B1B1B&}
+Dialogue: 0,0:00:31.98,0:00:32.40,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}sandale{\c&H001B1B1B&} n'importe
+Dialogue: 0,0:00:32.40,0:00:32.80,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}sandale {\c&H00264E7E&}n'importe{\c&H001B1B1B&}
+Dialogue: 0,0:00:32.80,0:00:33.44,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}quand,{\c&H001B1B1B&} clique,
+Dialogue: 0,0:00:33.44,0:00:33.88,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}quand, {\c&H00264E7E&}clique,{\c&H001B1B1B&}
+Dialogue: 0,0:00:33.88,0:00:34.28,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}essaye{\c&H001B1B1B&} et reviens
+Dialogue: 0,0:00:34.28,0:00:34.36,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}essaye {\c&H00264E7E&}et{\c&H001B1B1B&} reviens
+Dialogue: 0,0:00:34.36,0:00:34.66,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}essaye et {\c&H00264E7E&}reviens{\c&H001B1B1B&}
+Dialogue: 0,0:00:34.66,0:00:34.76,Cap,,0,0,0,,{\pos(360,985)\fad(60,0)}{\c&H00264E7E&}me{\c&H001B1B1B&} dire merci.
+Dialogue: 0,0:00:34.76,0:00:34.96,Cap,,0,0,0,,{\pos(360,985)\fad(0,0)}me {\c&H00264E7E&}dire{\c&H001B1B1B&} merci.
+Dialogue: 0,0:00:34.96,0:00:35.72,Cap,,0,0,0,,{\pos(360,985)\fad(0,60)}me dire {\c&H00264E7E&}merci.{\c&H001B1B1B&}
