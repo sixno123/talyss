@@ -22,7 +22,12 @@ PLATE_R = 32                         # rayon des coins
 CAP_Y = 998                          # bloc de texte ~963-1033, centré dans la pastille
 FONT_PX = 54
 MAX_TEXT_W = 560                     # tient dans la pastille (630 px) avec marge
-GOLD, WHITE = "&H1BA9DE&", "&H00FFFFFF&"
+# Cartouche blanc : le texte s'inverse. Le doré (#DEA91B) tombe à ~2:1 de
+# contraste sur blanc — on prend le brun de la charte, ~7:1, et de l'encre pour
+# le texte courant. Format ASS = &HBBGGRR&.
+PLATE_RGBA = (255, 255, 255, 255)
+GOLD = "&H00264E7E&"                 # #7E4E26, brun de marque -> accent karaoké
+WHITE = "&H001B1B1B&"                # #1B1B1B, encre -> texte courant
 KEYWORDS = ["Talyss", "sans douleur", "doux et lisses", "peau morte", "râpe électrique"]
 
 # --- voix : (début, fin) dans vo_final2.wav + le texte réellement prononcé -------
@@ -168,7 +173,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,Montserrat ExtraBold,{FONT_PX},&H00FFFFFF,&H00101010,&H80000000,0,0,0,0,100,100,0.4,0,1,2.6,0,5,40,40,40,1
+Style: Cap,Montserrat ExtraBold,{FONT_PX},{WHITE},&H00FFFFFF,&H80FFFFFF,0,0,0,0,100,100,0.4,0,1,0,0,5,40,40,40,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -204,7 +209,7 @@ print(f"{len(cards)} cartons, {events} événements ASS")
 S = 4
 plate = Image.new("RGBA", (PLATE_W * S, PLATE_H * S), (0, 0, 0, 0))
 ImageDraw.Draw(plate).rounded_rectangle(
-    [0, 0, PLATE_W * S - 1, PLATE_H * S - 1], radius=PLATE_R * S, fill=(0, 0, 0, 255))
+    [0, 0, PLATE_W * S - 1, PLATE_H * S - 1], radius=PLATE_R * S, fill=PLATE_RGBA)
 plate.resize((PLATE_W, PLATE_H), Image.LANCZOS).save("plate.png")
 assert PLATE_Y <= 960 and PLATE_Y + PLATE_H >= 1090, "la pastille ne couvre pas l'ancien texte"
 assert PLATE_X <= 142 and PLATE_X + PLATE_W >= 581, "pastille trop étroite"

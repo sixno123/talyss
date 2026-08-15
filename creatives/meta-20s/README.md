@@ -46,8 +46,14 @@ Les mots sont recalés sur la nouvelle timeline à partir de `../words.json`
 (décalage par segment), donc **aucune retranscription n'est nécessaire** : le
 karaoké mot par mot et les mots-clés dorés se recalculent tout seuls.
 
-**Fond plein noir** au lieu du bandeau flouté de la créa 47 s : un aplat opaque
+**Fond plein blanc** au lieu du bandeau flouté de la créa 47 s : un aplat opaque
 efface l'ancien texte incrusté sans avoir besoin de flou.
+
+Le fond blanc impose d'inverser le texte : **encre `#1B1B1B`** pour le texte
+courant et **brun de marque `#7E4E26`** pour l'accent karaoké. Le doré de la
+créa 47 s (`#DEA91B`) tombe à ~2:1 de contraste sur blanc, contre ~7:1 pour le
+brun. Le contour ASS passe à 0 — le cartouche suffit à détacher le texte, un
+contour ne ferait que l'épaissir.
 
 Pas une barre pleine largeur, mais un **cartouche arrondi détaché des bords** —
 `x 45–675`, `y 936–1104`, coins à 32 px — dessiné 4× puis réduit en lanczos, car
