@@ -52,7 +52,11 @@
           }
         }
       },
-      "block_order": ["step1", "step2", "step3"],
+      "block_order": [
+        "step1",
+        "step2",
+        "step3"
+      ],
       "settings": {
         "heading": "Une ponceuse qui travaille",
         "heading_accent": "Pour Vous",
@@ -69,7 +73,8 @@
             "stars": 5,
             "title": "Très belle découverte",
             "text": "Mes talons sont lisses dès la première utilisation. Aucune douleur, juste une sensation de gommage. On ne sent presque rien et le résultat est superbe. Je recommande sans hésiter.",
-            "author": "Camille R."
+            "author": "Camille R.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-1.jpg?v=1786807743"
           }
         },
         "rev2": {
@@ -78,7 +83,8 @@
             "stars": 5,
             "title": "Un résultat bluffant",
             "text": "J'étais sceptique au départ, mais mes talons sont redevenus tout doux en une seule séance. Fini la râpe manuelle qui fatigue le bras pour un demi-résultat.",
-            "author": "Julie D."
+            "author": "Julie D.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-2.jpg?v=1786807742"
           }
         },
         "rev3": {
@@ -87,7 +93,8 @@
             "stars": 5,
             "title": "Mon nouveau rituel",
             "text": "Application rapide, pratique avec les disques qui se clipsent, et le résultat dure toute la semaine. C'est devenu mon rituel du dimanche soir.",
-            "author": "Manon L."
+            "author": "Manon L.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-3.jpg?v=1786807742"
           }
         },
         "rev4": {
@@ -96,11 +103,17 @@
             "stars": 5,
             "title": "Exactement ce qu'il me fallait",
             "text": "Plus besoin de prendre rendez-vous en institut. En 5 minutes devant la télé, mes pieds sont prêts pour les sandales. Le rapport qualité-prix est imbattable.",
-            "author": "Sophie B."
+            "author": "Sophie B.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-4.jpg?v=1786807742"
           }
         }
       },
-      "block_order": ["rev1", "rev2", "rev3", "rev4"],
+      "block_order": [
+        "rev1",
+        "rev2",
+        "rev3",
+        "rev4"
+      ],
       "settings": {
         "heading": "Nos avis récents de la semaine",
         "pad_top": 64,
@@ -110,12 +123,37 @@
     "approved": {
       "type": "aelo-approved",
       "blocks": {
-        "chk1": { "type": "check", "settings": { "text": "Résultat visible dès la première séance" } },
-        "chk2": { "type": "check", "settings": { "text": "Aucune lame : la peau saine n'est jamais touchée" } },
-        "chk3": { "type": "check", "settings": { "text": "Disque neuf à chaque séance, hygiène parfaite" } },
-        "chk4": { "type": "check", "settings": { "text": "Recharge USB — pas de piles à racheter" } }
+        "chk1": {
+          "type": "check",
+          "settings": {
+            "text": "Résultat visible dès la première séance"
+          }
+        },
+        "chk2": {
+          "type": "check",
+          "settings": {
+            "text": "Aucune lame : la peau saine n'est jamais touchée"
+          }
+        },
+        "chk3": {
+          "type": "check",
+          "settings": {
+            "text": "Disque neuf à chaque séance, hygiène parfaite"
+          }
+        },
+        "chk4": {
+          "type": "check",
+          "settings": {
+            "text": "Recharge USB — pas de piles à racheter"
+          }
+        }
       },
-      "block_order": ["chk1", "chk2", "chk3", "chk4"],
+      "block_order": [
+        "chk1",
+        "chk2",
+        "chk3",
+        "chk4"
+      ],
       "settings": {
         "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-ponceuse-packshot_20a39dd1-98e9-4406-b343-c253b85e4f89.jpg?v=1786668653&width=1000",
         "image_alt": "Ponceuse pieds électrique Talyss",
@@ -129,5 +167,11 @@
       }
     }
   },
-  "order": ["hero", "marquee", "steps", "reviews", "approved"]
+  "order": [
+    "hero",
+    "marquee",
+    "steps",
+    "reviews",
+    "approved"
+  ]
 }

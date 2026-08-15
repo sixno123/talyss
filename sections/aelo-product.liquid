@@ -188,10 +188,20 @@
       {%- endif -%}
 
       {%- if section.settings.social_text != blank -%}
+        {%- assign avatars = section.settings.social_avatars | newline_to_br | replace: '<br />', ',' | split: ',' -%}
         <div class="ae-social">
           <span class="ae-social__avs">
-            {%- assign initials = section.settings.social_initials | split: ',' -%}
-            {%- for ini in initials -%}<span>{{ ini | strip }}</span>{%- endfor -%}
+            {%- if section.settings.social_avatars != blank -%}
+              {%- for a in avatars limit: 6 -%}
+                {%- assign au = a | strip -%}
+                {%- if au != blank -%}
+                  <img src="{{ au }}" alt="" width="34" height="34" loading="lazy" decoding="async">
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- assign initials = section.settings.social_initials | split: ',' -%}
+              {%- for ini in initials -%}<span>{{ ini | strip }}</span>{%- endfor -%}
+            {%- endif -%}
           </span>
           <span>{{ section.settings.social_text }}</span>
           <span class="gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -343,7 +353,8 @@
     { "type": "text", "id": "ship_item1", "label": "Encart livraison — point 1", "default": "Expédiée sous 24–48 h" },
     { "type": "text", "id": "ship_item2", "label": "Encart livraison — point 2", "default": "Suivi inclus par e-mail" },
     { "type": "text", "id": "ship_item3", "label": "Encart livraison — point 3", "default": "Livraison offerte" },
-    { "type": "text", "id": "social_initials", "label": "Initiales des avatars (séparées par ,)", "default": "C,M,J,S,A" },
+    { "type": "textarea", "id": "social_avatars", "label": "Photos des avatars — une URL par ligne (prioritaire sur les initiales)" },
+    { "type": "text", "id": "social_initials", "label": "Initiales des avatars (repli, séparées par ,)", "default": "C,M,J,S,A" },
     { "type": "text", "id": "social_text", "label": "Preuve sociale", "default": "Déjà adoptée par nos clientes" },
     { "type": "checkbox", "id": "show_description", "label": "Accordéon description", "default": true },
     { "type": "text", "id": "description_label", "label": "Libellé de la description", "default": "Description" }

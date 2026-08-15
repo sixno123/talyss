@@ -41,6 +41,23 @@ thème proviennent de Horizon et ne sont pas versionnés ici.
 
 Paliers de prix (variantes du produit ponceuse) : 1 = 34,99 € · 2 = 59,90 € · 3 = 79,90 €.
 
+## Photos de clientes (preuve sociale)
+
+Comme sur AELOPARIS, les avatars sont de vraies photos rondes et non des initiales :
+
+- `aelo-product.liquid` → réglage `social_avatars` : une URL par ligne (ou séparées par
+  des virgules). Repli automatique sur `social_initials` si le champ est vide.
+- `aelo-reviews.liquid` → par bloc d'avis : `avatar` (sélecteur d'image) ou `avatar_url`,
+  repli sur l'initiale du prénom.
+
+Les 5 photos sont hébergées sur le CDN Shopify (`talyss-cliente-1..5.jpg`, 256×256,
+~15 Ko chacune, recadrées en carré).
+
+**Piège à connaître** : quand on ajoute un nouveau réglage à une section *et* qu'on
+renseigne ce réglage dans un template JSON, il faut **deux envois séparés**. Shopify valide
+le template contre le schéma déjà en place et supprime silencieusement les réglages qu'il
+ne connaît pas encore.
+
 ## Moon Bundles (app de bundles)
 
 L'app **Moon Bundles** (CScorp LLC) est installée sur la boutique. Ses bundles se

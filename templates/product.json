@@ -3,11 +3,41 @@
     "main": {
       "type": "aelo-product",
       "blocks": {
-        "ben1": { "type": "benefit", "settings": { "text": "S'adapte à toutes les zones — talons, plante, orteils", "strong": false } },
-        "ben2": { "type": "benefit", "settings": { "text": "Lisse visiblement callosités et talons secs", "strong": false } },
-        "ben3": { "type": "benefit", "settings": { "text": "Zéro effort : le moteur travaille pour vous", "strong": false } },
-        "ben4": { "type": "benefit", "settings": { "text": "Disque neuf à chaque séance — hygiène parfaite", "strong": false } },
-        "ben5": { "type": "benefit", "settings": { "text": "90 JOURS SATISFAIT OU REMBOURSÉ", "strong": true } },
+        "ben1": {
+          "type": "benefit",
+          "settings": {
+            "text": "S'adapte à toutes les zones — talons, plante, orteils",
+            "strong": false
+          }
+        },
+        "ben2": {
+          "type": "benefit",
+          "settings": {
+            "text": "Lisse visiblement callosités et talons secs",
+            "strong": false
+          }
+        },
+        "ben3": {
+          "type": "benefit",
+          "settings": {
+            "text": "Zéro effort : le moteur travaille pour vous",
+            "strong": false
+          }
+        },
+        "ben4": {
+          "type": "benefit",
+          "settings": {
+            "text": "Disque neuf à chaque séance — hygiène parfaite",
+            "strong": false
+          }
+        },
+        "ben5": {
+          "type": "benefit",
+          "settings": {
+            "text": "90 JOURS SATISFAIT OU REMBOURSÉ",
+            "strong": true
+          }
+        },
         "off1": {
           "type": "offer",
           "settings": {
@@ -69,7 +99,19 @@
           }
         }
       },
-      "block_order": ["ben1", "ben2", "ben3", "ben4", "ben5", "off1", "off2", "off3", "faq1", "faq2", "faq3"],
+      "block_order": [
+        "ben1",
+        "ben2",
+        "ben3",
+        "ben4",
+        "ben5",
+        "off1",
+        "off2",
+        "off3",
+        "faq1",
+        "faq2",
+        "faq3"
+      ],
       "settings": {
         "rating_text": "Noté Excellent — Garantie Peau Douce 90 jours",
         "tagline": "Des pieds tout doux en moins de 5 minutes",
@@ -90,7 +132,8 @@
         "social_initials": "C,M,J,S,A",
         "social_text": "Déjà adoptée par nos clientes",
         "show_description": true,
-        "description_label": "Description"
+        "description_label": "Description",
+        "social_avatars": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-1.jpg?v=1786807743,https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-2.jpg?v=1786807742,https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-3.jpg?v=1786807742,https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-4.jpg?v=1786807742,https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-5.jpg?v=1786807742"
       }
     },
     "reviews": {
@@ -102,7 +145,8 @@
             "stars": 5,
             "title": "Très belle découverte",
             "text": "Mes talons sont lisses dès la première utilisation. Aucune douleur, juste une sensation de gommage. Je recommande sans hésiter.",
-            "author": "Camille R."
+            "author": "Camille R.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-1.jpg?v=1786807743"
           }
         },
         "rev2": {
@@ -111,7 +155,8 @@
             "stars": 5,
             "title": "Un résultat bluffant",
             "text": "J'étais sceptique au départ, mais mes talons sont redevenus tout doux en une seule séance. Fini la râpe manuelle.",
-            "author": "Julie D."
+            "author": "Julie D.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-2.jpg?v=1786807742"
           }
         },
         "rev3": {
@@ -120,7 +165,8 @@
             "stars": 5,
             "title": "Mon nouveau rituel",
             "text": "Application rapide, pratique avec les disques qui se clipsent, et le résultat dure toute la semaine.",
-            "author": "Manon L."
+            "author": "Manon L.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-3.jpg?v=1786807742"
           }
         },
         "rev4": {
@@ -129,11 +175,17 @@
             "stars": 5,
             "title": "Exactement ce qu'il me fallait",
             "text": "Plus besoin d'institut. En 5 minutes devant la télé, mes pieds sont prêts pour les sandales.",
-            "author": "Sophie B."
+            "author": "Sophie B.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-4.jpg?v=1786807742"
           }
         }
       },
-      "block_order": ["rev1", "rev2", "rev3", "rev4"],
+      "block_order": [
+        "rev1",
+        "rev2",
+        "rev3",
+        "rev4"
+      ],
       "settings": {
         "heading": "Elles ont adopté Talyss™",
         "pad_top": 56,
@@ -202,7 +254,9 @@
               "blocks": {}
             }
           },
-          "block_order": ["cs_title"]
+          "block_order": [
+            "cs_title"
+          ]
         },
         "static-product-card": {
           "type": "_product-card",
@@ -284,7 +338,11 @@
               "blocks": {}
             }
           },
-          "block_order": ["cs_gallery", "cs_ptitle", "cs_price"]
+          "block_order": [
+            "cs_gallery",
+            "cs_ptitle",
+            "cs_price"
+          ]
         }
       },
       "settings": {
@@ -308,5 +366,9 @@
       }
     }
   },
-  "order": ["main", "reviews", "cross_sell"]
+  "order": [
+    "main",
+    "reviews",
+    "cross_sell"
+  ]
 }

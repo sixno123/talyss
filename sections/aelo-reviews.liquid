@@ -11,7 +11,15 @@
           <h3>{{ block.settings.title }}</h3>
           <p>{{ block.settings.text }}</p>
           <div class="ae-review__author">
-            <span class="ae-review__avatar">{{ block.settings.author | slice: 0 }}</span>
+            <span class="ae-review__avatar">
+              {%- if block.settings.avatar -%}
+                <img src="{{ block.settings.avatar | image_url: width: 96 }}" alt="" width="36" height="36" loading="lazy" decoding="async">
+              {%- elsif block.settings.avatar_url != blank -%}
+                <img src="{{ block.settings.avatar_url }}" alt="" width="36" height="36" loading="lazy" decoding="async">
+              {%- else -%}
+                {{- block.settings.author | slice: 0 -}}
+              {%- endif -%}
+            </span>
             <span>{{ block.settings.author }}</span>
             <span class="ae-review__verified"><svg viewBox="0 0 24 24" fill="#00b67a"><path d="M12 1l3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H5v-4l-3-3 3-3V4h4z"/><path d="M10.6 15.3l-3-3 1.4-1.4 1.6 1.6 4.4-4.4 1.4 1.4z" fill="#fff"/></svg> Cliente vérifiée</span>
           </div>
@@ -51,7 +59,9 @@
         { "type": "range", "id": "stars", "label": "Étoiles", "min": 1, "max": 5, "step": 1, "default": 5 },
         { "type": "text", "id": "title", "label": "Titre de l'avis", "default": "Très belle découverte" },
         { "type": "textarea", "id": "text", "label": "Texte", "default": "Écrivez ici l'avis de votre cliente." },
-        { "type": "text", "id": "author", "label": "Prénom", "default": "Camille R." }
+        { "type": "text", "id": "author", "label": "Prénom", "default": "Camille R." },
+        { "type": "image_picker", "id": "avatar", "label": "Photo de la cliente (prioritaire)" },
+        { "type": "text", "id": "avatar_url", "label": "ou URL de la photo" }
       ]
     }
   ],
