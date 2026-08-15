@@ -27,6 +27,8 @@ ACCENT, INK = "&H00264E7E&", "&H001B1B1B&"      # #7E4E26 brun, #1B1B1B encre
 KEYWORDS = ["Talyss", "60 disques", "ultra lisse", "corne disparaît", "zéro galère"]
 
 MUTE = (17.58, 18.24)             # « honey glow »
+WORD = "w_talyss.wav"             # « Talyss » recalé en hauteur (voir pitch_fit.py)
+WORD_AT = 17.60                   # démarre dans la fenêtre muette, 0,04 s de marge
 CARD_HOLD = 3.0
 
 # Texte réellement affiché, jeton par jeton (l'ASR se trompe : « crouchés »,
@@ -173,17 +175,24 @@ def build(tag, shots, audio_keep):
         cursor += b - a
     write_ass(words, f"subs_{tag}.ass")
 
-    # audio : on tait d'abord le concurrent sur la source, puis on découpe.
+    # audio : on tait le concurrent sur la source, on greffe « Talyss » à sa
+    # place, PUIS on découpe. Le mixage doit précéder la découpe pour que les
+    # deux versions héritent du mot.
     # asplit est nécessaire : un flux filtré ne se consomme qu'une fois, et il
     # faut le relire autant de fois qu'il y a de segments à extraire.
     n = len(audio_keep)
     mute = f"volume=enable='between(t,{MUTE[0]},{MUTE[1]})':volume=0"
-    agraph = (f"[0:a]{mute},asplit={n}" + "".join(f"[m{i}]" for i in range(n)) + ";"
-              + "".join(f"[m{i}]atrim=start={s}:end={e},asetpts=N/SR/TB[a{i}];"
-                        for i, (s, e) in enumerate(audio_keep))
-              + "".join(f"[a{i}]" for i in range(n))
-              + f"concat=n={n}:v=0:a=1,apad=whole_dur={total:.3f}[out]")
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", SRC,
+    agraph = (
+        f"[0:a]{mute}[muet];"
+        f"[1:a]aformat=channel_layouts=stereo,"
+        f"adelay={int(WORD_AT * 1000)}|{int(WORD_AT * 1000)}[mot];"
+        f"[muet][mot]amix=inputs=2:normalize=0[mix];"          # normalize=0 : sinon amix divise les niveaux par deux
+        f"[mix]asplit={n}" + "".join(f"[m{i}]" for i in range(n)) + ";"
+        + "".join(f"[m{i}]atrim=start={s}:end={e},asetpts=N/SR/TB[a{i}];"
+                  for i, (s, e) in enumerate(audio_keep))
+        + "".join(f"[a{i}]" for i in range(n))
+        + f"concat=n={n}:v=0:a=1,apad=whole_dur={total:.3f}[out]")
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", SRC, "-i", WORD,
                     "-filter_complex", agraph, "-map", "[out]",
                     "-ar", "48000", "-ac", "2", f"a_{tag}.wav"], check=True)
 

@@ -19,16 +19,42 @@ La créa d'origine vend un concurrent. Trois traces, trois traitements :
 
 | Trace | Où | Traitement |
 |---|---|---|
-| « honey glow » **dit** à 17,62–18,18 s | audio | **son coupé** sur ces mots |
+| « honey glow » **dit** à 17,62–18,18 s | audio | son coupé, **« Talyss » greffé à la place** |
 | « Honey » **incrusté** vers 17,9 s | image, dans la bande de sous-titres | couvert par le cartouche |
 | Carte de fin « Mielle GLOW − 50 % » | 36,07 s → fin | remplacée par la carte Talyss |
 | « moins 50 % » **dit** à partir de 35,58 s | audio | absorbé par la carte de fin |
 
 **On tait, on ne coupe pas.** Retirer 0,56 s de piste décalerait l'image ou
-imposerait un saut visible en plein plan. Le silence, lui, ne décale rien — et
-comme le sous-titre reste affiché, il porte « Talyss » exactement là où l'ancienne
-marque était prononcée *et* incrustée. Le spectateur lit la bonne marque au bon
-moment.
+imposerait un saut visible en plein plan. Rendre la portion muette ne décale
+rien, et laisse une fenêtre propre où déposer le bon nom.
+
+### Le mot greffé (`pitch_fit.py`)
+
+« Talyss » est prélevé dans la voix off Talyss de la créa 47 s, qui prononce
+déjà la marque. Deux réglages ont été trouvés en écoutant ce que l'ASR
+comprend, pas en calculant :
+
+- **Début de l'extraction.** Partir 0,04 s plus tôt happait le /k/ final
+  d'« électrique » : l'ASR entendait « Octalis », « Kitalis ». Démarrer à
+  27,34 s supprime cette consonne parasite.
+- **Transposition = 1,15×.** Caler la hauteur au plus près de la créatrice
+  (210 Hz contre 140 Hz mesurés) demandait 1,44×, ce qui rendait le mot
+  inintelligible — « Pétalice ». À 1,15× l'ASR relit /ta-lis/. Pour une marque,
+  **être compris prime sur être à la bonne hauteur.**
+
+Le mot est ensuite mis au niveau exact de la phrase voisine (RMS 0,1357) et
+mixé **avant** la découpe, pour que les deux versions en héritent.
+
+> C'est une greffe : une autre voix, sur un mot. Le sous-titre affiche
+> « Talyss » au même instant, ce qui lève l'ambiguïté à l'écran. À valider à
+> l'oreille avant diffusion.
+
+**Contrôle** (`verify.py`) : les deux sorties sont retranscrites après rendu.
+On vérifie qu'aucune des chaînes `honey` / `glow` / `mielle` / `50 %` n'y
+figure, et que /ta-lis/ s'entend au bon endroit. Le test cherche le squelette
+phonétique et non l'orthographe : selon le contexte, l'ASR rend le même son par
+« Thalys », « ta lice » ou « ta liste » — exiger l'orthographe exacte faisait
+échouer un greffon pourtant correct.
 
 Le CTA d'origine (« clique, essaye et reviens me dire merci ») est neutre : gardé tel
 quel. Seule la revendication −50 %, qui n'est pas l'offre Talyss, disparaît.
