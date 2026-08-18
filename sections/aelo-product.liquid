@@ -130,7 +130,11 @@
                        data-ae-label="{{ o_label | escape }}" data-ae-price="{{ ov.price | money }}"
                        {% if forloop.index0 == sel_index %}checked{% endif %}>
                 <span class="ae-offer__img">
-                  <img src="{{ op.featured_image | image_url: width: 120 }}" alt="" loading="lazy" decoding="async" width="54" height="54">
+                  {%- if block.settings.image_url != blank -%}
+                    <img src="{{ block.settings.image_url }}" alt="" loading="lazy" decoding="async" width="54" height="54">
+                  {%- else -%}
+                    <img src="{{ op.featured_image | image_url: width: 120 }}" alt="" loading="lazy" decoding="async" width="54" height="54">
+                  {%- endif -%}
                   {%- if block.settings.qty_badge != blank -%}<span class="ae-offer__qty">{{ block.settings.qty_badge }}</span>{%- endif -%}
                 </span>
                 <span class="ae-offer__label">
@@ -367,6 +371,7 @@
       "settings": [
         { "type": "product", "id": "product", "label": "Produit (vide = produit de la page)" },
         { "type": "text", "id": "variant_id", "label": "ID de variante (vide = 1re dispo)" },
+        { "type": "text", "id": "image_url", "label": "Image de l'offre (URL, sinon image du produit)" },
         { "type": "text", "id": "title", "label": "Titre", "default": "1 PONCEUSE" },
         { "type": "text", "id": "subtitle", "label": "Sous-titre" },
         { "type": "text", "id": "qty_badge", "label": "Badge quantité", "default": "x1" },

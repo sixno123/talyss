@@ -1,0 +1,187 @@
+{
+  "sections": {
+    "hero": {
+      "type": "aelo-hero",
+      "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-fix-hero.jpg?v=1787038501",
+        "image_alt": "Femme fixant un cadre au mur sans percer avec le ruban Talyss Fix",
+        "product": "ruban-double-face-renforce-fixation-sans-percer",
+        "rating_text": "",
+        "kicker": "Pour les locataires et les petits espaces",
+        "heading": "Fixez sans percer.",
+        "subheading": "Ruban double-face à maillage renforcé, 3 cm × 10 m. Pour vos cadres légers, vos câbles et vos petites décorations — sans perceuse, sans trou, sans chantier.",
+        "button_label": "Découvrir Talyss Fix™",
+        "button_link": "/products/ruban-double-face-renforce-fixation-sans-percer",
+        "pad_top": 32,
+        "pad_bottom": 40
+      }
+    },
+    "marquee": {
+      "type": "aelo-marquee",
+      "settings": {
+        "text": "Sans perceuse | Sans trou | 3 cm × 10 m | Pose en trois gestes",
+        "pad_top": 20,
+        "pad_bottom": 20
+      }
+    },
+    "steps": {
+      "type": "aelo-steps",
+      "blocks": {
+        "step1": {
+          "type": "step",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-fix-etape-1.jpg?v=1787038501",
+            "title": "Nettoyez et séchez",
+            "text": "Passez un chiffon sec sur la zone. Le ruban tient sur les surfaces lisses et propres : verre, carrelage, métal, plastique, bois lisse. Faites un essai sur une zone peu visible."
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-fix-05-decoupe.jpg?v=1787038352",
+            "title": "Découpez la longueur utile",
+            "text": "Le maillage tissu se coupe net aux ciseaux, sans s'effilocher. Vous n'utilisez que ce dont vous avez besoin — le rouleau de 10 m couvre plusieurs projets."
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-fix-etape-3.jpg?v=1787038501",
+            "title": "Appliquez et ajustez",
+            "text": "Pressez fermement quelques secondes, puis placez votre cadre ou votre accessoire. Réservé aux objets légers : pas d'objets lourds, fragiles ou dangereux en cas de chute."
+          }
+        }
+      },
+      "block_order": [
+        "step1",
+        "step2",
+        "step3"
+      ],
+      "settings": {
+        "heading": "Trois gestes,",
+        "heading_accent": "Et C'est Fixé",
+        "pad_top": 64,
+        "pad_bottom": 72
+      }
+    },
+    "reviews": {
+      "type": "aelo-reviews",
+      "blocks": {
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Parfait en location",
+            "text": "Je déménage souvent et je ne voulais plus percer. Mes cadres tiennent et je n'ai plus la crainte de l'état des lieux.",
+            "author": "Camille R.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-1.jpg?v=1786807743"
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Le maillage change tout",
+            "text": "J'avais déjà essayé du double-face classique qui se déchirait. Là, la bande se coupe net et reste bien en place.",
+            "author": "Julie D.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-2.jpg?v=1786807742"
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Installée en dix minutes",
+            "text": "Nouvel appartement, cadres et câbles rangés le premier soir. Aucun outil sorti du carton.",
+            "author": "Manon L.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-3.jpg?v=1786807742"
+          }
+        },
+        "rev4": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Pratique au quotidien",
+            "text": "Je m'en sers surtout pour les câbles le long de la plinthe. Le rouleau de 10 m dure longtemps.",
+            "author": "Sophie B.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-4.jpg?v=1786807742"
+          }
+        }
+      },
+      "block_order": [
+        "rev1",
+        "rev2",
+        "rev3",
+        "rev4"
+      ],
+      "settings": {
+        "heading": "Ils ont adopté Talyss Fix™",
+        "pad_top": 64,
+        "pad_bottom": 56
+      }
+    },
+    "approved": {
+      "type": "aelo-approved",
+      "blocks": {
+        "chk1": {
+          "type": "check",
+          "settings": {
+            "text": "Aucun trou, aucune cheville, aucun outil"
+          }
+        },
+        "chk2": {
+          "type": "check",
+          "settings": {
+            "text": "Maillage tissu renforcé qui se coupe net"
+          }
+        },
+        "chk3": {
+          "type": "check",
+          "settings": {
+            "text": "3 cm × 10 m : de quoi couvrir plusieurs projets"
+          }
+        },
+        "chk4": {
+          "type": "check",
+          "settings": {
+            "text": "Pour cadres légers, câbles et petites décorations"
+          }
+        }
+      },
+      "block_order": [
+        "chk1",
+        "chk2",
+        "chk3",
+        "chk4"
+      ],
+      "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-fix-approuvee.jpg?v=1787038501",
+        "image_alt": "Cadres et décoration fixés sans percer dans un salon",
+        "heading": "Pensé pour",
+        "heading_accent": "Les Locataires\nEt Les Petits Espaces.",
+        "text": "Décorez et organisez votre intérieur sans le transformer en chantier. Le ruban Talyss Fix™ se pose en quelques secondes sur une surface lisse et propre, et se découpe à la longueur exacte dont vous avez besoin.",
+        "button_label": "Découvrir Talyss Fix™",
+        "button_link": "/products/ruban-double-face-renforce-fixation-sans-percer",
+        "pad_top": 32,
+        "pad_bottom": 88
+      }
+    },
+    "accent": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>.ae{--brown:#b4551f;--brown-d:#95431a;--serif-c:#b06a3a}</style>",
+        "section_width": "full-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    }
+  },
+  "order": [
+    "accent",
+    "hero",
+    "marquee",
+    "steps",
+    "reviews",
+    "approved"
+  ]
+}

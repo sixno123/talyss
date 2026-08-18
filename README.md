@@ -80,3 +80,61 @@ Marche à suivre dans l'éditeur de thème : section « AELO — Page produit »
   par de vrais avis dès que vous en avez.
 - Les offres de la page produit pointent vers les variantes réelles
   (Découverte 34,99 €, Sérénité 44,99 €, Pack Duo 59,90 €) — modifiables bloc par bloc.
+
+## Talyss Fix™ — vitrine ruban (thème v8)
+
+Second produit, second thème : **« Talyss Fix — v8 · Vitrine ruban »** (id `203529158999`,
+non publié). Il réutilise toutes les sections `aelo-*` sans les modifier ; seuls les
+templates changent. Le thème publié de la ponceuse reste intact.
+
+| Fichier | Rôle |
+|---|---|
+| `talyss-fix/templates/index.json` | Accueil : hero « Fixez sans percer. », marquee, 3 gestes, avis, carte « Pensé pour les locataires » |
+| `talyss-fix/templates/product.json` | Fiche ruban : 5 bénéfices, 3 offres, 4 questions fréquentes |
+| `talyss-fix/sections/header-group.json` | Bandeau « FIXEZ SANS PERCER · LIVRAISON SUIVIE SOUS 24–48 H » |
+
+L'accent brun est décalé vers le terracotta de la charte Fix par une section
+`custom-liquid` placée en tête d'ordre (`accent`), qui redéfinit `--brown`, `--brown-d`
+et `--serif-c` sur `.ae`. Aucune modification de `config/settings_data.json` n'est donc
+nécessaire, et la ponceuse garde sa palette.
+
+### Offres
+
+| Bloc | Variante | Prix | Titre | Ruban |
+|---|---|---|---|---|
+| off1 | `54368982860119` (TLY-TAPE-1) | 24,90 € | 1 rouleau | — |
+| off2 | `54368982892887` (TLY-TAPE-2) | 34,90 € | Pack locataire | LE PLUS CHOISI (présélectionné) |
+| off3 | `54368982925655` (TLY-TAPE-4) | 49,90 € | Pack maison | MEILLEURE VALEUR |
+
+Chaque offre a sa propre vignette via le nouveau réglage `image_url` du bloc `offer`
+(`sections/aelo-product.liquid`). Sans valeur, la section retombe sur l'image principale
+du produit.
+
+### Ce qui n'est volontairement pas là
+
+- **Pas de prix barré** : les variantes n'en ont aucun, et en France le prix de référence
+  doit être le prix le plus bas pratiqué sur les 30 derniers jours.
+- **Pas de barre de rareté** (`show_scarcity: false`) ni de note « Excellent »
+  (`rating_text` vide) : aucun avis réel pour l'instant.
+- **Pas de promesse « sans trace » ni de charge maximale en kg** tant que la variante
+  exacte n'a pas été testée.
+- Les 4 avis sont des exemples de structure, à remplacer avant toute publicité.
+
+### Images
+
+14 visuels préparés (recadrage carré, 1086–1254 px, marquage vert du mandrin retouché
+sur 5 photos) et hébergés sur le CDN Shopify :
+
+- Galerie produit : `talyss-fix-01-packshot` → `talyss-fix-07-cable`
+- Vignettes d'offres : `talyss-fix-pack-1`, `-pack-2`, `-pack-4`
+- Vitrine : `talyss-fix-hero`, `talyss-fix-etape-1`, `talyss-fix-etape-3`,
+  `talyss-fix-approuvee` (l'étape 2 réutilise `talyss-fix-05-decoupe`)
+
+### Reste à fournir avant publication
+
+- Logo « Talyss FIX™ » détouré (PNG transparent) et favicon
+- Photo lisible de l'étiquette : fabricant, adresse, référence ou lot
+- Notice et avertissements en français (obligations GPSR)
+
+Le produit reste en **brouillon** et le thème **non publié** tant que ces éléments ne sont
+pas réunis.

@@ -1,0 +1,221 @@
+{
+  "sections": {
+    "main": {
+      "type": "aelo-product",
+      "blocks": {
+        "ben1": {
+          "type": "benefit",
+          "settings": {
+            "text": "Maillage tissu renforcé, plus résistant à la déchirure qu'un ruban classique",
+            "strong": false
+          }
+        },
+        "ben2": {
+          "type": "benefit",
+          "settings": {
+            "text": "3 cm × 10 m — vous découpez seulement la longueur nécessaire",
+            "strong": false
+          }
+        },
+        "ben3": {
+          "type": "benefit",
+          "settings": {
+            "text": "Pose en trois gestes, sans perceuse et sans outil",
+            "strong": false
+          }
+        },
+        "ben4": {
+          "type": "benefit",
+          "settings": {
+            "text": "Pensé pour les espaces loués : studio, chambre, appartement",
+            "strong": false
+          }
+        },
+        "ben5": {
+          "type": "benefit",
+          "settings": {
+            "text": "COMPATIBLE SURFACES LISSES : VERRE, CARRELAGE, MÉTAL, PLASTIQUE, BOIS LISSE",
+            "strong": true
+          }
+        },
+        "off1": {
+          "type": "offer",
+          "settings": {
+            "product": "",
+            "variant_id": "54368982860119",
+            "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-fix-pack-1.jpg?v=1787038500",
+            "title": "1 rouleau",
+            "subtitle": "10 m — soit 2,49 € le mètre",
+            "qty_badge": "x1",
+            "ribbon_text": "",
+            "ribbon_countdown": false,
+            "preselected": false
+          }
+        },
+        "off2": {
+          "type": "offer",
+          "settings": {
+            "product": "",
+            "variant_id": "54368982892887",
+            "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-fix-pack-2.jpg?v=1787038501",
+            "title": "Pack locataire",
+            "subtitle": "2 rouleaux — soit 17,45 € l'unité",
+            "qty_badge": "x2",
+            "ribbon_text": "LE PLUS CHOISI",
+            "ribbon_countdown": false,
+            "preselected": true
+          }
+        },
+        "off3": {
+          "type": "offer",
+          "settings": {
+            "product": "",
+            "variant_id": "54368982925655",
+            "image_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-fix-pack-4.jpg?v=1787038500",
+            "title": "Pack maison",
+            "subtitle": "4 rouleaux — soit 12,48 € l'unité",
+            "qty_badge": "x4",
+            "ribbon_text": "MEILLEURE VALEUR",
+            "ribbon_countdown": false,
+            "preselected": false
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Sur quelles surfaces puis-je l'utiliser ?",
+            "answer": "<p>Sur des surfaces lisses, propres et sèches : verre, carrelage, métal, plastique et bois lisse. Faites toujours un essai sur une zone peu visible avant la pose définitive.</p>"
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "Que puis-je fixer avec ?",
+            "answer": "<p>Des objets légers : cadres légers, câbles, petites décorations, tapis et petits accessoires. N'utilisez pas le ruban pour suspendre des objets lourds, fragiles, ou dont la chute pourrait causer des blessures.</p>"
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Comment retirer le ruban ?",
+            "answer": "<p>Décollez lentement, en tirant la bande le long de la surface plutôt que perpendiculairement. Le résultat dépend du support, de la peinture et de la durée de pose : commencez toujours par un essai sur une zone discrète.</p>"
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Quels sont les délais de livraison ?",
+            "answer": "<p>Votre commande est expédiée sous 24 à 48 h ouvrées, avec un numéro de suivi envoyé par e-mail.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ben1",
+        "ben2",
+        "ben3",
+        "ben4",
+        "ben5",
+        "off1",
+        "off2",
+        "off3",
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4"
+      ],
+      "settings": {
+        "rating_text": "",
+        "tagline": "Fixez sans percer, en trois gestes",
+        "show_scarcity": false,
+        "scarcity_text": "OFFRE DE LANCEMENT",
+        "scarcity_pct": 60,
+        "show_offers": true,
+        "show_atc": true,
+        "atc_label": "Ajouter au panier",
+        "show_sticky": true,
+        "sticky_label": "Ajouter",
+        "guarantee_text": "Paiement sécurisé · 14 jours pour changer d'avis",
+        "ship_title": "Livraison suivie",
+        "ship_sub": "Numéro de suivi envoyé par e-mail dès l'expédition",
+        "ship_item1": "Expédiée sous 24–48 h",
+        "ship_item2": "Suivi inclus par e-mail",
+        "ship_item3": "Emballage soigné",
+        "social_initials": "C,M,J,S,A",
+        "social_avatars": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-1.jpg?v=1786807743,https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-2.jpg?v=1786807742,https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-3.jpg?v=1786807742,https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-4.jpg?v=1786807742,https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-5.jpg?v=1786807742",
+        "social_text": "Ils ont adopté Talyss Fix™",
+        "show_description": true,
+        "description_label": "Description"
+      }
+    },
+    "reviews": {
+      "type": "aelo-reviews",
+      "blocks": {
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Parfait en location",
+            "text": "Je déménage souvent et je ne voulais plus percer. Mes cadres tiennent et je n'ai plus la crainte de l'état des lieux.",
+            "author": "Camille R.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-1.jpg?v=1786807743"
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Le maillage change tout",
+            "text": "J'avais déjà essayé du double-face classique qui se déchirait. Là, la bande se coupe net et reste bien en place.",
+            "author": "Julie D.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-2.jpg?v=1786807742"
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Installée en dix minutes",
+            "text": "Nouvel appartement, cadres et câbles rangés le premier soir. Aucun outil sorti du carton.",
+            "author": "Manon L.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-3.jpg?v=1786807742"
+          }
+        },
+        "rev4": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "title": "Pratique au quotidien",
+            "text": "Je m'en sers surtout pour les câbles le long de la plinthe. Le rouleau de 10 m dure longtemps.",
+            "author": "Sophie B.",
+            "avatar_url": "https://cdn.shopify.com/s/files/1/1037/9300/0791/files/talyss-cliente-4.jpg?v=1786807742"
+          }
+        }
+      },
+      "block_order": [
+        "rev1",
+        "rev2",
+        "rev3",
+        "rev4"
+      ],
+      "settings": {
+        "heading": "Ils ont adopté Talyss Fix™",
+        "pad_top": 56,
+        "pad_bottom": 48
+      }
+    },
+    "accent": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>.ae{--brown:#b4551f;--brown-d:#95431a;--serif-c:#b06a3a}</style>",
+        "section_width": "full-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    }
+  },
+  "order": [
+    "accent",
+    "main",
+    "reviews"
+  ]
+}
